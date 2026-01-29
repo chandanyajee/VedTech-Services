@@ -40,7 +40,7 @@ const Header: React.FC = () => {
               {item.name}
             </Link>
           ))}
-          <Button asChild variant="default" size="sm">
+          <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-white font-semibold">
             <Link to="/contact">Book Now</Link>
           </Button>
         </nav>
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                     {item.name}
                   </Link>
                 ))}
-                <Button asChild className="w-full mt-4">
+                <Button asChild className="w-full mt-4 bg-primary hover:bg-primary/90 text-white font-semibold">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
                 </Button>
               </nav>
