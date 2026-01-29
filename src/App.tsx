@@ -7,6 +7,7 @@ import routes from './routes';
 // import { AuthProvider } from '@/contexts/AuthContext';
 // import { RouteGuard } from '@/components/common/RouteGuard';
 import { Toaster } from '@/components/ui/toaster';
+import MainLayout from '@/components/layouts/MainLayout';
 
 const App: React.FC = () => {
   return (
@@ -14,10 +15,8 @@ const App: React.FC = () => {
       {/*<AuthProvider>*/}
       {/*<RouteGuard>*/}
       <IntersectObserver />
-      <div className="flex flex-col min-h-screen">
-        {/*<Header />*/}
-        <main className="flex-grow">
-          <Routes>
+      <MainLayout>
+        <Routes>
           {routes.map((route, index) => (
             <Route
               key={index}
@@ -26,9 +25,8 @@ const App: React.FC = () => {
             />
           ))}
           <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-      </div>
+        </Routes>
+      </MainLayout>
       <Toaster />
       {/*</RouteGuard>*/}
       {/*</AuthProvider>*/}
