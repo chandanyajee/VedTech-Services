@@ -6,6 +6,8 @@ import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
 import AdminTickets from './pages/AdminTickets';
+import AMCPlans from './pages/AMCPlans';
+import CustomerDashboard from './pages/CustomerDashboard';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -42,6 +44,11 @@ const routes: RouteConfig[] = [
     element: <WhyUs />
   },
   {
+    name: 'AMC Plans',
+    path: '/amc-plans',
+    element: <AMCPlans />
+  },
+  {
     name: 'Support',
     path: '/support',
     element: <Support />
@@ -50,6 +57,11 @@ const routes: RouteConfig[] = [
     name: 'Contact',
     path: '/contact',
     element: <Contact />
+  },
+  {
+    name: 'My Dashboard',
+    path: '/dashboard',
+    element: <CustomerDashboard />
   },
   {
     name: 'Admin Tickets',

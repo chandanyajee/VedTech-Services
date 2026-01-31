@@ -27,19 +27,24 @@ const About: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Story</h2>
             <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6">
               <p className="text-lg">
-                VedTech Services was founded with a clear vision: to create a comprehensive IT services company 
-                that businesses across India can rely on for all their technology needs. We recognized that most 
-                businesses struggle with fragmented IT support – calling different vendors for hardware, software, 
-                and networking issues.
+                VedTech Services is an IT Services & Technical Support company established to provide complete 
+                hardware and software solutions under one roof. The company offers services such as computer and 
+                hardware maintenance, software installation, IT support services, website development, and networking solutions.
               </p>
               <p className="text-lg">
-                Our <strong>"One Call – Complete IT Solutions"</strong> model was born from this insight. Today, 
-                we serve over 500 clients across multiple industries, providing everything from custom software 
-                development to on-site hardware repairs, all backed by our 24/7 support team.
+                VedTech Services follows a customer-centric and fast service model, providing on-call, remote, and 
+                on-site IT support to small businesses, schools, offices, and individual customers. Our 
+                <strong> "One Call – Complete IT Solutions"</strong> approach ensures that clients receive comprehensive 
+                support without the need to contact multiple vendors.
               </p>
               <p className="text-lg">
-                What sets us apart is our commitment to building long-term relationships. We don't just fix problems; 
-                we become your technology partner, helping you scale and grow with the right IT infrastructure.
+                The objective of the enterprise is to generate self-employment and local employment while delivering 
+                reliable and affordable IT services in the region. We are committed to building long-term relationships 
+                with our clients and becoming their trusted technology partner for growth and success.
+              </p>
+              <p className="text-lg">
+                As part of the <strong>VedArambh - A Sanatan initiative</strong>, we combine traditional values of 
+                trust and service excellence with modern technology solutions to serve businesses across India.
               </p>
             </div>
           </div>

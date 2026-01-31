@@ -19,6 +19,8 @@ const Support: React.FC = () => {
       email: "",
       phone: "",
       company: "",
+      location: "",
+      serviceType: "",
       priority: "",
       category: "",
       subject: "",
@@ -30,6 +32,28 @@ const Support: React.FC = () => {
     setIsSubmitting(true);
     
     try {
+      // Get or create customer
+      const { data: customerData, error: customerError } = await supabase
+        .rpc('get_or_create_customer', {
+          p_email: data.email,
+          p_name: data.name,
+          p_phone: data.phone,
+          p_company: data.company || null,
+          p_location: data.location || null
+        } as any);
+
+      if (customerError) {
+        console.error('Error creating customer:', customerError);
+      }
+
+      const customerId = customerData;
+
+      // Check if customer has active AMC
+      const { data: amcStatus } = await supabase
+        .rpc('check_customer_amc_status', { customer_email: data.email } as any);
+
+      const isAMCCustomer = amcStatus || false;
+
       // Generate ticket ID
       const ticketId = `VTS-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
       
@@ -38,15 +62,19 @@ const Support: React.FC = () => {
         .from('support_tickets')
         .insert({
           ticket_id: ticketId,
+          customer_id: customerId,
           name: data.name,
           email: data.email,
           phone: data.phone,
           company: data.company || 'N/A',
+          location: data.location || 'N/A',
+          service_type: data.serviceType,
           category: data.category,
           priority: data.priority,
           subject: data.subject,
           description: data.description,
-          status: 'open'
+          status: 'open',
+          is_amc_customer: isAMCCustomer
         } as any);
 
       if (error) {
@@ -217,6 +245,48 @@ This ticket has been saved to the VedTech Services support system.
                               <FormControl>
                                 <Input placeholder="Your Company Name" {...field} />
                               </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="location"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Location</FormLabel>
+                              <FormControl>
+                                <Input placeholder="City, State" {...field} />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="serviceType"
+                          rules={{ required: "Service type is required" }}
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Service Type *</FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value}>
+                                <FormControl>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder="Select service type" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="hardware">Hardware Support</SelectItem>
+                                  <SelectItem value="software">Software Support</SelectItem>
+                                  <SelectItem value="web">Web Development</SelectItem>
+                                  <SelectItem value="app">App Development</SelectItem>
+                                  <SelectItem value="networking">Networking</SelectItem>
+                                  <SelectItem value="other">Other</SelectItem>
+                                </SelectContent>
+                              </Select>
                               <FormMessage />
                             </FormItem>
                           )}

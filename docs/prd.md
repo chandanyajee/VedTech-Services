@@ -35,6 +35,11 @@ VedTech Services provides end-to-end IT solutions with:
 - Growth mindset and future-ready positioning
 - Trust-building content
 - Company values and commitment
+- PMEGP-friendly description:
+  - VedTech Services is an IT Services & Technical Support company established to provide complete hardware and software solutions under one roof
+  - The company offers services such as computer and hardware maintenance, software installation, IT support services, website development, and networking solutions
+  - VedTech Services follows a customer-centric and fast service model, providing on-call, remote, and on-site IT support to small businesses, schools, offices, and individual customers
+  - The objective of the enterprise is to generate self-employment and local employment while delivering reliable and affordable IT services in the region
 - Leadership team information:
   - Founder: Chandan Kumar Yajee
     - LinkedIn: www.linkedin.com/in/chandan-yajee
@@ -64,14 +69,55 @@ VedTech Services provides end-to-end IT solutions with:
 - Professional handling advantages
 - AMC and long-term support benefits
 
-**Page 6: Customer Support / Raise Ticket**
-- Service Request / Ticket Raise Form with customer data entry fields
-- Customer data access and submission functionality
+**Page 6: AMC Plans & Pricing**
+- BASIC AMC – ₹3,999 / Year
+  - 1 PC / Laptop
+  - Software issues
+  - OS installation
+  - Remote support
+  - 24–48 hrs response
+- STANDARD AMC – ₹7,999 / Year (MOST POPULAR)
+  - 2–3 Systems
+  - Hardware + Software
+  - Printer support
+  - Network support
+  - Priority support
+  - 12–24 hrs response
+- PREMIUM AMC – ₹14,999 / Year
+  - Office / Shop / School
+  - Unlimited support
+  - On-site + Remote
+  - Network + Hardware
+  - Emergency support
+  - 4–8 hrs response
+- Note: AMC customers get priority support with guaranteed response time
+
+**Page 7: Customer Support / Raise Ticket**
+- Service Request / Ticket Raise Form with fields:
+  - Name
+  - Mobile / Email
+  - Service Type (Hardware / Software / Web / App)
+  - Problem description
+  - Location
+- Auto Ticket ID generation
+- Customer confirmation via SMS / Email
+- Expected response time display
+- Support engineer assignment
+- Issue resolution (Remote / On-site)
+- Ticket Closed + Feedback option
 - Clear service process (step-by-step)
 - Support options overview
 - Response time commitments
 
-**Page 7: Contact Us**
+**Page 8: Customer Dashboard (Login Required)**
+- Raise new ticket
+- Ticket status check
+- Service history
+- AMC validity check
+- Invoice / payment record
+- Feedback & support chat
+
+**Page 9: Contact Us**
 - Contact form with email integration to vedtechservice@gmail.com
 - Phone number with Call Now button
 - Email address: vedtechservice@gmail.com
@@ -104,28 +150,68 @@ VedTech Services provides end-to-end IT solutions with:
 - Annual Maintenance Contract (AMC)
 - Business IT Management
 
-## 5. Customer Handling Features
+## 5. Customer Ticket System – Full Flow
 
-### 5.1 Support System Components
-- Customer Support System integration
-- Service Request / Ticket Raise Form with customer data entry and access capabilities
-- WhatsApp Quick Support Button (prominent placement)
-- Advanced chat bot for instant customer interaction with enhanced capabilities
-- Call Now & Email Support options
-- Contact form messages sent to vedtechservice@gmail.com
-- Clear Service Process display (step-by-step guide)
-- Trust-building content throughout
+### 5.1 Customer Side Flow
+- Customer requests via website / WhatsApp / Call
+- Raise a Ticket form with fields:
+  - Name
+  - Mobile / Email
+  - Service Type (Hardware / Software / Web / App)
+  - Problem description
+  - Location
+- System auto-generates Ticket ID
+- Customer receives:
+  - SMS / Email confirmation
+  - Expected response time
+- Support engineer assignment
+- Issue resolution (Remote / On-site)
+- Ticket Closed + Feedback option
 
-## 6. Target Industries
+### 5.2 Admin / Support Team Flow
+- New ticket appears in dashboard
+- Priority setting:
+  - High / Medium / Low
+- Engineer assignment
+- Status updates:
+  - Open → In Progress → Waiting → Resolved → Closed
+- Notes + solution recording
+- AMC customer tagging (free / priority)
+
+## 6. Admin Dashboard Features
+
+### 6.1 Dashboard Overview
+- Total tickets
+- Open / Closed tickets
+- AMC customers
+- Monthly revenue
+- Pending payments
+
+### 6.2 Customer Management
+- Customer list
+- AMC status
+- Service history
+
+### 6.3 Ticket Management
+- Assign engineer
+- Priority control
+- SLA tracking
+
+### 6.4 Billing & AMC
+- AMC plans management
+- Invoice generation
+- Payment tracking
+
+## 7. Target Industries
 - Schools and educational institutes
 - Offices and corporate businesses
 - Shops and retail establishments
 - Startups and growing businesses
 - Small to medium enterprises
 
-## 7. Design Requirements
+## 8. Design Requirements
 
-### 7.1 Visual Style
+### 8.1 Visual Style
 - Corporate, clean, premium design
 - India top IT company look & feel
 - Blue / Dark Tech / Professional color palette
@@ -134,26 +220,27 @@ VedTech Services provides end-to-end IT solutions with:
 - Mobile-first & responsive design
 - Fast loading & SEO-friendly structure
 
-### 7.2 Language
+### 8.2 Language
 - Simple professional English
 - Trust-focused messaging
 - Customer-friendly tone
 - Indian business mindset
 - Clear and straightforward content
 
-## 8. Key Taglines
+## 9. Key Taglines
 - One Call – Complete IT Solutions
 - Fast, Reliable & Professional IT Services
 - Your Trusted IT Partner
+- VedTech Services – One Call, Complete IT Solutions: Fast | Reliable | Professional | India-Focused
 
-## 9. Content Tone & Style
+## 10. Content Tone & Style
 - Professional and trustworthy
 - Enterprise-level positioning
 - Growth and future-ready mindset
 - Customer-focused messaging
 - Reliability and power emphasis
 
-## 10. Call-to-Action Elements
+## 11. Call-to-Action Elements
 - Hero section contact buttons
 - WhatsApp Quick Support Button (multiple placements)
 - Advanced chat bot widget for instant engagement
@@ -162,7 +249,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Email contact options (vedtechservice@gmail.com)
 - Request AMC buttons
 
-## 11. Leadership Team
+## 12. Leadership Team
 - Founder: Chandan Kumar Yajee
   - LinkedIn Profile: www.linkedin.com/in/chandan-yajee
   - Founder Image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
@@ -173,19 +260,45 @@ VedTech Services provides end-to-end IT solutions with:
 - HR Manager: Muskan Dubey
   - LinkedIn Profile: linkedin.com/in/muskan-dubey-b990b3330
 
-## 12. Contact & Communication
+## 13. Contact & Communication
 - Primary Email: vedtechservice@gmail.com
 - Contact form submissions sent to vedtechservice@gmail.com
 - Advanced chat bot integration for real-time customer support
 - WhatsApp quick support access
 
-## 13. SEO Keywords & Brand Names
+## 14. SEO Keywords & Brand Names
 - vedtechservices
 - ved tech services
 - VTS
 - VedArambh A Sanatan initiative
 - VedArambh Sanatan initiative
 
-## 14. Reference Images
+## 15. Future SaaS Upgrade Roadmap
+
+### Phase 1 – Current (2025)
+- Company website
+- Ticket system
+- AMC plans
+- Admin dashboard
+
+### Phase 2 – SaaS Launch (2026)
+- VedTech Helpdesk Software
+- Online ticketing platform
+- Subscription based model
+- Multi-company login
+
+### Phase 3 – India Level SaaS (2027)
+- Mobile app (Customer + Engineer)
+- AI-based ticket routing
+- CRM + Billing + AMC
+- Schools / SMB focused SaaS
+
+### Phase 4 – National Brand (2028)
+- Franchise model
+- White-label IT support software
+- Enterprise clients
+- Government & education sector
+
+## 16. Reference Images
 - screenshot.png
 - Gemini_Generated_Image_dc8im8dc8im8dc8i.png (Founder image)
