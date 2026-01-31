@@ -20,7 +20,24 @@ const Contact: React.FC = () => {
 
   const onSubmit = (data: any) => {
     console.log("Form submitted:", data);
-    alert("Thank you for your inquiry. We will get back to you shortly!");
+    
+    // Create email content
+    const subject = `Contact Form: ${data.service || 'General Inquiry'}`;
+    const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Service: ${data.service}
+
+Message:
+${data.message}
+    `;
+    
+    // Open default email client
+    const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    
+    alert("Thank you for your inquiry. Your email client will open to send the message. We will get back to you shortly!");
     form.reset();
   };
 

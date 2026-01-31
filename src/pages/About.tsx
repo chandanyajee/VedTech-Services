@@ -166,6 +166,55 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Founder</h2>
+              <p className="text-slate-600 text-lg">The visionary behind VedTech Services</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1 space-y-6">
+                <h3 className="text-3xl font-bold text-slate-900">Chandan Kumar Yajee</h3>
+                <p className="text-lg text-primary font-semibold">Founder & CEO</p>
+                <p className="text-slate-600 leading-relaxed">
+                  With a passion for technology and a vision to make IT services accessible to businesses across India, 
+                  Chandan Kumar Yajee founded VedTech Services in 2020. His commitment to excellence and customer satisfaction 
+                  has been the driving force behind the company's rapid growth and success.
+                </p>
+                <p className="text-slate-600 leading-relaxed">
+                  Under his leadership, VedTech Services has grown from a small startup to a trusted IT partner for over 500 
+                  businesses, delivering comprehensive technology solutions with a focus on quality, reliability, and innovation.
+                </p>
+                <div className="flex items-center gap-4 pt-4">
+                  <a 
+                    href="https://www.linkedin.com/in/chandan-yajee" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    Connect on LinkedIn
+                  </a>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b54bmiwix34.png" 
+                    alt="Chandan Kumar Yajee - Founder of VedTech Services" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Growth Journey */}
       <section className="py-24 bg-slate-50">
         <div className="container">

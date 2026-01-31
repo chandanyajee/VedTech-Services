@@ -26,9 +26,33 @@ const Support: React.FC = () => {
 
   const onSubmit = (data: any) => {
     console.log("Ticket submitted:", data);
+    
+    // Create email content for ticket
+    const ticketId = Math.floor(Math.random() * 100000);
+    const subject = `Support Ticket #${ticketId}: ${data.subject}`;
+    const body = `
+Support Ticket Details:
+
+Ticket ID: #${ticketId}
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Company: ${data.company}
+Category: ${data.category}
+Priority: ${data.priority}
+Subject: ${data.subject}
+
+Description:
+${data.description}
+    `;
+    
+    // Open default email client
+    const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+    
     toast({
       title: "Ticket Raised Successfully!",
-      description: "Our support team will contact you within 2 hours. Ticket ID: #" + Math.floor(Math.random() * 100000),
+      description: `Our support team will contact you within 2 hours. Ticket ID: #${ticketId}`,
     });
     form.reset();
   };

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/in/chandan-yajee" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>
           
