@@ -9,10 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
-            <p className="text-sm leading-relaxed">
-              Your one-stop solution for all IT hardware, software, and technical support needs. 
-              "One Call – All IT Problems Solved"
-            </p>
+            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" Faundar- Chandan Kumar yajee"}</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
@@ -47,19 +44,19 @@ const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>Visit us: Main Street, Tech Hub, India</span>
+                <span>{"Visit us: Samastipur, Tech Hub, Bihar, India"}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>Call: +91 98765 43210</span>
+                <span>{"Call: +91 7858971869 , +91 7370057723"}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>Email: contact@vedtechservices.com</span>
+                <span>{"Email: contact@vedtechservices.com"}</span>
               </li>
               <li className="flex items-center gap-3">
                 <MessageSquare className="h-5 w-5 text-green-500 shrink-0" />
-                <span>WhatsApp: +91 98765 43210</span>
+                <span>{"WhatsApp: +91 7858971869 ,7370057723"}</span>
               </li>
             </ul>
           </div>
