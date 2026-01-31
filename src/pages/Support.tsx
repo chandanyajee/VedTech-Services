@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Headset, Ticket, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,9 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/db/supabase';
 
 const Support: React.FC = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm({
     defaultValues: {
       name: "",
@@ -24,37 +26,80 @@ const Support: React.FC = () => {
     }
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Ticket submitted:", data);
+  const onSubmit = async (data: any) => {
+    setIsSubmitting(true);
     
-    // Create email content for ticket
-    const ticketId = Math.floor(Math.random() * 100000);
-    const subject = `Support Ticket #${ticketId}: ${data.subject}`;
-    const body = `
+    try {
+      // Generate ticket ID
+      const ticketId = `VTS-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+      
+      // Save to database
+      const { error } = await supabase
+        .from('support_tickets')
+        .insert({
+          ticket_id: ticketId,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          company: data.company || 'N/A',
+          category: data.category,
+          priority: data.priority,
+          subject: data.subject,
+          description: data.description,
+          status: 'open'
+        } as any);
+
+      if (error) {
+        console.error('Error saving ticket:', error);
+        toast({
+          title: "Error",
+          description: "Failed to submit ticket. Please try again or contact us directly.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Create email content for ticket
+      const subject = `Support Ticket ${ticketId}: ${data.subject}`;
+      const body = `
 Support Ticket Details:
 
-Ticket ID: #${ticketId}
+Ticket ID: ${ticketId}
 Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}
-Company: ${data.company}
+Company: ${data.company || 'N/A'}
 Category: ${data.category}
 Priority: ${data.priority}
 Subject: ${data.subject}
 
 Description:
 ${data.description}
-    `;
-    
-    // Open default email client
-    const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Ticket Raised Successfully!",
-      description: `Our support team will contact you within 2 hours. Ticket ID: #${ticketId}`,
-    });
-    form.reset();
+
+---
+This ticket has been saved to the VedTech Services support system.
+      `;
+      
+      // Open default email client
+      const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Ticket Raised Successfully!",
+        description: `Ticket saved to database. Our support team will contact you within 2 hours. Ticket ID: ${ticketId}`,
+      });
+      form.reset();
+    } catch (err) {
+      console.error('Error submitting ticket:', err);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

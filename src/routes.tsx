@@ -5,6 +5,7 @@ import Industries from './pages/Industries';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
+import AdminTickets from './pages/AdminTickets';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -49,6 +50,12 @@ const routes: RouteConfig[] = [
     name: 'Contact',
     path: '/contact',
     element: <Contact />
+  },
+  {
+    name: 'Admin Tickets',
+    path: '/admin/tickets',
+    element: <AdminTickets />,
+    visible: false
   }
 ];
 

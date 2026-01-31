@@ -65,7 +65,8 @@ VedTech Services provides end-to-end IT solutions with:
 - AMC and long-term support benefits
 
 **Page 6: Customer Support / Raise Ticket**
-- Service Request / Ticket Raise Form
+- Service Request / Ticket Raise Form with customer data entry fields
+- Customer data access and submission functionality
 - Clear service process (step-by-step)
 - Support options overview
 - Response time commitments
@@ -107,7 +108,7 @@ VedTech Services provides end-to-end IT solutions with:
 
 ### 5.1 Support System Components
 - Customer Support System integration
-- Service Request / Ticket Raise Form
+- Service Request / Ticket Raise Form with customer data entry and access capabilities
 - WhatsApp Quick Support Button (prominent placement)
 - Advanced chat bot for instant customer interaction with enhanced capabilities
 - Call Now & Email Support options
@@ -178,6 +179,13 @@ VedTech Services provides end-to-end IT solutions with:
 - Advanced chat bot integration for real-time customer support
 - WhatsApp quick support access
 
-## 13. Reference Images
+## 13. SEO Keywords & Brand Names
+- vedtechservices
+- ved tech services
+- VTS
+- VedArambh A Sanatan initiative
+- VedArambh Sanatan initiative
+
+## 14. Reference Images
 - screenshot.png
 - Gemini_Generated_Image_dc8im8dc8im8dc8i.png (Founder image)
