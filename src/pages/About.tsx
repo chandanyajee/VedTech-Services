@@ -20,7 +20,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Company Story */}
       <section className="py-24 bg-white">
         <div className="container">
@@ -46,7 +45,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Mission & Vision */}
       <section className="py-24 bg-slate-50">
         <div className="container">
@@ -87,7 +85,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Core Values */}
       <section className="py-24 bg-white">
         <div className="container">
@@ -129,7 +126,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Why We're Different */}
       <section className="py-24 bg-primary text-white">
         <div className="container">
@@ -165,7 +161,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Leadership Team Section */}
       <section className="py-24 bg-white">
         <div className="container">
@@ -206,11 +201,11 @@ const About: React.FC = () => {
                 </div>
                 <div className="order-1 md:order-2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                    <img 
-                      src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b54bmiwix34.png" 
-                      alt="Chandan Kumar Yajee - Founder & CEO of VedTech Services" 
+                    <img
+                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5ob54n6wao.png"
+                      alt="Chandan Kumar Yajee - Founder & CEO of VedTech Services"
                       className="w-full h-auto object-cover"
-                    />
+                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9b5ob54n6wao.png%22%7D" />
                   </div>
                 </div>
               </div>
@@ -220,12 +215,8 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Co-founder */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
-                    <svg className="w-20 h-20 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                <div className="aspect-square from-blue-100 to-blue-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5p2brz2adc.png)]">
+
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
@@ -251,12 +242,8 @@ const About: React.FC = () => {
 
               {/* IT Manager */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
-                    <svg className="w-20 h-20 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                <div className="aspect-square from-purple-100 to-purple-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5pizldb56o.png)]">
+
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
@@ -282,12 +269,8 @@ const About: React.FC = () => {
 
               {/* HR Manager */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square bg-gradient-to-br from-pink-100 to-pink-200 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-white flex items-center justify-center">
-                    <svg className="w-20 h-20 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                  </div>
+                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5q9ao7cydc.png)]">
+
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
@@ -314,7 +297,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Growth Journey */}
       <section className="py-24 bg-slate-50">
         <div className="container">
