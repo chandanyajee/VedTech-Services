@@ -5,9 +5,12 @@ import Industries from './pages/Industries';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 import AdminTickets from './pages/AdminTickets';
 import AMCPlans from './pages/AMCPlans';
 import CustomerDashboard from './pages/CustomerDashboard';
+import EngineerDashboard from './pages/EngineerDashboard';
 import type { ReactNode } from 'react';
 
 interface RouteConfig {
@@ -64,9 +67,27 @@ const routes: RouteConfig[] = [
     element: <CustomerDashboard />
   },
   {
+    name: 'Admin Login',
+    path: '/admin/login',
+    element: <AdminLogin />,
+    visible: false
+  },
+  {
+    name: 'Admin Dashboard',
+    path: '/admin/dashboard',
+    element: <AdminDashboard />,
+    visible: false
+  },
+  {
     name: 'Admin Tickets',
     path: '/admin/tickets',
     element: <AdminTickets />,
+    visible: false
+  },
+  {
+    name: 'Engineer Dashboard',
+    path: '/engineer/dashboard',
+    element: <EngineerDashboard />,
     visible: false
   }
 ];

@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { Headset, Ticket, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Headset, Ticket, Clock, CheckCircle2, AlertCircle, Copy, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/db/supabase';
+import { useNavigate } from 'react-router-dom';
 
 const Support: React.FC = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+  const [ticketDetails, setTicketDetails] = useState({ ticketId: '', email: '', isNewCustomer: false });
+  
   const form = useForm({
     defaultValues: {
       name: "",
@@ -28,10 +34,27 @@ const Support: React.FC = () => {
     }
   });
 
+  const copyTicketId = () => {
+    navigator.clipboard.writeText(ticketDetails.ticketId);
+    toast({
+      title: "Copied!",
+      description: "Ticket ID copied to clipboard",
+    });
+  };
+
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
     
     try {
+      // Check if customer exists
+      const { data: existingCustomer } = await supabase
+        .from('customers')
+        .select('id')
+        .eq('email', data.email)
+        .single();
+
+      const isNewCustomer = !existingCustomer;
+
       // Get or create customer
       const { data: customerData, error: customerError } = await supabase
         .rpc('get_or_create_customer', {
@@ -98,6 +121,8 @@ Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}
 Company: ${data.company || 'N/A'}
+Location: ${data.location || 'N/A'}
+Service Type: ${data.serviceType}
 Category: ${data.category}
 Priority: ${data.priority}
 Subject: ${data.subject}
@@ -113,10 +138,9 @@ This ticket has been saved to the VedTech Services support system.
       const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoLink;
       
-      toast({
-        title: "Ticket Raised Successfully!",
-        description: `Ticket saved to database. Our support team will contact you within 2 hours. Ticket ID: ${ticketId}`,
-      });
+      // Show success dialog
+      setTicketDetails({ ticketId, email: data.email, isNewCustomer });
+      setShowSuccessDialog(true);
       form.reset();
     } catch (err) {
       console.error('Error submitting ticket:', err);
@@ -452,6 +476,67 @@ This ticket has been saved to the VedTech Services support system.
           </div>
         </div>
       </section>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+              <CheckCircle2 className="h-10 w-10 text-green-600" />
+            </div>
+            <DialogTitle className="text-center text-2xl">Ticket Created Successfully!</DialogTitle>
+            <DialogDescription className="text-center space-y-4 pt-4">
+              <div className="bg-slate-50 p-4 rounded-lg">
+                <p className="text-sm text-slate-600 mb-2">Your Ticket ID</p>
+                <div className="flex items-center justify-center gap-2">
+                  <p className="text-2xl font-bold text-primary">{ticketDetails.ticketId}</p>
+                  <Button size="sm" variant="ghost" onClick={copyTicketId}>
+                    <Copy className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+
+              {ticketDetails.isNewCustomer && (
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg text-left">
+                  <p className="text-sm font-semibold text-blue-900 mb-2">✅ Account Created</p>
+                  <p className="text-sm text-blue-800">
+                    Your customer account has been created with email: <strong>{ticketDetails.email}</strong>
+                  </p>
+                  <p className="text-xs text-blue-700 mt-2">
+                    You can now track all your tickets using this email on the Customer Dashboard.
+                  </p>
+                </div>
+              )}
+
+              <div className="space-y-2 text-sm text-slate-700">
+                <p className="font-semibold">✅ Ticket saved to our system</p>
+                <p className="font-semibold">✅ Email notification sent</p>
+                <p className="font-semibold">✅ Our team will contact you within 2 hours</p>
+              </div>
+
+              <div className="pt-4 space-y-2">
+                <Button 
+                  className="w-full" 
+                  onClick={() => {
+                    setShowSuccessDialog(false);
+                    navigate('/dashboard');
+                  }}
+                >
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Go to Customer Dashboard
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => setShowSuccessDialog(false)}
+                >
+                  Close
+                </Button>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

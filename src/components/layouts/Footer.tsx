@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-2">
-              <img 
-                src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b2hbmac31ts.png" 
-                alt="VedTech Services Logo" 
+              <img
+                src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9bb2mddb1ukg.png"
+                alt="VedTech Services Logo"
                 className="h-12 w-auto"
-              />
+                data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9bb2mddb1ukg.png%22%7D" />
             </div>
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
             <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" Founder- Chandan Kumar Yajee"}</p>
