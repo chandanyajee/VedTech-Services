@@ -1,7 +1,9 @@
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import Industries from './pages/Industries';
 import WhyUs from './pages/WhyUs';
+import Support from './pages/Support';
 import Contact from './pages/Contact';
 import type { ReactNode } from 'react';
 
@@ -29,9 +31,19 @@ const routes: RouteConfig[] = [
     element: <Services />
   },
   {
+    name: 'Industries',
+    path: '/industries',
+    element: <Industries />
+  },
+  {
     name: 'Why Us',
     path: '/why-us',
     element: <WhyUs />
+  },
+  {
+    name: 'Support',
+    path: '/support',
+    element: <Support />
   },
   {
     name: 'Contact',
