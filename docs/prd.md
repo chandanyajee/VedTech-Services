@@ -28,17 +28,23 @@ VedTech Services provides end-to-end IT solutions with:
 - Call-to-action buttons
 - Trust-building highlights
 - WhatsApp Quick Support Button
-- Chat bot integration
+- Advanced chat bot integration
 
 **Page 2: About Us**
 - Company vision and mission
 - Growth mindset and future-ready positioning
 - Trust-building content
 - Company values and commitment
-- Founder information:
-  - Name: Chandan Kumar Yajee
-  - LinkedIn: www.linkedin.com/in/chandan-yajee
-  - Founder image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
+- Leadership team information:
+  - Founder: Chandan Kumar Yajee
+    - LinkedIn: www.linkedin.com/in/chandan-yajee
+    - Founder image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
+  - Co-founder & CEO: Arpit Singh Parihar
+    - LinkedIn: https://www.linkedin.com/in/arpit-singh-parihar-67696b330
+  - IT Manager: Ashita Sarathe
+    - LinkedIn: https://www.linkedin.com/in/aasita-sarathe-b53382384
+  - HR Manager: Muskan Dubey
+    - LinkedIn: linkedin.com/in/muskan-dubey-b990b3330
 
 **Page 3: Services**
 - Software & Digital Services section
@@ -103,7 +109,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Customer Support System integration
 - Service Request / Ticket Raise Form
 - WhatsApp Quick Support Button (prominent placement)
-- Chat bot for instant customer interaction
+- Advanced chat bot for instant customer interaction with enhanced capabilities
 - Call Now & Email Support options
 - Contact form messages sent to vedtechservice@gmail.com
 - Clear Service Process display (step-by-step guide)
@@ -149,21 +155,27 @@ VedTech Services provides end-to-end IT solutions with:
 ## 10. Call-to-Action Elements
 - Hero section contact buttons
 - WhatsApp Quick Support Button (multiple placements)
-- Chat bot widget for instant engagement
+- Advanced chat bot widget for instant engagement
 - Call Now buttons with phone number
 - Service inquiry and ticket raise forms
 - Email contact options (vedtechservice@gmail.com)
 - Request AMC buttons
 
-## 11. Founder Information
-- Founder Name: Chandan Kumar Yajee
-- LinkedIn Profile: www.linkedin.com/in/chandan-yajee
-- Founder Image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
+## 11. Leadership Team
+- Founder: Chandan Kumar Yajee
+  - LinkedIn Profile: www.linkedin.com/in/chandan-yajee
+  - Founder Image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
+- Co-founder & CEO: Arpit Singh Parihar
+  - LinkedIn Profile: https://www.linkedin.com/in/arpit-singh-parihar-67696b330
+- IT Manager: Ashita Sarathe
+  - LinkedIn Profile: https://www.linkedin.com/in/aasita-sarathe-b53382384
+- HR Manager: Muskan Dubey
+  - LinkedIn Profile: linkedin.com/in/muskan-dubey-b990b3330
 
 ## 12. Contact & Communication
 - Primary Email: vedtechservice@gmail.com
 - Contact form submissions sent to vedtechservice@gmail.com
-- Chat bot integration for real-time customer support
+- Advanced chat bot integration for real-time customer support
 - WhatsApp quick support access
 
 ## 13. Reference Images
