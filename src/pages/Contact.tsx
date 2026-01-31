@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-bold">Call Us</div>
-                      <div className="text-slate-600">+91 98765 43210</div>
+                      <div className="text-slate-600">+91 7858971869, +91 7370057723</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-bold">Email Us</div>
-                      <div className="text-slate-600">contact@vedtechservices.com</div>
+                      <div className="text-slate-600">vedtechservice@gmail.com</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-bold">WhatsApp</div>
-                      <div className="text-slate-600">+91 98765 43210</div>
+                      <div className="text-slate-600">+91 7858971869, 7370057723</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
                           <FormItem>
                             <FormLabel>Phone Number</FormLabel>
                             <FormControl>
-                              <Input placeholder="+91 98765 43210" {...field} />
+                              <Input placeholder="+91 7370057723" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

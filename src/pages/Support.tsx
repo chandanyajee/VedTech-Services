@@ -48,7 +48,6 @@ const Support: React.FC = () => {
           </p>
         </div>
       </section>
-
       {/* Support Stats */}
       <section className="py-12 bg-white border-b">
         <div className="container">
@@ -72,7 +71,6 @@ const Support: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Main Content */}
       <section className="py-20 bg-slate-50">
         <div className="container">
@@ -135,7 +133,7 @@ const Support: React.FC = () => {
                             <FormItem>
                               <FormLabel>Phone Number *</FormLabel>
                               <FormControl>
-                                <Input placeholder="+91 98765 43210" {...field} />
+                                <Input placeholder="+91 7370057723" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -298,15 +296,15 @@ const Support: React.FC = () => {
                   <div className="space-y-3 text-sm">
                     <div>
                       <div className="text-slate-400 mb-1">Call Us</div>
-                      <div className="font-semibold text-lg">+91 98765 43210</div>
+                      <div className="font-semibold text-lg">{"+91 7858971869 , +91 7370057723"}</div>
                     </div>
                     <div>
                       <div className="text-slate-400 mb-1">Email</div>
-                      <div className="font-semibold">support@vedtechservices.com</div>
+                      <div className="font-semibold">{"vedtechservice@gmail.com"}</div>
                     </div>
                     <div>
                       <div className="text-slate-400 mb-1">WhatsApp</div>
-                      <div className="font-semibold">+91 98765 43210</div>
+                      <div className="font-semibold">+91 7858971869, 7370057723</div>
                     </div>
                   </div>
                 </CardContent>
