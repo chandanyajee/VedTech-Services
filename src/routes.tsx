@@ -8,6 +8,8 @@ import Contact from './pages/Contact';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminTickets from './pages/AdminTickets';
+import AdminSettings from './pages/AdminSettings';
+import EngineerManagement from './pages/EngineerManagement';
 import AMCPlans from './pages/AMCPlans';
 import CustomerDashboard from './pages/CustomerDashboard';
 import EngineerDashboard from './pages/EngineerDashboard';
@@ -82,6 +84,18 @@ const routes: RouteConfig[] = [
     name: 'Admin Tickets',
     path: '/admin/tickets',
     element: <AdminTickets />,
+    visible: false
+  },
+  {
+    name: 'Admin Settings',
+    path: '/admin/settings',
+    element: <AdminSettings />,
+    visible: false
+  },
+  {
+    name: 'Engineer Management',
+    path: '/admin/engineers',
+    element: <EngineerManagement />,
     visible: false
   },
   {

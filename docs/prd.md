@@ -180,24 +180,41 @@ VedTech Services provides end-to-end IT solutions with:
 
 ## 6. Admin Dashboard Features
 
-### 6.1 Dashboard Overview
+### 6.1 Admin Login System
+- Admin login with ID and Password authentication
+- Secure admin access control
+
+### 6.2 Dashboard Overview
 - Total tickets
 - Open / Closed tickets
 - AMC customers
 - Monthly revenue
 - Pending payments
 
-### 6.2 Customer Management
+### 6.3 Customer Management
 - Customer list
 - AMC status
 - Service history
 
-### 6.3 Ticket Management
+### 6.4 Ticket Management
 - Assign engineer
+- Forward ticket to engineer
 - Priority control
 - SLA tracking
 
-### 6.4 Billing & AMC
+### 6.5 Engineer Management
+- Add new engineer
+- Manage engineer profiles
+- View engineer workload
+- Track engineer performance
+
+### 6.6 Team Management
+- Add developers and engineers to the team
+- Assign roles and responsibilities
+- Team member access control
+- Team collaboration features
+
+### 6.7 Billing & AMC
 - AMC plans management
 - Invoice generation
 - Payment tracking

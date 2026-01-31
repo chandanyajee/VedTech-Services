@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
-import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit } from 'lucide-react';
+import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings } from 'lucide-react';
 import { supabase } from '@/db/supabase';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -244,6 +244,10 @@ const AdminDashboard: React.FC = () => {
               <Button variant="secondary" onClick={() => navigate('/admin/engineers')}>
                 <UserCog className="h-4 w-4 mr-2" />
                 Engineers
+              </Button>
+              <Button variant="secondary" onClick={() => navigate('/admin/settings')}>
+                <Settings className="h-4 w-4 mr-2" />
+                Settings
               </Button>
               <Button variant="outline" className="bg-transparent border-white hover:bg-white hover:text-slate-900" onClick={handleLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
