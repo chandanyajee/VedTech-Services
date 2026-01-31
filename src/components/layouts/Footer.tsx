@@ -8,8 +8,15 @@ const Footer: React.FC = () => {
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">
+            <div className="flex items-center gap-3 mb-2">
+              <img 
+                src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260131/file-9b2hbmac31ts.png" 
+                alt="VedTech Services Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
-            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" Faundar- Chandan Kumar yajee"}</p>
+            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" Founder- Chandan Kumar Yajee"}</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>

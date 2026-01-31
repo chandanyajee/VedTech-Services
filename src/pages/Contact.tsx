@@ -36,7 +36,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -78,7 +77,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-bold">Our Office</div>
-                      <div className="text-slate-600">Main Street, Tech Hub, Mumbai, India</div>
+                      <div className="text-slate-600">{"Samastipur, Tech Hub, Bihar, India"}</div>
                     </div>
                   </div>
                 </CardContent>
