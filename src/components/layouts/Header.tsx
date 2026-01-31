@@ -25,10 +25,10 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9bb2e1gly1a8.png"
+              src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260201/file-9bcp4b0uyc5c.png"
               alt="VedTech Services Logo"
               className="h-10 w-auto"
-              data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9bb2e1gly1a8.png%22%7D" />
+              data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260201%2Ffile-9bcp4b0uyc5c.png%22%7D" />
             <span className="text-xl font-bold tracking-tight text-primary hidden sm:inline">VedTech <span className="text-foreground">Services</span></span>
           </Link>
         </div>
