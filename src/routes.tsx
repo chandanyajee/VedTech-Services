@@ -9,6 +9,9 @@ import MobileAppDevelopment from './pages/MobileAppDevelopment';
 import HardwareRepair from './pages/HardwareRepair';
 import NetworkingSolutions from './pages/NetworkingSolutions';
 import Industries from './pages/Industries';
+import EducationalInstitutions from './pages/EducationalInstitutions';
+import CorporateOffices from './pages/CorporateOffices';
+import RetailShops from './pages/RetailShops';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
@@ -91,6 +94,42 @@ const routes: RouteConfig[] = [
     name: 'Industries',
     path: '/industries',
     element: <Industries />
+  },
+  {
+    name: 'Educational Institutions',
+    path: '/industries/educational-institutions',
+    element: <EducationalInstitutions />,
+    visible: false
+  },
+  {
+    name: 'Corporate Offices',
+    path: '/industries/corporate-offices',
+    element: <CorporateOffices />,
+    visible: false
+  },
+  {
+    name: 'Retail & Shops',
+    path: '/industries/retail-shops',
+    element: <RetailShops />,
+    visible: false
+  },
+  {
+    name: 'Startups & SMEs',
+    path: '/industries/startups-smes',
+    element: <CorporateOffices />,
+    visible: false
+  },
+  {
+    name: 'Healthcare',
+    path: '/industries/healthcare',
+    element: <CorporateOffices />,
+    visible: false
+  },
+  {
+    name: 'Manufacturing',
+    path: '/industries/manufacturing',
+    element: <CorporateOffices />,
+    visible: false
   },
   {
     name: 'Why Us',

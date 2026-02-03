@@ -54,7 +54,7 @@ VedTech Services provides end-to-end IT solutions with:
 **Page 3: Services Overview**
 - Software & Digital Services section (clickable card that opens Page 3A)
 - Hardware & Infrastructure Services section (clickable card that opens Page 3B)
-- IT Support & Customer Handling section
+- IT Support & Customer Handling section (clickable card that opens Page 3G)
 - Detailed service descriptions with icons
 - Each service card is clickable and navigates to its dedicated detail page
 
@@ -66,6 +66,13 @@ VedTech Services provides end-to-end IT solutions with:
 - Technology stack information
 - Client testimonials related to software services
 - Call-to-action for service inquiry
+- Clickable sub-service cards:
+  - Website Design & Development (opens Page 3C)
+  - Mobile App Development (opens Page 3D)
+  - Custom Software Development
+  - Software Installation & Configuration
+  - Bug Fixing & Maintenance
+  - Cloud & Backup Support
 
 **Page 3B: Hardware & Infrastructure Services Detail Page**
 - Comprehensive hardware services overview
@@ -75,6 +82,12 @@ VedTech Services provides end-to-end IT solutions with:
 - Previous work examples and installations
 - Client testimonials related to hardware services
 - Call-to-action for service inquiry
+- Clickable sub-service cards:
+  - Computer & Laptop Repair (opens Page 3E)
+  - Printer / Scanner / CCTV Setup
+  - Networking Solutions (opens Page 3F)
+  - Hardware Upgrade (RAM, SSD, Storage)
+  - Office IT Infrastructure Setup
 
 **Page 3C: Web Development Services Detail Page**
 - Comprehensive web development services overview
@@ -123,32 +136,120 @@ VedTech Services provides end-to-end IT solutions with:
 - Call-to-action for AMC subscription
 
 **Page 4: Industries We Serve**
-- Schools and educational institutes
-- Offices and corporate businesses
-- Shops and retail establishments
-- Startups and growing businesses
+- Schools and educational institutes (clickable card that opens Page 4A)
+- Offices and corporate businesses (clickable card that opens Page 4B)
+- Shops and retail establishments (clickable card that opens Page 4C)
+- Startups and growing businesses (clickable card that opens Page 4D)
+- Healthcare sector (clickable card that opens Page 4E)
+- Manufacturing sector (clickable card that opens Page 4F)
+
+**Page 4A: Educational Institutions Detail Page**
+- IT solutions for schools, colleges, and educational institutes
+- Computer lab setup and maintenance
+- Educational software installation
+- Network infrastructure for campuses
+- Student management systems
+- Case studies from educational clients
+- Call-to-action for educational institution inquiry
+
+**Page 4B: Corporate Offices Detail Page**
+- IT solutions for corporate and business offices
+- Office IT infrastructure setup
+- Business software solutions
+- Network and security systems
+- IT support and maintenance
+- Case studies from corporate clients
+- Call-to-action for corporate inquiry
+
+**Page 4C: Retail & Shops Detail Page**
+- IT solutions for retail stores and shops
+- POS system setup and support
+- Inventory management software
+- CCTV and security systems
+- Billing and accounting software
+- Case studies from retail clients
+- Call-to-action for retail inquiry
+
+**Page 4D: Startups & SMEs Detail Page**
+- IT solutions for startups and small-medium enterprises
+- Cost-effective IT infrastructure
+- Cloud solutions and remote work setup
+- Website and app development for startups
+- Scalable IT support plans
+- Case studies from startup clients
+- Call-to-action for startup inquiry
+
+**Page 4E: Healthcare Detail Page**
+- IT solutions for healthcare facilities
+- Medical software installation and support
+- Data security and compliance
+- Network infrastructure for clinics and hospitals
+- Hardware maintenance for medical equipment
+- Case studies from healthcare clients
+- Call-to-action for healthcare inquiry
+
+**Page 4F: Manufacturing Detail Page**
+- IT solutions for manufacturing units
+- Industrial network setup
+- Production management software
+- Hardware support for manufacturing systems
+- IT infrastructure for factories
+- Case studies from manufacturing clients
+- Call-to-action for manufacturing inquiry
 
 **Page 5: Why Choose VedTech Services**
-- Fast service highlights
-- One call solution benefits
-- Professional handling advantages
-- AMC and long-term support benefits
+- Fast service highlights (clickable card that opens Page 5A)
+- One call solution benefits (clickable card that opens Page 5B)
+- Professional handling advantages (clickable card that opens Page 5C)
+- AMC and long-term support benefits (clickable card that opens Page 5D)
+
+**Page 5A: Fast Service Detail Page**
+- Detailed explanation of fast service commitment
+- Response time guarantees
+- Emergency support availability
+- Quick resolution process
+- Customer testimonials on service speed
+- Call-to-action for fast service inquiry
+
+**Page 5B: One Call Solution Detail Page**
+- Comprehensive explanation of one-stop IT solutions
+- All services under one roof benefits
+- Integrated service approach
+- Simplified customer experience
+- Customer testimonials on convenience
+- Call-to-action for complete solution inquiry
+
+**Page 5C: Professional Handling Detail Page**
+- Expert team qualifications and certifications
+- Professional service standards
+- Quality assurance processes
+- Customer satisfaction commitment
+- Customer testimonials on professionalism
+- Call-to-action for professional service inquiry
+
+**Page 5D: AMC Benefits Detail Page**
+- Long-term support advantages
+- Cost savings with AMC plans
+- Priority service for AMC customers
+- Preventive maintenance benefits
+- Customer testimonials on AMC experience
+- Call-to-action for AMC subscription
 
 **Page 6: AMC Plans & Pricing**
-- BASIC AMC – ₹3,999 / Year
+- BASIC AMC – ₹3,999 / Year (clickable card that opens Page 6A)
   - 1 PC / Laptop
   - Software issues
   - OS installation
   - Remote support
   - 24–48 hrs response
-- STANDARD AMC – ₹7,999 / Year (MOST POPULAR)
+- STANDARD AMC – ₹7,999 / Year (MOST POPULAR) (clickable card that opens Page 6B)
   - 2–3 Systems
   - Hardware + Software
   - Printer support
   - Network support
   - Priority support
   - 12–24 hrs response
-- PREMIUM AMC – ₹14,999 / Year
+- PREMIUM AMC – ₹14,999 / Year (clickable card that opens Page 6C)
   - Office / Shop / School
   - Unlimited support
   - On-site + Remote
@@ -156,6 +257,33 @@ VedTech Services provides end-to-end IT solutions with:
   - Emergency support
   - 4–8 hrs response
 - Note: AMC customers get priority support with guaranteed response time
+
+**Page 6A: Basic AMC Plan Detail Page**
+- Complete details of Basic AMC plan
+- Included services breakdown
+- Terms and conditions
+- Subscription process
+- Payment options
+- Customer testimonials for Basic AMC
+- Call-to-action for Basic AMC subscription
+
+**Page 6B: Standard AMC Plan Detail Page**
+- Complete details of Standard AMC plan
+- Included services breakdown
+- Terms and conditions
+- Subscription process
+- Payment options
+- Customer testimonials for Standard AMC
+- Call-to-action for Standard AMC subscription
+
+**Page 6C: Premium AMC Plan Detail Page**
+- Complete details of Premium AMC plan
+- Included services breakdown
+- Terms and conditions
+- Subscription process
+- Payment options
+- Customer testimonials for Premium AMC
+- Call-to-action for Premium AMC subscription
 
 **Page 7: Customer Support / Raise Ticket**
 - Service Request / Ticket Raise Form with fields:
@@ -290,6 +418,8 @@ VedTech Services provides end-to-end IT solutions with:
 - Shops and retail establishments
 - Startups and growing businesses
 - Small to medium enterprises
+- Healthcare sector
+- Manufacturing sector
 
 ## 8. Design Requirements
 
