@@ -76,7 +76,7 @@ ${data.message}
                     </div>
                     <div>
                       <div className="font-bold">Email Us</div>
-                      <div className="text-slate-600">vedtechservice@gmail.com</div>
+                      <div className="text-slate-600">{"vedtechservicess@gmail.com"}</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
