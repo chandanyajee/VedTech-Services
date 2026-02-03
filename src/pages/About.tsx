@@ -180,7 +180,7 @@ const About: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1 space-y-6">
                   <h3 className="text-3xl font-bold text-slate-900">Chandan Kumar Yajee</h3>
-                  <p className="text-lg text-primary font-semibold">Founder & CEO</p>
+                  <p className="text-lg text-primary font-semibold">{" Founder "}</p>
                   <p className="text-slate-600 leading-relaxed">
                     With a passion for technology and a vision to make IT services accessible to businesses across India, 
                     Chandan Kumar Yajee founded VedTech Services in 2020. His commitment to excellence and customer satisfaction 
@@ -310,9 +310,9 @@ const About: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { year: "2020", milestone: "Company Founded" },
-                { year: "2021", milestone: "100+ Clients" },
+                { year: "2021", milestone: "10+ Clients" },
                 { year: "2023", milestone: "Pan-India Presence" },
-                { year: "2026", milestone: "500+ Happy Clients" }
+                { year: "2026", milestone: "100+ Clients" }
               ].map((item, i) => (
                 <div key={i} className="space-y-2">
                   <div className="text-3xl font-bold text-primary">{item.year}</div>
