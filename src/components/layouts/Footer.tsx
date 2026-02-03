@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/in/chandan-yajee" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/in/ved-tech-services-0b04b03aa" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn Company Profile"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>
           
@@ -38,11 +38,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li>Web Development</li>
-              <li>Mobile App Development</li>
-              <li>Hardware Repair</li>
-              <li>Networking Solutions</li>
-              <li>IT Support & AMC</li>
+              <li><Link to="/services/web-development" className="hover:text-white transition-colors">Web Development</Link></li>
+              <li><Link to="/services/mobile-app-development" className="hover:text-white transition-colors">Mobile App Development</Link></li>
+              <li><Link to="/services/hardware-repair" className="hover:text-white transition-colors">Hardware Repair</Link></li>
+              <li><Link to="/services/networking-solutions" className="hover:text-white transition-colors">Networking Solutions</Link></li>
+              <li><Link to="/services/it-support" className="hover:text-white transition-colors">IT Support & AMC</Link></li>
             </ul>
           </div>
 

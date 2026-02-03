@@ -158,7 +158,6 @@ const Services: React.FC = () => {
           </p>
         </div>
       </section>
-
       {/* Services Grid */}
       <section className="py-24 bg-white">
         <div className="container">
@@ -201,7 +200,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Service Process */}
       <section className="py-24 bg-slate-50">
         <div className="container">
@@ -229,7 +227,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Trust Section */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="container">
@@ -239,7 +236,7 @@ const Services: React.FC = () => {
               <div className="text-sm text-slate-400 uppercase tracking-widest">Happy Clients</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-primary">5000+</div>
+              <div className="text-4xl font-bold text-primary">{"100+"}</div>
               <div className="text-sm text-slate-400 uppercase tracking-widest">Projects Done</div>
             </div>
             <div className="space-y-2">
@@ -253,7 +250,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-24 bg-white">
         <div className="container">

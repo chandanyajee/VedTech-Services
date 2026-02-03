@@ -25,9 +25,9 @@ VedTech Services provides end-to-end IT solutions with:
 **Page 1: Home**
 - Hero section with strong company tagline
 - Quick service overview with clickable icons and cards (each card opens a new dedicated service page)
-- Call-to-action buttons
+- Call-to-action buttons (clickable)
 - Trust-building highlights
-- WhatsApp Quick Support Button
+- WhatsApp Quick Support Button (clickable)
 - Advanced chat bot integration
 
 **Page 2: About Us**
@@ -42,14 +42,16 @@ VedTech Services provides end-to-end IT solutions with:
   - The objective of the enterprise is to generate self-employment and local employment while delivering reliable and affordable IT services in the region
 - Leadership team information:
   - Founder: Chandan Kumar Yajee
-    - LinkedIn: www.linkedin.com/in/chandan-yajee
+    - LinkedIn: www.linkedin.com/in/chandan-yajee (clickable)
     - Founder image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
   - Co-founder & CEO: Arpit Singh Parihar
-    - LinkedIn: https://www.linkedin.com/in/arpit-singh-parihar-67696b330
+    - LinkedIn: https://www.linkedin.com/in/arpit-singh-parihar-67696b330 (clickable)
   - IT Manager: Ashita Sarathe
-    - LinkedIn: https://www.linkedin.com/in/aasita-sarathe-b53382384
+    - LinkedIn: https://www.linkedin.com/in/aasita-sarathe-b53382384 (clickable)
   - HR Manager: Muskan Dubey
-    - LinkedIn: linkedin.com/in/muskan-dubey-b990b3330
+    - LinkedIn: linkedin.com/in/muskan-dubey-b990b3330 (clickable)
+- Company LinkedIn Profile:
+  - VedTech Services: www.linkedin.com/in/ved-tech-services-0b04b03aa (clickable)
 
 **Page 3: Services Overview**
 - Software & Digital Services section (clickable card that opens Page 3A)
@@ -65,14 +67,14 @@ VedTech Services provides end-to-end IT solutions with:
 - Case studies or project examples
 - Technology stack information
 - Client testimonials related to software services
-- Call-to-action for service inquiry
+- Call-to-action for service inquiry (clickable)
 - Clickable sub-service cards:
-  - Website Design & Development (opens Page 3C)
-  - Mobile App Development (opens Page 3D)
-  - Custom Software Development
-  - Software Installation & Configuration
-  - Bug Fixing & Maintenance
-  - Cloud & Backup Support
+  - Website Design & Development (clickable, opens Page 3C)
+  - Mobile App Development (clickable, opens Page 3D)
+  - Custom Software Development (clickable)
+  - Software Installation & Configuration (clickable)
+  - Bug Fixing & Maintenance (clickable)
+  - Cloud & Backup Support (clickable)
 
 **Page 3B: Hardware & Infrastructure Services Detail Page**
 - Comprehensive hardware services overview
@@ -81,13 +83,13 @@ VedTech Services provides end-to-end IT solutions with:
 - Service process and methodology
 - Previous work examples and installations
 - Client testimonials related to hardware services
-- Call-to-action for service inquiry
+- Call-to-action for service inquiry (clickable)
 - Clickable sub-service cards:
-  - Computer & Laptop Repair (opens Page 3E)
-  - Printer / Scanner / CCTV Setup
-  - Networking Solutions (opens Page 3F)
-  - Hardware Upgrade (RAM, SSD, Storage)
-  - Office IT Infrastructure Setup
+  - Computer & Laptop Repair (clickable, opens Page 3E)
+  - Printer / Scanner / CCTV Setup (clickable)
+  - Networking Solutions (clickable, opens Page 3F)
+  - Hardware Upgrade (RAM, SSD, Storage) (clickable)
+  - Office IT Infrastructure Setup (clickable)
 
 **Page 3C: Web Development Services Detail Page**
 - Comprehensive web development services overview
@@ -96,7 +98,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Portfolio of completed web projects
 - Pricing and packages information
 - Client testimonials for web development
-- Call-to-action for web development inquiry
+- Call-to-action for web development inquiry (clickable)
 
 **Page 3D: Mobile App Development Services Detail Page**
 - Mobile app development services overview
@@ -105,7 +107,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Portfolio of mobile applications
 - Technology stack for mobile development
 - Client testimonials for app development
-- Call-to-action for app development inquiry
+- Call-to-action for app development inquiry (clickable)
 
 **Page 3E: Hardware Repair Services Detail Page**
 - Computer and laptop repair services
@@ -114,7 +116,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Repair process and turnaround time
 - Warranty and quality assurance
 - Client testimonials for hardware repair
-- Call-to-action for repair service request
+- Call-to-action for repair service request (clickable)
 
 **Page 3F: Networking Solutions Detail Page**
 - Network design and implementation services
@@ -123,7 +125,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Infrastructure cabling and configuration
 - Network maintenance and support
 - Client testimonials for networking services
-- Call-to-action for networking consultation
+- Call-to-action for networking consultation (clickable)
 
 **Page 3G: IT Support & AMC Detail Page**
 - IT helpdesk and support services overview
@@ -133,7 +135,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Response time commitments
 - AMC plans and pricing details
 - Client testimonials for IT support
-- Call-to-action for AMC subscription
+- Call-to-action for AMC subscription (clickable)
 
 **Page 4: Industries We Serve**
 - Schools and educational institutes (clickable card that opens Page 4A)
@@ -150,7 +152,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Network infrastructure for campuses
 - Student management systems
 - Case studies from educational clients
-- Call-to-action for educational institution inquiry
+- Call-to-action for educational institution inquiry (clickable)
 
 **Page 4B: Corporate Offices Detail Page**
 - IT solutions for corporate and business offices
@@ -159,7 +161,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Network and security systems
 - IT support and maintenance
 - Case studies from corporate clients
-- Call-to-action for corporate inquiry
+- Call-to-action for corporate inquiry (clickable)
 
 **Page 4C: Retail & Shops Detail Page**
 - IT solutions for retail stores and shops
@@ -168,7 +170,7 @@ VedTech Services provides end-to-end IT solutions with:
 - CCTV and security systems
 - Billing and accounting software
 - Case studies from retail clients
-- Call-to-action for retail inquiry
+- Call-to-action for retail inquiry (clickable)
 
 **Page 4D: Startups & SMEs Detail Page**
 - IT solutions for startups and small-medium enterprises
@@ -177,7 +179,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Website and app development for startups
 - Scalable IT support plans
 - Case studies from startup clients
-- Call-to-action for startup inquiry
+- Call-to-action for startup inquiry (clickable)
 
 **Page 4E: Healthcare Detail Page**
 - IT solutions for healthcare facilities
@@ -186,7 +188,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Network infrastructure for clinics and hospitals
 - Hardware maintenance for medical equipment
 - Case studies from healthcare clients
-- Call-to-action for healthcare inquiry
+- Call-to-action for healthcare inquiry (clickable)
 
 **Page 4F: Manufacturing Detail Page**
 - IT solutions for manufacturing units
@@ -195,7 +197,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Hardware support for manufacturing systems
 - IT infrastructure for factories
 - Case studies from manufacturing clients
-- Call-to-action for manufacturing inquiry
+- Call-to-action for manufacturing inquiry (clickable)
 
 **Page 5: Why Choose VedTech Services**
 - Fast service highlights (clickable card that opens Page 5A)
@@ -209,7 +211,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Emergency support availability
 - Quick resolution process
 - Customer testimonials on service speed
-- Call-to-action for fast service inquiry
+- Call-to-action for fast service inquiry (clickable)
 
 **Page 5B: One Call Solution Detail Page**
 - Comprehensive explanation of one-stop IT solutions
@@ -217,7 +219,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Integrated service approach
 - Simplified customer experience
 - Customer testimonials on convenience
-- Call-to-action for complete solution inquiry
+- Call-to-action for complete solution inquiry (clickable)
 
 **Page 5C: Professional Handling Detail Page**
 - Expert team qualifications and certifications
@@ -225,7 +227,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Quality assurance processes
 - Customer satisfaction commitment
 - Customer testimonials on professionalism
-- Call-to-action for professional service inquiry
+- Call-to-action for professional service inquiry (clickable)
 
 **Page 5D: AMC Benefits Detail Page**
 - Long-term support advantages
@@ -233,7 +235,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Priority service for AMC customers
 - Preventive maintenance benefits
 - Customer testimonials on AMC experience
-- Call-to-action for AMC subscription
+- Call-to-action for AMC subscription (clickable)
 
 **Page 6: AMC Plans & Pricing**
 - BASIC AMC – ₹3,999 / Year (clickable card that opens Page 6A)
@@ -265,7 +267,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Subscription process
 - Payment options
 - Customer testimonials for Basic AMC
-- Call-to-action for Basic AMC subscription
+- Call-to-action for Basic AMC subscription (clickable)
 
 **Page 6B: Standard AMC Plan Detail Page**
 - Complete details of Standard AMC plan
@@ -274,7 +276,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Subscription process
 - Payment options
 - Customer testimonials for Standard AMC
-- Call-to-action for Standard AMC subscription
+- Call-to-action for Standard AMC subscription (clickable)
 
 **Page 6C: Premium AMC Plan Detail Page**
 - Complete details of Premium AMC plan
@@ -283,7 +285,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Subscription process
 - Payment options
 - Customer testimonials for Premium AMC
-- Call-to-action for Premium AMC subscription
+- Call-to-action for Premium AMC subscription (clickable)
 
 **Page 7: Customer Support / Raise Ticket**
 - Service Request / Ticket Raise Form with fields:
@@ -301,47 +303,49 @@ VedTech Services provides end-to-end IT solutions with:
 - Clear service process (step-by-step)
 - Support options overview
 - Response time commitments
+- Submit button (clickable)
 
 **Page 8: Customer Dashboard (Login Required)**
-- Raise new ticket
-- Ticket status check
-- Service history
-- AMC validity check
-- Invoice / payment record
-- Feedback & support chat
+- Raise new ticket (clickable)
+- Ticket status check (clickable)
+- Service history (clickable)
+- AMC validity check (clickable)
+- Invoice / payment record (clickable)
+- Feedback & support chat (clickable)
 
 **Page 9: Contact Us**
 - Contact form with email integration to vedtechservice@gmail.com
-- Phone number with Call Now button
-- Email address: vedtechservice@gmail.com
-- WhatsApp contact button
+- Phone number with Call Now button (clickable)
+- Email address: vedtechservice@gmail.com (clickable)
+- WhatsApp contact button (clickable)
 - Business address
 - Office hours
+- Submit button (clickable)
 
 ## 4. Services Details
 
 ### 4.1 Software & Digital Services
 - Website Design & Development (clickable, opens Page 3C)
-- Web Applications
+- Web Applications (clickable)
 - Mobile App Development (clickable, opens Page 3D)
-- Custom Software Development
-- Software Installation & Configuration
-- Bug Fixing & Maintenance
-- Cloud & Backup Support
+- Custom Software Development (clickable)
+- Software Installation & Configuration (clickable)
+- Bug Fixing & Maintenance (clickable)
+- Cloud & Backup Support (clickable)
 
 ### 4.2 Hardware & Infrastructure Services
 - Computer & Laptop Repair (clickable, opens Page 3E)
-- Printer / Scanner / CCTV Setup
+- Printer / Scanner / CCTV Setup (clickable)
 - Networking (LAN, Wi-Fi, Router, Firewall) (clickable, opens Page 3F)
-- Hardware Upgrade (RAM, SSD, Storage)
-- Office IT Infrastructure Setup
+- Hardware Upgrade (RAM, SSD, Storage) (clickable)
+- Office IT Infrastructure Setup (clickable)
 
 ### 4.3 IT Support & Customer Handling
 - IT Helpdesk System (clickable, opens Page 3G)
-- Ticket-based Customer Support
-- Remote & On-site Support
+- Ticket-based Customer Support (clickable)
+- Remote & On-site Support (clickable)
 - Annual Maintenance Contract (AMC) (clickable, opens Page 3G)
-- Business IT Management
+- Business IT Management (clickable)
 
 ## 5. Customer Ticket System – Full Flow
 
@@ -453,34 +457,37 @@ VedTech Services provides end-to-end IT solutions with:
 - Reliability and power emphasis
 
 ## 11. Call-to-Action Elements
-- Hero section contact buttons
-- WhatsApp Quick Support Button (multiple placements)
+- Hero section contact buttons (clickable)
+- WhatsApp Quick Support Button (clickable, multiple placements)
 - Advanced chat bot widget for instant engagement
-- Call Now buttons with phone number
-- Service inquiry and ticket raise forms
-- Email contact options (vedtechservice@gmail.com)
-- Request AMC buttons
+- Call Now buttons with phone number (clickable)
+- Service inquiry and ticket raise forms (clickable)
+- Email contact options (vedtechservice@gmail.com) (clickable)
+- Request AMC buttons (clickable)
 
 ## 12. Leadership Team
 - Founder: Chandan Kumar Yajee
-  - LinkedIn Profile: www.linkedin.com/in/chandan-yajee
+  - LinkedIn Profile: www.linkedin.com/in/chandan-yajee (clickable)
   - Founder Image: Gemini_Generated_Image_dc8im8dc8im8dc8i.png
 - Co-founder & CEO: Arpit Singh Parihar
-  - LinkedIn Profile: https://www.linkedin.com/in/arpit-singh-parihar-67696b330
+  - LinkedIn Profile: https://www.linkedin.com/in/arpit-singh-parihar-67696b330 (clickable)
 - IT Manager: Ashita Sarathe
-  - LinkedIn Profile: https://www.linkedin.com/in/aasita-sarathe-b53382384
+  - LinkedIn Profile: https://www.linkedin.com/in/aasita-sarathe-b53382384 (clickable)
 - HR Manager: Muskan Dubey
-  - LinkedIn Profile: linkedin.com/in/muskan-dubey-b990b3330
+  - LinkedIn Profile: linkedin.com/in/muskan-dubey-b990b3330 (clickable)
 
-## 13. Contact & Communication
-- Primary Email: vedtechservice@gmail.com
+## 13. Company Profile
+- Company LinkedIn Profile: www.linkedin.com/in/ved-tech-services-0b04b03aa (clickable)
+
+## 14. Contact & Communication
+- Primary Email: vedtechservice@gmail.com (clickable)
 - Contact form submissions sent to vedtechservice@gmail.com
 - Advanced chat bot integration for real-time customer support
-- WhatsApp quick support access
+- WhatsApp quick support access (clickable)
 
-## 14. SEO Requirements
+## 15. SEO Requirements
 
-### 14.1 Primary SEO Keywords
+### 15.1 Primary SEO Keywords
 - vedtechservices
 - ved tech services
 - VTS
@@ -502,7 +509,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Bihar web development
 - Bihar software company
 
-### 14.2 SEO Optimization for IT Company and Bihar Region
+### 15.2 SEO Optimization for IT Company and Bihar Region
 - Implement proper meta titles and descriptions for all pages with Bihar-focused keywords
 - Use semantic HTML structure with proper heading hierarchy
 - Optimize images with alt tags and compressed file sizes
@@ -524,7 +531,7 @@ VedTech Services provides end-to-end IT solutions with:
 - Build local citations and backlinks from Bihar-based directories
 - Include Bihar-specific testimonials and case studies
 
-## 15. Future SaaS Upgrade Roadmap
+## 16. Future SaaS Upgrade Roadmap
 
 ### Phase 1 – Current (2025)
 - Company website
@@ -550,6 +557,6 @@ VedTech Services provides end-to-end IT solutions with:
 - Enterprise clients
 - Government & education sector
 
-## 16. Reference Images
+## 17. Reference Images
 - screenshot.png
 - Gemini_Generated_Image_dc8im8dc8im8dc8i.png (Founder image)
