@@ -207,10 +207,10 @@ const About: React.FC = () => {
                 <div className="order-1 md:order-2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5ob54n6wao.png"
+                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzzm7phslc.png"
                       alt="Chandan Kumar Yajee - Founder & CEO of VedTech Services"
                       className="w-full h-auto object-cover"
-                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9b5ob54n6wao.png%22%7D" />
+                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9duzzm7phslc.png%22%7D" />
                   </div>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Co-founder */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-blue-100 to-blue-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5p2brz2adc.png)]">
+                <div className="aspect-square from-blue-100 to-blue-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duv4o51yark.jpg)]">
 
                 </div>
                 <div className="p-6 space-y-4">
@@ -247,7 +247,7 @@ const About: React.FC = () => {
 
               {/* IT Manager */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-purple-100 to-purple-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5pizldb56o.png)]">
+                <div className="aspect-square from-purple-100 to-purple-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9dv12n1pp1c0.jpg)]">
 
                 </div>
                 <div className="p-6 space-y-4">
@@ -274,7 +274,7 @@ const About: React.FC = () => {
 
               {/* HR Manager */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9b5q9ao7cydc.png)]">
+                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzcdmlqcqo.jpg)]">
 
                 </div>
                 <div className="p-6 space-y-4">

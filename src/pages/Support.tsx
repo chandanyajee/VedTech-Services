@@ -254,7 +254,7 @@ This ticket has been saved to the VedTech Services support system.
                             <FormItem>
                               <FormLabel>Phone Number *</FormLabel>
                               <FormControl>
-                                <Input placeholder="+91 7370057723" {...field} />
+                                <Input placeholder="+91 7858971869" {...field} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -459,7 +459,7 @@ This ticket has been saved to the VedTech Services support system.
                   <div className="space-y-3 text-sm">
                     <div>
                       <div className="text-slate-400 mb-1">Call Us</div>
-                      <div className="font-semibold text-lg">{"+91 7858971869 , +91 7370057723"}</div>
+                      <div className="font-semibold text-lg">{"+91 7858971869"}</div>
                     </div>
                     <div>
                       <div className="text-slate-400 mb-1">Email</div>
@@ -467,7 +467,7 @@ This ticket has been saved to the VedTech Services support system.
                     </div>
                     <div>
                       <div className="text-slate-400 mb-1">WhatsApp</div>
-                      <div className="font-semibold">+91 7858971869, 7370057723</div>
+                      <div className="font-semibold">+91 7858971869</div>
                     </div>
                   </div>
                 </CardContent>

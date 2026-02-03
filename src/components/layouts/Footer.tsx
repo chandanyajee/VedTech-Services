@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9bb2mddb1ukg.png%22%7D" />
             </div>
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
-            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" Founder- Chandan Kumar Yajee"}</p>
+            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" "}</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>{"Call: +91 7858971869 , +91 7370057723"}</span>
+                <span>{"Call: +91 7858971869 "}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <MessageSquare className="h-5 w-5 text-green-500 shrink-0" />
-                <span>{"WhatsApp: +91 7858971869 ,7370057723"}</span>
+                <span>{"WhatsApp: +91 7858971869"}</span>
               </li>
             </ul>
           </div>

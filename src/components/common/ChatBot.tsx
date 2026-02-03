@@ -48,7 +48,7 @@ const ChatBot: React.FC = () => {
         console.error('Error calling chat-ai:', error);
         setMessages([...newMessages, {
           type: 'bot',
-          text: 'I apologize, but I\'m having trouble connecting right now. Please call us at +91 7370057723 or email vedtechservice@gmail.com for immediate assistance.'
+          text: 'I apologize, but I\'m having trouble connecting right now. Please call us at +91 7858971869 or email vedtechservice@gmail.com for immediate assistance.'
         }]);
       } else if (data?.response) {
         setMessages([...newMessages, {
@@ -58,14 +58,14 @@ const ChatBot: React.FC = () => {
       } else {
         setMessages([...newMessages, {
           type: 'bot',
-          text: 'I apologize, but I couldn\'t generate a response. Please contact us at +91 7370057723 for immediate help.'
+          text: 'I apologize, but I couldn\'t generate a response. Please contact us at +91 7858971869 for immediate help.'
         }]);
       }
     } catch (err) {
       console.error('Error in chat:', err);
       setMessages([...newMessages, {
         type: 'bot',
-        text: 'Sorry, I encountered an error. Please reach out to us directly at +91 7370057723 or vedtechservice@gmail.com.'
+        text: 'Sorry, I encountered an error. Please reach out to us directly at +91 7858971869 or vedtechservice@gmail.com.'
       }]);
     } finally {
       setIsLoading(false);

@@ -67,7 +67,7 @@ ${data.message}
                     </div>
                     <div>
                       <div className="font-bold">Call Us</div>
-                      <div className="text-slate-600">+91 7858971869, +91 7370057723</div>
+                      <div className="text-slate-600">+91 7858971869</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -85,7 +85,7 @@ ${data.message}
                     </div>
                     <div>
                       <div className="font-bold">WhatsApp</div>
-                      <div className="text-slate-600">+91 7858971869, 7370057723</div>
+                      <div className="text-slate-600">+91 7858971869</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -161,7 +161,7 @@ ${data.message}
                           <FormItem>
                             <FormLabel>Phone Number</FormLabel>
                             <FormControl>
-                              <Input placeholder="+91 7370057723" {...field} />
+                              <Input placeholder="+91 7858971869" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
