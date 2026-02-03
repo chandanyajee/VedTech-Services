@@ -4,6 +4,10 @@ import Services from './pages/Services';
 import SoftwareServices from './pages/SoftwareServices';
 import HardwareServices from './pages/HardwareServices';
 import ITSupportServices from './pages/ITSupportServices';
+import WebDevelopment from './pages/WebDevelopment';
+import MobileAppDevelopment from './pages/MobileAppDevelopment';
+import HardwareRepair from './pages/HardwareRepair';
+import NetworkingSolutions from './pages/NetworkingSolutions';
 import Industries from './pages/Industries';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
@@ -57,6 +61,30 @@ const routes: RouteConfig[] = [
     name: 'IT Support Services',
     path: '/services/it-support',
     element: <ITSupportServices />,
+    visible: false
+  },
+  {
+    name: 'Web Development',
+    path: '/services/web-development',
+    element: <WebDevelopment />,
+    visible: false
+  },
+  {
+    name: 'Mobile App Development',
+    path: '/services/mobile-app-development',
+    element: <MobileAppDevelopment />,
+    visible: false
+  },
+  {
+    name: 'Hardware Repair',
+    path: '/services/hardware-repair',
+    element: <HardwareRepair />,
+    visible: false
+  },
+  {
+    name: 'Networking Solutions',
+    path: '/services/networking-solutions',
+    element: <NetworkingSolutions />,
     visible: false
   },
   {

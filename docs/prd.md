@@ -24,7 +24,7 @@ VedTech Services provides end-to-end IT solutions with:
 
 **Page 1: Home**
 - Hero section with strong company tagline
-- Quick service overview with icons and cards
+- Quick service overview with clickable icons and cards (each card opens a new dedicated service page)
 - Call-to-action buttons
 - Trust-building highlights
 - WhatsApp Quick Support Button
@@ -51,11 +51,12 @@ VedTech Services provides end-to-end IT solutions with:
   - HR Manager: Muskan Dubey
     - LinkedIn: linkedin.com/in/muskan-dubey-b990b3330
 
-**Page 3: Services**
-- Software & Digital Services section (clickable card)
-- Hardware & Infrastructure Services section (clickable card)
+**Page 3: Services Overview**
+- Software & Digital Services section (clickable card that opens Page 3A)
+- Hardware & Infrastructure Services section (clickable card that opens Page 3B)
 - IT Support & Customer Handling section
 - Detailed service descriptions with icons
+- Each service card is clickable and navigates to its dedicated detail page
 
 **Page 3A: Software & Digital Services Detail Page**
 - Detailed overview of all software and digital services
@@ -74,6 +75,52 @@ VedTech Services provides end-to-end IT solutions with:
 - Previous work examples and installations
 - Client testimonials related to hardware services
 - Call-to-action for service inquiry
+
+**Page 3C: Web Development Services Detail Page**
+- Comprehensive web development services overview
+- Website design and development process
+- Technology stack and frameworks used
+- Portfolio of completed web projects
+- Pricing and packages information
+- Client testimonials for web development
+- Call-to-action for web development inquiry
+
+**Page 3D: Mobile App Development Services Detail Page**
+- Mobile app development services overview
+- iOS and Android app development capabilities
+- App development process and methodology
+- Portfolio of mobile applications
+- Technology stack for mobile development
+- Client testimonials for app development
+- Call-to-action for app development inquiry
+
+**Page 3E: Hardware Repair Services Detail Page**
+- Computer and laptop repair services
+- Hardware troubleshooting and diagnostics
+- Component replacement and upgrades
+- Repair process and turnaround time
+- Warranty and quality assurance
+- Client testimonials for hardware repair
+- Call-to-action for repair service request
+
+**Page 3F: Networking Solutions Detail Page**
+- Network design and implementation services
+- LAN, Wi-Fi, Router, and Firewall setup
+- Network security and optimization
+- Infrastructure cabling and configuration
+- Network maintenance and support
+- Client testimonials for networking services
+- Call-to-action for networking consultation
+
+**Page 3G: IT Support & AMC Detail Page**
+- IT helpdesk and support services overview
+- Annual Maintenance Contract (AMC) benefits
+- Remote and on-site support options
+- Ticket-based support system
+- Response time commitments
+- AMC plans and pricing details
+- Client testimonials for IT support
+- Call-to-action for AMC subscription
 
 **Page 4: Industries We Serve**
 - Schools and educational institutes
@@ -146,26 +193,26 @@ VedTech Services provides end-to-end IT solutions with:
 ## 4. Services Details
 
 ### 4.1 Software & Digital Services
-- Website Design & Development
+- Website Design & Development (clickable, opens Page 3C)
 - Web Applications
-- Mobile App Development
+- Mobile App Development (clickable, opens Page 3D)
 - Custom Software Development
 - Software Installation & Configuration
 - Bug Fixing & Maintenance
 - Cloud & Backup Support
 
 ### 4.2 Hardware & Infrastructure Services
-- Computer & Laptop Repair
+- Computer & Laptop Repair (clickable, opens Page 3E)
 - Printer / Scanner / CCTV Setup
-- Networking (LAN, Wi-Fi, Router, Firewall)
+- Networking (LAN, Wi-Fi, Router, Firewall) (clickable, opens Page 3F)
 - Hardware Upgrade (RAM, SSD, Storage)
 - Office IT Infrastructure Setup
 
 ### 4.3 IT Support & Customer Handling
-- IT Helpdesk System
+- IT Helpdesk System (clickable, opens Page 3G)
 - Ticket-based Customer Support
 - Remote & On-site Support
-- Annual Maintenance Contract (AMC)
+- Annual Maintenance Contract (AMC) (clickable, opens Page 3G)
 - Business IT Management
 
 ## 5. Customer Ticket System – Full Flow
@@ -310,29 +357,42 @@ VedTech Services provides end-to-end IT solutions with:
 - VedArambh A Sanatan initiative
 - VedArambh Sanatan initiative
 - IT services India
-- web development services
-- hardware support services
-- IT AMC services
-- computer repair services
-- website design company
+- IT services Bihar
+- IT company Bihar
+- web development services Bihar
+- hardware support services Bihar
+- IT AMC services Bihar
+- computer repair services Bihar
+- website design company Bihar
 - IT support company India
+- IT support company Bihar
+- best IT company Bihar
+- top IT services Bihar
+- Bihar IT solutions
+- Bihar web development
+- Bihar software company
 
-### 14.2 SEO Optimization for Web Services
-- Implement proper meta titles and descriptions for all pages
+### 14.2 SEO Optimization for IT Company and Bihar Region
+- Implement proper meta titles and descriptions for all pages with Bihar-focused keywords
 - Use semantic HTML structure with proper heading hierarchy
 - Optimize images with alt tags and compressed file sizes
-- Implement schema markup for services, organization, and local business
+- Implement schema markup for services, organization, and local business (Bihar location)
 - Create XML sitemap and robots.txt
 - Ensure fast page load speed and mobile responsiveness
 - Implement internal linking strategy
 - Add breadcrumb navigation
-- Use descriptive URLs with target keywords
+- Use descriptive URLs with target keywords including Bihar
 - Implement Open Graph tags for social media sharing
 - Add structured data for service pages
-- Optimize for local SEO with location-based keywords
-- Create service-specific landing pages with targeted content
+- Optimize for local SEO with Bihar location-based keywords
+- Create service-specific landing pages with targeted content for Bihar region
 - Implement canonical tags to avoid duplicate content
-- Add FAQ schema for common questions
+- Add FAQ schema for common questions related to IT services in Bihar
+- Include Bihar city names in content (Patna, Gaya, Bhagalpur, Muzaffarpur, etc.)
+- Create location-specific content for Bihar IT services
+- Optimize Google My Business listing for Bihar location
+- Build local citations and backlinks from Bihar-based directories
+- Include Bihar-specific testimonials and case studies
 
 ## 15. Future SaaS Upgrade Roadmap
 

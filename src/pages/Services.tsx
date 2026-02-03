@@ -17,33 +17,39 @@ const serviceCategories = [
     items: [
       { 
         icon: <Globe className="h-6 w-6 text-primary" />,
-        name: "Website Design & Development", 
-        desc: "Responsive, SEO-optimized websites built with modern technologies. E-commerce, corporate sites, and custom web portals." 
+        name: "Web Development", 
+        desc: "Responsive, SEO-optimized websites built with modern technologies. E-commerce, corporate sites, and custom web portals.",
+        link: "/services/web-development"
       },
       { 
         icon: <Code className="h-6 w-6 text-primary" />,
         name: "Web Applications", 
-        desc: "Custom web-based business applications, dashboards, CRM systems, and management tools tailored to your workflow." 
+        desc: "Custom web-based business applications, dashboards, CRM systems, and management tools tailored to your workflow.",
+        link: "/services/web-development"
       },
       { 
         icon: <Smartphone className="h-6 w-6 text-primary" />,
         name: "Mobile App Development", 
-        desc: "Native iOS and Android apps, cross-platform solutions using React Native and Flutter for maximum reach." 
+        desc: "Native iOS and Android apps, cross-platform solutions using React Native and Flutter for maximum reach.",
+        link: "/services/mobile-app-development"
       },
       { 
         icon: <Server className="h-6 w-6 text-primary" />,
         name: "Custom Software Development", 
-        desc: "Enterprise software solutions, automation tools, and bespoke applications designed for your specific business needs." 
+        desc: "Enterprise software solutions, automation tools, and bespoke applications designed for your specific business needs.",
+        link: "/services/software"
       },
       { 
         icon: <Cloud className="h-6 w-6 text-primary" />,
         name: "Cloud Solutions & Migration", 
-        desc: "Cloud infrastructure setup, migration services, AWS/Azure/Google Cloud deployment, and ongoing management." 
+        desc: "Cloud infrastructure setup, migration services, AWS/Azure/Google Cloud deployment, and ongoing management.",
+        link: "/services/software"
       },
       { 
         icon: <Wrench className="h-6 w-6 text-primary" />,
         name: "Software Maintenance & Support", 
-        desc: "Bug fixes, updates, performance optimization, and ongoing technical support for your existing software." 
+        desc: "Bug fixes, updates, performance optimization, and ongoing technical support for your existing software.",
+        link: "/services/software"
       }
     ]
   },
@@ -56,33 +62,39 @@ const serviceCategories = [
     items: [
       { 
         icon: <Laptop className="h-6 w-6 text-primary" />,
-        name: "Computer & Laptop Repair", 
-        desc: "Expert diagnosis and repair for all brands. Screen replacement, motherboard repair, data recovery, and component replacement." 
+        name: "Hardware Repair", 
+        desc: "Expert diagnosis and repair for all brands. Screen replacement, motherboard repair, data recovery, and component replacement.",
+        link: "/services/hardware-repair"
       },
       { 
         icon: <Printer className="h-6 w-6 text-primary" />,
         name: "Printer / Scanner / CCTV Setup", 
-        desc: "Installation, configuration, and troubleshooting of office peripherals and surveillance systems." 
+        desc: "Installation, configuration, and troubleshooting of office peripherals and surveillance systems.",
+        link: "/services/hardware-repair"
       },
       { 
         icon: <Network className="h-6 w-6 text-primary" />,
         name: "Networking Solutions", 
-        desc: "LAN/WAN setup, Wi-Fi installation, router configuration, firewall setup, and network security implementation." 
+        desc: "LAN/WAN setup, Wi-Fi installation, router configuration, firewall setup, and network security implementation.",
+        link: "/services/networking-solutions"
       },
       { 
         icon: <Server className="h-6 w-6 text-primary" />,
         name: "Hardware Upgrades", 
-        desc: "RAM upgrades, SSD installation, storage expansion, graphics card upgrades, and performance enhancement." 
+        desc: "RAM upgrades, SSD installation, storage expansion, graphics card upgrades, and performance enhancement.",
+        link: "/services/hardware-repair"
       },
       { 
         icon: <Wrench className="h-6 w-6 text-primary" />,
         name: "Office IT Infrastructure Setup", 
-        desc: "Complete office IT setup including workstations, servers, networking, and peripheral devices." 
+        desc: "Complete office IT setup including workstations, servers, networking, and peripheral devices.",
+        link: "/services/hardware"
       },
       { 
         icon: <Lock className="h-6 w-6 text-primary" />,
         name: "Data Backup & Recovery", 
-        desc: "Automated backup solutions, disaster recovery planning, and data retrieval services." 
+        desc: "Automated backup solutions, disaster recovery planning, and data retrieval services.",
+        link: "/services/hardware"
       }
     ]
   },
@@ -96,32 +108,38 @@ const serviceCategories = [
       { 
         icon: <Headset className="h-6 w-6 text-primary" />,
         name: "24/7 IT Helpdesk", 
-        desc: "Round-the-clock technical support via phone, email, and remote access. Dedicated support team for your business." 
+        desc: "Round-the-clock technical support via phone, email, and remote access. Dedicated support team for your business.",
+        link: "/services/it-support"
       },
       { 
         icon: <Shield className="h-6 w-6 text-primary" />,
-        name: "Annual Maintenance Contract (AMC)", 
-        desc: "Comprehensive maintenance plans with regular checkups, priority support, and discounted rates on services." 
+        name: "IT Support & AMC", 
+        desc: "Comprehensive maintenance plans with regular checkups, priority support, and discounted rates on services.",
+        link: "/services/it-support"
       },
       { 
         icon: <Server className="h-6 w-6 text-primary" />,
         name: "Remote Technical Support", 
-        desc: "Instant remote assistance for software issues, configuration problems, and troubleshooting without site visits." 
+        desc: "Instant remote assistance for software issues, configuration problems, and troubleshooting without site visits.",
+        link: "/services/it-support"
       },
       { 
         icon: <Wrench className="h-6 w-6 text-primary" />,
         name: "On-site IT Support", 
-        desc: "Technician visits for hardware repairs, installations, and complex issues requiring physical presence." 
+        desc: "Technician visits for hardware repairs, installations, and complex issues requiring physical presence.",
+        link: "/services/it-support"
       },
       { 
         icon: <Network className="h-6 w-6 text-primary" />,
         name: "Business IT Management", 
-        desc: "Complete IT infrastructure management, vendor coordination, and technology consulting for growing businesses." 
+        desc: "Complete IT infrastructure management, vendor coordination, and technology consulting for growing businesses.",
+        link: "/services/it-support"
       },
       { 
         icon: <Lock className="h-6 w-6 text-primary" />,
         name: "Cybersecurity Services", 
-        desc: "Security audits, antivirus deployment, firewall configuration, and employee security training." 
+        desc: "Security audits, antivirus deployment, firewall configuration, and employee security training.",
+        link: "/services/it-support"
       }
     ]
   }
@@ -161,19 +179,21 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* Services List */}
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.items.map((item, i) => (
-                    <Card key={i} className="border-2 border-transparent hover:border-primary hover:shadow-xl transition-all group">
-                      <CardHeader>
-                        <div className="mb-4 group-hover:scale-110 transition-transform">
-                          {item.icon}
-                        </div>
-                        <CardTitle className="text-lg font-bold leading-tight">{item.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-                      </CardContent>
-                    </Card>
+                    <Link key={i} to={item.link} className="block">
+                      <Card className="border-2 border-transparent hover:border-primary hover:shadow-xl transition-all group cursor-pointer h-full">
+                        <CardHeader>
+                          <div className="mb-4 group-hover:scale-110 transition-transform">
+                            {item.icon}
+                          </div>
+                          <CardTitle className="text-lg font-bold leading-tight">{item.name}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   ))}
                 </div>
               </div>
