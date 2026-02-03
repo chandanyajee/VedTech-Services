@@ -207,10 +207,10 @@ const About: React.FC = () => {
                 <div className="order-1 md:order-2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzzm7phslc.png"
+                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9dv8752ctatc.jpg"
                       alt="Chandan Kumar Yajee - Founder & CEO of VedTech Services"
                       className="w-full h-auto object-cover"
-                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9duzzm7phslc.png%22%7D" />
+                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9dv8752ctatc.jpg%22%7D" />
                   </div>
                 </div>
               </div>
