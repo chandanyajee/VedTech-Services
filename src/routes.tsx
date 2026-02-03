@@ -1,6 +1,9 @@
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import SoftwareServices from './pages/SoftwareServices';
+import HardwareServices from './pages/HardwareServices';
+import ITSupportServices from './pages/ITSupportServices';
 import Industries from './pages/Industries';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
@@ -37,6 +40,24 @@ const routes: RouteConfig[] = [
     name: 'Services',
     path: '/services',
     element: <Services />
+  },
+  {
+    name: 'Software Services',
+    path: '/services/software',
+    element: <SoftwareServices />,
+    visible: false
+  },
+  {
+    name: 'Hardware Services',
+    path: '/services/hardware',
+    element: <HardwareServices />,
+    visible: false
+  },
+  {
+    name: 'IT Support Services',
+    path: '/services/it-support',
+    element: <ITSupportServices />,
+    visible: false
   },
   {
     name: 'Industries',

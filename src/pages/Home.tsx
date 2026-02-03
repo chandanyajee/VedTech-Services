@@ -52,17 +52,16 @@ const Home: React.FC = () => {
            <Laptop className="w-full h-full text-blue-400" />
         </div>
       </section>
-
       {/* Trust Indicators */}
       <section className="py-12 bg-white border-y">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">{"100+"}</div>
               <div className="text-sm text-slate-600 font-medium">Satisfied Clients</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">5000+</div>
+              <div className="text-4xl font-bold text-primary mb-2">{"100+"}</div>
               <div className="text-sm text-slate-600 font-medium">Projects Completed</div>
             </div>
             <div>
@@ -76,7 +75,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Services Overview */}
       <section className="py-24 bg-slate-50">
         <div className="container">
@@ -87,70 +85,75 @@ const Home: React.FC = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl">
-              <CardContent className="pt-8">
-                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Globe className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Software & Digital Services</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">Custom software development, web applications, mobile apps, and cloud solutions tailored to your business needs.</p>
-                <ul className="space-y-2 mb-6">
-                  {["Website Development", "Mobile Apps", "Custom Software", "Cloud Solutions"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/services" className="text-primary font-semibold flex items-center hover:underline">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl">
-              <CardContent className="pt-8">
-                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Laptop className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Hardware & Infrastructure</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">Complete hardware solutions including repairs, upgrades, networking, and IT infrastructure setup for offices.</p>
-                <ul className="space-y-2 mb-6">
-                  {["Computer Repair", "Network Setup", "Hardware Upgrades", "CCTV Installation"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/services" className="text-primary font-semibold flex items-center hover:underline">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl">
-              <CardContent className="pt-8">
-                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <Shield className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">IT Support & AMC</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">Dedicated IT helpdesk, annual maintenance contracts, and comprehensive support for businesses of all sizes.</p>
-                <ul className="space-y-2 mb-6">
-                  {["24/7 Helpdesk", "AMC Plans", "Remote Support", "On-site Service"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/services" className="text-primary font-semibold flex items-center hover:underline">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+            <Link to="/services/software" className="block">
+              <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl cursor-pointer h-full">
+                <CardContent className="pt-8">
+                  <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    <Globe className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">Software & Digital Services</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed">Custom software development, web applications, mobile apps, and cloud solutions tailored to your business needs.</p>
+                  <ul className="space-y-2 mb-6">
+                    {["Website Development", "Mobile Apps", "Custom Software", "Cloud Solutions"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-primary font-semibold flex items-center hover:underline">
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/services/hardware" className="block">
+              <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl cursor-pointer h-full">
+                <CardContent className="pt-8">
+                  <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    <Laptop className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">Hardware & Infrastructure</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed">Complete hardware solutions including repairs, upgrades, networking, and IT infrastructure setup for offices.</p>
+                  <ul className="space-y-2 mb-6">
+                    {["Computer Repair", "Network Setup", "Hardware Upgrades", "CCTV Installation"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-primary font-semibold flex items-center hover:underline">
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/services/it-support" className="block">
+              <Card className="border-2 border-transparent hover:border-primary transition-all shadow-lg hover:shadow-xl cursor-pointer h-full">
+                <CardContent className="pt-8">
+                  <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                    <Shield className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">IT Support & AMC</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed">Dedicated IT helpdesk, annual maintenance contracts, and comprehensive support for businesses of all sizes.</p>
+                  <ul className="space-y-2 mb-6">
+                    {["24/7 Helpdesk", "AMC Plans", "Remote Support", "On-site Service"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-primary font-semibold flex items-center hover:underline">
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
-
       {/* Why Choose Us Preview */}
       <section className="py-24 bg-white">
         <div className="container">
@@ -187,7 +190,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* Industries Section */}
       <section className="py-24 bg-slate-50">
         <div className="container">
@@ -220,7 +222,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary via-blue-600 to-primary text-white">
         <div className="container">

@@ -52,10 +52,28 @@ VedTech Services provides end-to-end IT solutions with:
     - LinkedIn: linkedin.com/in/muskan-dubey-b990b3330
 
 **Page 3: Services**
-- Software & Digital Services section
-- Hardware & Infrastructure Services section
+- Software & Digital Services section (clickable card)
+- Hardware & Infrastructure Services section (clickable card)
 - IT Support & Customer Handling section
 - Detailed service descriptions with icons
+
+**Page 3A: Software & Digital Services Detail Page**
+- Detailed overview of all software and digital services
+- Service categories with descriptions
+- Portfolio/work showcase section
+- Case studies or project examples
+- Technology stack information
+- Client testimonials related to software services
+- Call-to-action for service inquiry
+
+**Page 3B: Hardware & Infrastructure Services Detail Page**
+- Comprehensive hardware services overview
+- Infrastructure solutions descriptions
+- Equipment and technology partnerships
+- Service process and methodology
+- Previous work examples and installations
+- Client testimonials related to hardware services
+- Call-to-action for service inquiry
 
 **Page 4: Industries We Serve**
 - Schools and educational institutes
@@ -283,12 +301,38 @@ VedTech Services provides end-to-end IT solutions with:
 - Advanced chat bot integration for real-time customer support
 - WhatsApp quick support access
 
-## 14. SEO Keywords & Brand Names
+## 14. SEO Requirements
+
+### 14.1 Primary SEO Keywords
 - vedtechservices
 - ved tech services
 - VTS
 - VedArambh A Sanatan initiative
 - VedArambh Sanatan initiative
+- IT services India
+- web development services
+- hardware support services
+- IT AMC services
+- computer repair services
+- website design company
+- IT support company India
+
+### 14.2 SEO Optimization for Web Services
+- Implement proper meta titles and descriptions for all pages
+- Use semantic HTML structure with proper heading hierarchy
+- Optimize images with alt tags and compressed file sizes
+- Implement schema markup for services, organization, and local business
+- Create XML sitemap and robots.txt
+- Ensure fast page load speed and mobile responsiveness
+- Implement internal linking strategy
+- Add breadcrumb navigation
+- Use descriptive URLs with target keywords
+- Implement Open Graph tags for social media sharing
+- Add structured data for service pages
+- Optimize for local SEO with location-based keywords
+- Create service-specific landing pages with targeted content
+- Implement canonical tags to avoid duplicate content
+- Add FAQ schema for common questions
 
 ## 15. Future SaaS Upgrade Roadmap
 
