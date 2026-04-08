@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to Your Miaoda Project
 Miaoda Application Link URL
     URL:https://medo.dev/projects/app-99gjdx4fbuv5
@@ -92,3 +93,6 @@ Configure environment variables and install relevant dependencies.If you need to
 
 ## Learn More
 
+=======
+# VedTech-Services
+>>>>>>> 0c368e89b7f943dfb48ed8f32cac68fc554b04b6
