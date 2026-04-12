@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Globe, Code, Smartphone, Cloud, Database, Palette, ShoppingCart, Rocket, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Globe, Code, Smartphone, Cloud, Database, Palette, ShoppingCart, Rocket, CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -94,24 +94,90 @@ const SoftwareServices: React.FC = () => {
     }
   ];
 
-  const projects = [
+  const portfolioProjects = [
     {
-      title: "E-commerce Platform",
-      category: "Web Development",
-      description: "Full-featured online store with payment gateway integration",
-      results: ["50% increase in sales", "10,000+ monthly visitors", "Mobile-responsive design"]
+      title: "VedTech Services Official",
+      category: "Corporate Website",
+      description: "Official professional services website for VedTech Services.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4d281b68-bc1c-4c3d-b384-1e78f72970ff.jpg",
+      link: "https://vedtechservices.in/"
     },
     {
-      title: "School Management System",
-      category: "Custom Software",
-      description: "Complete ERP solution for educational institutions",
-      results: ["500+ students managed", "Automated fee collection", "Parent-teacher portal"]
+      title: "VedArambh Online Gurukul",
+      category: "Educational Portal",
+      description: "A Sanatan initiative for traditional and modern education.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_0866568b-b656-45f5-a62b-84c47abc3c46.jpg",
+      link: "https://vedarambhin.vercel.app/"
     },
     {
-      title: "Restaurant Mobile App",
-      category: "Mobile Development",
-      description: "Food ordering and delivery app with real-time tracking",
-      results: ["5000+ downloads", "4.8★ rating", "30% faster orders"]
+      title: "VedArambh Mart",
+      category: "E-commerce",
+      description: "Comprehensive online marketplace for retail products.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_64a9d5c7-85a8-48da-bff0-f792374f4496.jpg",
+      link: "https://app-9gbc95t8hhq9.appmedo.com"
+    },
+    {
+      title: "Guru Shishya Public School",
+      category: "School ERP",
+      description: "Complete school management system for administration and academics.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_1b9c9dd5-69e5-4c33-8235-44894fa55d56.jpg",
+      link: "https://app-9d204bkggf0h.appmedo.com"
+    },
+    {
+      title: "College Management System",
+      category: "Enterprise Software",
+      description: "Unified platform for college administrative and educational management.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_b0783a9d-a234-4fcb-9370-d9032da3bd7d.jpg",
+      link: "https://app-8t84np01ksu9.appmedo.com"
+    },
+    {
+      title: "VedArambh Learning Language",
+      category: "Learning Platform",
+      description: "Digital platform for language acquisition and coaching.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_eed35a87-07ee-4769-b38d-44d408a43d33.jpg",
+      link: "https://app-99gy8ue2nwu9.appmedo.com"
+    },
+    {
+      title: "IT Management System",
+      category: "SaaS Application",
+      description: "Operational dashboard for managing IT infrastructure and services.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_3e2a7f1b-93a6-442c-a38f-651e2821decc.jpg",
+      link: "https://app-9d1ic5zguu4h.appmedo.com"
+    },
+    {
+      title: "Beauty Parlor Management",
+      category: "Business Software",
+      description: "Appointment and management solution for salon and parlor businesses.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4c7a61c9-cf39-4d97-bc60-16e846c470c6.jpg",
+      link: "https://app-9grz3x2dsf0h.appmedo.com"
+    },
+    {
+      title: "VedArambh Group",
+      category: "Corporate Site",
+      description: "Corporate portfolio website for the VedArambh Group of companies.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_4d281b68-bc1c-4c3d-b384-1e78f72970ff.jpg",
+      link: "https://app-82srpbr0v9xd.appmedo.com/"
+    },
+    {
+      title: "VedArambh Learning Platform",
+      category: "EdTech Solution",
+      description: "Full-featured online learning and course management platform.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_0866568b-b656-45f5-a62b-84c47abc3c46.jpg",
+      link: "https://app-7vh9c6jdo3cz.appmedo.com"
+    },
+    {
+      title: "VED FITNESS",
+      category: "Gym & Health",
+      description: "Member management and workout tracking site for fitness centers.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_e55de5fe-91aa-4df5-b863-632b849406bc.jpg",
+      link: "https://app-9j7xgqljr6dd.appmedo.com"
+    },
+    {
+      title: "VedArambh Coaching Center",
+      category: "Educational Site",
+      description: "Dedicated website for local coaching centers and institutes.",
+      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_6aa5fb4a-c845-4519-ad4a-d373f845b288.jpg",
+      link: "https://app-9j7w69fc8nb5.appmedo.com"
     }
   ];
 
@@ -168,7 +234,7 @@ const SoftwareServices: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -195,7 +261,7 @@ const SoftwareServices: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Software Services</h2>
@@ -246,34 +312,39 @@ const SoftwareServices: React.FC = () => {
         </section>
 
         {/* Projects Showcase */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Recent Projects</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Portfolio</h2>
               <p className="text-slate-600 text-lg max-w-3xl mx-auto">
-                See how we've helped businesses succeed with our software solutions
+                Explore our successful software and digital projects delivered to clients across various industries.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <Card key={index} className="hover:shadow-xl transition-shadow">
-                  <CardHeader>
-                    <Badge className="w-fit mb-2">{project.category}</Badge>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {portfolioProjects.map((project, index) => (
+                <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border-muted/50 group">
+                  <div className="relative aspect-video overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <Badge className="bg-primary text-white border-none">{project.category}</Badge>
+                    </div>
+                  </div>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-slate-600">{project.description}</p>
-                    <div>
-                      <h4 className="font-semibold mb-2 text-sm">Results:</h4>
-                      <ul className="space-y-1">
-                        {project.results.map((result, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                            <Rocket className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                            <span>{result}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  <CardContent className="flex-1 space-y-4">
+                    <p className="text-slate-600 text-sm leading-relaxed">{project.description}</p>
+                    <div className="pt-4 mt-auto border-t">
+                      <Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-white transition-colors">
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                          Visit Project <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -283,7 +354,7 @@ const SoftwareServices: React.FC = () => {
         </section>
 
         {/* Development Process */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Development Process</h2>
@@ -314,7 +385,7 @@ const SoftwareServices: React.FC = () => {
         </section>
 
         {/* Technologies */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Technologies We Use</h2>
@@ -340,7 +411,7 @@ const SoftwareServices: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Build Your Software Solution?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
@@ -350,7 +421,7 @@ const SoftwareServices: React.FC = () => {
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
                 <Link to="/contact">Get Started Now</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
                 <Link to="/support">Request a Quote</Link>
               </Button>
             </div>

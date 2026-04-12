@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
-import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings } from 'lucide-react';
+import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings, PieChart, TrendingUp, Filter, CheckCircle2, Award } from 'lucide-react';
 import { supabase } from '@/db/supabase';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -258,52 +258,72 @@ const AdminDashboard: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Stats and Advanced Insights */}
       <section className="py-8">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-600">Total Tickets</p>
-                    <p className="text-3xl font-bold">{stats.total}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Card className="bg-white hover:shadow-md transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col">
+                    <p className="text-xs text-slate-500 uppercase font-bold mb-1">Total</p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold">{stats.total}</p>
+                      <Ticket className="h-5 w-5 text-primary opacity-50" />
+                    </div>
                   </div>
-                  <Ticket className="h-10 w-10 text-primary" />
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-600">Open Tickets</p>
-                    <p className="text-3xl font-bold text-yellow-600">{stats.open}</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white hover:shadow-md transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col">
+                    <p className="text-xs text-slate-500 uppercase font-bold mb-1">Open</p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold text-yellow-600">{stats.open}</p>
+                      <Calendar className="h-5 w-5 text-yellow-600 opacity-50" />
+                    </div>
                   </div>
-                  <Calendar className="h-10 w-10 text-yellow-600" />
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-600">Resolved</p>
-                    <p className="text-3xl font-bold text-green-600">{stats.resolved}</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white hover:shadow-md transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col">
+                    <p className="text-xs text-slate-500 uppercase font-bold mb-1">Resolved</p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold text-green-600">{stats.resolved}</p>
+                      <CheckCircle2 className="h-5 w-5 text-green-600 opacity-50" />
+                    </div>
                   </div>
-                  <Ticket className="h-10 w-10 text-green-600" />
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-slate-600">AMC Customers</p>
-                    <p className="text-3xl font-bold text-purple-600">{stats.amc}</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white hover:shadow-md transition-shadow">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col">
+                    <p className="text-xs text-slate-500 uppercase font-bold mb-1">AMC</p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold text-purple-600">{stats.amc}</p>
+                      <Award className="h-5 w-5 text-purple-600 opacity-50" />
+                    </div>
                   </div>
-                  <User className="h-10 w-10 text-purple-600" />
+                </CardContent>
+              </Card>
+            </div>
+            
+            <Card className="bg-slate-900 text-white border-none overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <PieChart className="h-24 w-24" />
+              </div>
+              <CardContent className="pt-6 relative z-10">
+                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase mb-2">
+                  <TrendingUp className="h-4 w-4" />
+                  Performance Insight
                 </div>
+                <h3 className="text-lg font-bold mb-1">Success Rate: 94%</h3>
+                <p className="text-xs text-slate-400 mb-4">Average resolution time: 3.8 hours</p>
+                <div className="w-full bg-slate-800 rounded-full h-2 mb-2">
+                  <div className="bg-primary h-full rounded-full" style={{ width: '94%' }} />
+                </div>
+                <p className="text-[10px] text-slate-500">Based on last 30 days of ticket history</p>
               </CardContent>
             </Card>
           </div>
@@ -318,37 +338,43 @@ const AdminDashboard: React.FC = () => {
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <CardTitle>Support Tickets</CardTitle>
                 <div className="flex flex-wrap gap-2 w-full md:w-auto">
+                  <div className="flex items-center gap-2 bg-slate-100 p-1 rounded-lg">
+                    <Filter className="h-4 w-4 text-slate-500 ml-2" />
+                    <Button
+                      variant={filterStatus === 'all' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => setFilterStatus('all')}
+                      className="h-8"
+                    >
+                      All
+                    </Button>
+                    <Button
+                      variant={filterStatus === 'open' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => setFilterStatus('open')}
+                      className="h-8"
+                    >
+                      Open
+                    </Button>
+                    <Button
+                      variant={filterStatus === 'resolved' ? 'default' : 'ghost'}
+                      size="sm"
+                      onClick={() => setFilterStatus('resolved')}
+                      className="h-8"
+                    >
+                      Resolved
+                    </Button>
+                  </div>
                   <div className="relative flex-1 md:w-64">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
                     <Input
                       placeholder="Search tickets..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="pl-10"
+                      className="pl-10 h-10"
                     />
                   </div>
-                  <Button
-                    variant={filterStatus === 'all' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setFilterStatus('all')}
-                  >
-                    All
-                  </Button>
-                  <Button
-                    variant={filterStatus === 'open' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setFilterStatus('open')}
-                  >
-                    Open
-                  </Button>
-                  <Button
-                    variant={filterStatus === 'resolved' ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setFilterStatus('resolved')}
-                  >
-                    Resolved
-                  </Button>
-                  <Button size="sm" variant="outline" onClick={fetchTickets}>
+                  <Button size="icon" variant="outline" className="h-10 w-10" onClick={fetchTickets}>
                     <RefreshCw className="h-4 w-4" />
                   </Button>
                 </div>

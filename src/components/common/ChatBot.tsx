@@ -1,192 +1,196 @@
-import React, { useState } from 'react';
-import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Sparkles, Phone, Mail, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { supabase } from '@/db/supabase';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
 
 interface Message {
-  type: 'user' | 'bot';
+  id: string;
   text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
 }
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { type: 'bot', text: 'Hello! Welcome to VedTech Services. How can I help you today?' }
+    {
+      id: '1',
+      text: "Hello! I'm VedBot, your AI IT Support Assistant. How can I help you today? You can ask about our services, AMC plans, or how to raise a ticket.",
+      sender: 'bot',
+      timestamp: new Date()
+    }
   ]);
-  const [inputMessage, setInputMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const quickReplies = [
-    'Tell me about your services',
-    'I need IT support',
-    'Request a quote',
-    'Contact information'
+  // Suggested Actions
+  const suggestions = [
+    "Our Services",
+    "AMC Plans",
+    "Raise a Ticket",
+    "Contact Details"
   ];
 
-  const handleSendMessage = async () => {
-    if (!inputMessage.trim() || isLoading) return;
+  useEffect(() => {
+    const handleOpenChat = () => setIsOpen(true);
+    document.addEventListener('open-chatbot', handleOpenChat);
+    return () => document.removeEventListener('open-chatbot', handleOpenChat);
+  }, []);
 
-    const userMessage = inputMessage.trim();
-    
-    // Add user message
-    const newMessages = [...messages, { type: 'user' as const, text: userMessage }];
-    setMessages(newMessages);
-    setInputMessage('');
-    setIsLoading(true);
-
-    try {
-      // Call the AI Edge Function
-      const { data, error } = await supabase.functions.invoke('chat-ai', {
-        body: {
-          message: userMessage,
-          conversationHistory: messages.slice(1) // Exclude welcome message
-        }
-      });
-
-      if (error) {
-        console.error('Error calling chat-ai:', error);
-        setMessages([...newMessages, {
-          type: 'bot',
-          text: 'I apologize, but I\'m having trouble connecting right now. Please call us at +91 7858971869 or email vedtechservice@gmail.com for immediate assistance.'
-        }]);
-      } else if (data?.response) {
-        setMessages([...newMessages, {
-          type: 'bot',
-          text: data.response
-        }]);
-      } else {
-        setMessages([...newMessages, {
-          type: 'bot',
-          text: 'I apologize, but I couldn\'t generate a response. Please contact us at +91 7858971869 for immediate help.'
-        }]);
-      }
-    } catch (err) {
-      console.error('Error in chat:', err);
-      setMessages([...newMessages, {
-        type: 'bot',
-        text: 'Sorry, I encountered an error. Please reach out to us directly at +91 7858971869 or vedtechservice@gmail.com.'
-      }]);
-    } finally {
-      setIsLoading(false);
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
+  }, [messages, isTyping]);
+
+
+  const handleSuggestion = (suggestion: string) => {
+    setInput(suggestion);
+    handleSend(suggestion);
   };
 
-  const handleQuickReply = (reply: string) => {
-    setInputMessage(reply);
+  const handleSend = (overrideInput?: any) => {
+    const textToSend = typeof overrideInput === 'string' ? overrideInput : input;
+    if (!textToSend.trim()) return;
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: textToSend,
+      sender: 'user',
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsTyping(true);
+
+    // Simulate AI Response
+    setTimeout(() => {
+      const botResponse = generateResponse(textToSend);
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: botResponse,
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
+      setIsTyping(false);
+    }, 1500);
+  };
+
+  const generateResponse = (query: string): string => {
+    const q = query.toLowerCase();
+    
+    if (q.includes('price') || q.includes('cost') || q.includes('amc') || q.includes('plan')) {
+      return "We offer flexible AMC (Annual Maintenance Contract) plans starting from basic support for small offices to comprehensive enterprise packages. You can view all details on our 'AMC Plans' page or I can give you a quick quote if you describe your infrastructure!";
+    }
+    
+    if (q.includes('service') || q.includes('what do you do')) {
+      return "VedTech Services provides complete IT solutions: Hardware Repair (Laptops, Printers), Software Development (Web & Apps), Networking (LAN/Wi-Fi), and 24/7 IT Support. Is there a specific service you're interested in?";
+    }
+
+    if (q.includes('ticket') || q.includes('support') || q.includes('help')) {
+      return "To get technical help, you can raise a support ticket on our 'Support' page. I can also help you track an existing ticket if you provide the Ticket ID! Once submitted, our engineers will contact you within 4 hours. Would you like me to guide you there?";
+    }
+
+    if (q.includes('vts-')) {
+      return "I see you're providing a Ticket ID. Please use the 'Track Ticket Status' tool on our Support page for real-time updates from our system. Would you like me to take you there?";
+    }
+
+    if (q.includes('contact') || q.includes('phone') || q.includes('call')) {
+      return "You can reach us at +91 7858971869 or email vedtechservicess@gmail.com. We also offer on-site support in Bihar and surrounding regions.";
+    }
+
+    if (q.includes('about') || q.includes('who are you')) {
+      return "VedTech Services is an IT firm founded by Chandan Kumar Yajee and co-founded by Arpit Singh Parihar, focused on providing 'One Call - All IT Solutions'. We are part of the VedArambh initiative.";
+    }
+
+    return "That's interesting! To provide the most accurate assistance for your IT needs, I recommend speaking with one of our human experts at +91 7858971869 or raising a ticket. Anything else I can help with?";
   };
 
   return (
-    <>
-      {/* Chat Button */}
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition-all hover:bg-blue-700 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300"
-          aria-label="Open AI chat"
-        >
-          <MessageCircle className="h-7 w-7" />
-        </button>
-      )}
-
-      {/* Chat Window */}
+    <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end">
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border-2 border-slate-200 flex flex-col overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <MessageCircle className="h-6 w-6" />
+        <Card className="w-[350px] md:w-[400px] h-[500px] shadow-2xl border-2 animate-in slide-in-from-bottom-5 duration-300 flex flex-col mb-4">
+          <CardHeader className="bg-primary text-white p-4 rounded-t-lg flex flex-row items-center justify-between space-y-0">
+            <CardTitle className="text-lg flex items-center gap-2">
+              <div className="bg-white/20 p-1.5 rounded-lg">
+                <Bot className="h-5 w-5" />
               </div>
-              <div>
-                <div className="font-bold">VedTech AI Assistant</div>
-                <div className="text-xs text-blue-100">Powered by AI</div>
+              <div className="flex flex-col">
+                <span>VedBot AI</span>
+                <span className="text-[10px] text-blue-100 font-normal">Active Support Agent</span>
               </div>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 rounded-full p-1 transition-colors"
-            >
+            </CardTitle>
+            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 h-8 w-8" onClick={() => setIsOpen(false)}>
               <X className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 p-4 space-y-4 overflow-y-auto max-h-96 bg-slate-50">
-            {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                    msg.type === 'user'
-                      ? 'bg-blue-600 text-white rounded-br-none'
-                      : 'bg-white text-slate-800 rounded-bl-none shadow-sm border'
-                  }`}
-                >
-                  <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
-                </div>
-              </div>
-            ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-white text-slate-800 rounded-2xl rounded-bl-none shadow-sm border px-4 py-2">
-                  <div className="flex items-center gap-2">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    <span className="text-sm">Thinking...</span>
+            </Button>
+          </CardHeader>
+          
+          <CardContent className="flex-1 p-0 overflow-hidden bg-slate-50 flex flex-col">
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto">
+              <div className="space-y-4">
+                {messages.map((m) => (
+                  <div key={m.id} className={cn("flex w-max max-w-[80%] flex-col gap-2 rounded-lg px-3 py-2 text-sm", 
+                    m.sender === 'user' ? "ml-auto bg-primary text-primary-foreground shadow-md" : "bg-white border text-slate-900 shadow-sm")}>
+                    {m.text}
                   </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Quick Replies */}
-          {messages.length <= 2 && !isLoading && (
-            <div className="px-4 py-2 bg-white border-t">
-              <div className="text-xs text-slate-500 mb-2">Quick replies:</div>
-              <div className="flex flex-wrap gap-2">
-                {quickReplies.map((reply, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleQuickReply(reply)}
-                    className="text-xs px-3 py-1.5 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 transition-colors"
-                  >
-                    {reply}
-                  </button>
                 ))}
+                {isTyping && (
+                  <div className="flex w-max max-w-[80%] items-center gap-2 rounded-lg bg-white border px-3 py-2 text-sm text-slate-500">
+                    <Loader2 className="h-3 w-3 animate-spin" />
+                    VedBot is typing...
+                  </div>
+                )}
               </div>
             </div>
-          )}
+            
+            {/* Quick Actions */}
+            <div className="p-3 bg-slate-50 border-t flex flex-wrap gap-2">
+              {suggestions.map((s, idx) => (
+                <Badge 
+                  key={idx} 
+                  variant="outline" 
+                  className="bg-white hover:bg-primary hover:text-white cursor-pointer transition-colors px-2 py-1 text-[10px]"
+                  onClick={() => handleSuggestion(s)}
+                >
+                  {s}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
 
-          {/* Input */}
-          <div className="p-4 bg-white border-t">
-            <div className="flex gap-2">
-              <Input
-                value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSendMessage()}
-                placeholder="Type your message..."
+          <CardFooter className="p-3 bg-white border-t">
+            <div className="flex w-full gap-2">
+              <Input 
+                placeholder="Type your question..." 
+                value={input} 
+                onChange={(e) => setInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                 className="flex-1"
-                disabled={isLoading}
               />
-              <Button
-                onClick={handleSendMessage}
-                size="icon"
-                className="bg-blue-600 hover:bg-blue-700"
-                disabled={isLoading || !inputMessage.trim()}
-              >
-                {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <Send className="h-4 w-4" />
-                )}
+              <Button size="icon" onClick={handleSend} disabled={!input.trim() || isTyping}>
+                <Send className="h-4 w-4" />
               </Button>
             </div>
-          </div>
-        </div>
+          </CardFooter>
+        </Card>
       )}
-    </>
+
+      <Button 
+        size="lg" 
+        className={cn("h-14 w-14 rounded-full shadow-2xl transition-all duration-300", 
+          isOpen ? "rotate-90 bg-slate-900" : "bg-primary hover:scale-110")}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X className="h-7 w-7" /> : <Bot className="h-7 w-7" />}
+      </Button>
+    </div>
   );
 };
 

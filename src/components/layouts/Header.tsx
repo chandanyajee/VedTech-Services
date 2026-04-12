@@ -11,6 +11,8 @@ const navItems = [
   { name: 'Services', path: '/services' },
   { name: 'Industries', path: '/industries' },
   { name: 'Why Choose Us', path: '/why-us' },
+  { name: 'Demo', path: '/demo' },
+  { name: 'Blog', path: '/blog' },
   { name: 'Support', path: '/support' },
   { name: 'Contact Us', path: '/contact' },
 ];
@@ -25,10 +27,10 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260201/file-9bcta9df4a9s.png"
+              src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260302/file-9znj7azzuakg.png"
               alt="VedTech Services Logo"
               className="h-12 w-12 rounded-full"
-              data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260201%2Ffile-9bcta9df4a9s.png%22%7D" />
+              data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
             <span className="text-xl font-bold tracking-tight text-primary hidden sm:inline">VedTech <span className="text-foreground">Services</span></span>
           </Link>
         </div>
@@ -48,7 +50,7 @@ const Header: React.FC = () => {
             </Link>
           ))}
           <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 text-white font-semibold">
-            <Link to="/contact">Book Now</Link>
+            <Link to="/contact">Book Service</Link>
           </Button>
         </nav>
 

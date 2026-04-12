@@ -52,7 +52,7 @@ const Industries: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32 md:py-32">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Industries We Serve</h1>
           <p className="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -63,13 +63,13 @@ const Industries: React.FC = () => {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, idx) => (
               <Link key={idx} to={industry.link} className="block">
                 <Card className="border-2 hover:border-primary/50 transition-all hover:shadow-xl cursor-pointer h-full">
-                  <CardContent className="p-8">
+                  <CardContent className="p-6 md:p-8">
                     <div className="mb-6">{industry.icon}</div>
                     <h3 className="text-2xl font-bold mb-4">{industry.title}</h3>
                     <p className="text-slate-600 mb-6 leading-relaxed">{industry.description}</p>
@@ -93,7 +93,7 @@ const Industries: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">Don't See Your Industry?</h2>

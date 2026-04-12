@@ -85,7 +85,7 @@ const MobileAppDevelopment: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -126,7 +126,7 @@ const MobileAppDevelopment: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Mobile App Development Services</h2>
@@ -165,7 +165,7 @@ const MobileAppDevelopment: React.FC = () => {
         </section>
 
         {/* App Types */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Types of Apps We Develop</h2>
@@ -187,7 +187,7 @@ const MobileAppDevelopment: React.FC = () => {
         </section>
 
         {/* Projects */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Mobile Apps in Bihar</h2>
@@ -227,7 +227,7 @@ const MobileAppDevelopment: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Us for Mobile App Development?</h2>
@@ -266,7 +266,7 @@ const MobileAppDevelopment: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Build Your Mobile App?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

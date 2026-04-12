@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building } from 'lucide-react';
 import { supabase } from '@/db/supabase';
 
+import { LoadingSpinner } from '@/components/common/Loader';
+
 interface SupportTicket {
   id: string;
   ticket_id: string;
@@ -182,9 +184,9 @@ const AdminTickets: React.FC = () => {
       <section className="py-8">
         <div className="container">
           {isLoading ? (
-            <div className="text-center py-12">
-              <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-              <p className="text-slate-600">Loading tickets...</p>
+            <div className="flex flex-col items-center justify-center py-20 md:py-32 bg-white rounded-xl border-2 border-dashed border-slate-200">
+              <LoadingSpinner size={48} />
+              <p className="text-slate-500 font-medium animate-pulse mt-4">Fetching support tickets...</p>
             </div>
           ) : filteredTickets.length === 0 ? (
             <Card>

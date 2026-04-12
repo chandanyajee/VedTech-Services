@@ -7,6 +7,8 @@ import { Ticket, Clock, CheckCircle2, Shield, FileText, Plus, Search } from 'luc
 import { supabase } from '@/db/supabase';
 import { useNavigate } from 'react-router-dom';
 
+import { LoadingSpinner } from '@/components/common/Loader';
+
 interface CustomerTicket {
   id: string;
   ticket_id: string;
@@ -158,14 +160,14 @@ const CustomerDashboard: React.FC = () => {
   if (!isLoggedIn) {
     return (
       <div className="flex flex-col w-full min-h-screen">
-        <section className="bg-gradient-to-br from-primary via-blue-600 to-primary text-white py-20">
+        <section className="bg-gradient-to-br from-primary via-blue-600 to-primary text-white py-20 md:py-32">
           <div className="container text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Customer Dashboard</h1>
             <p className="text-xl text-blue-100">Track your tickets and AMC status</p>
           </div>
         </section>
 
-        <section className="flex-1 flex items-center justify-center py-20">
+        <section className="flex-1 flex items-center justify-center py-20 md:py-32">
           <Card className="w-full max-w-md mx-4">
             <CardHeader>
               <CardTitle className="text-center">Login to Your Dashboard</CardTitle>
@@ -186,7 +188,12 @@ const CustomerDashboard: React.FC = () => {
                 onClick={handleLogin}
                 disabled={isLoading || !email}
               >
-                {isLoading ? 'Loading...' : 'Access Dashboard'}
+                {isLoading ? (
+                  <>
+                    <LoadingSpinner className="mr-2 h-4 w-4 text-white" />
+                    Accessing...
+                  </>
+                ) : 'Access Dashboard'}
               </Button>
               <p className="text-sm text-slate-600 text-center">
                 Don't have an account? <a href="/support" className="text-primary hover:underline">Raise a ticket</a> to get started

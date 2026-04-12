@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Check, Star, Clock, Shield, Zap } from 'lucide-react';
+import { Check, Star, Clock, Shield, Zap, ArrowRight, Sparkles } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -48,61 +49,57 @@ const AMCPlans: React.FC = () => {
     navigate(`/contact?plan=${planId}`);
   };
 
+  const categories = [
+    { title: "Standard Office", range: "₹4,999 - ₹14,999/yr", bestFor: "5-10 Workstations" },
+    { title: "Corporate Branch", range: "₹24,999 - ₹49,999/yr", bestFor: "10-25 Workstations" },
+    { title: "Enterprise Hub", range: "Custom Pricing", bestFor: "25+ Workstations + Servers" }
+  ];
+
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <section className="bg-gradient-to-br from-primary via-blue-600 to-primary text-white py-20">
-        <div className="container text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 mb-6">
-            <Shield className="h-5 w-5" />
-            <span className="text-sm font-semibold">Annual Maintenance Contracts</span>
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]" />
+        <div className="container relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/20 rounded-full px-4 py-2 mb-6 border border-primary/30">
+            <Shield className="h-5 w-5 text-primary" />
+            <span className="text-sm font-semibold text-primary-foreground">Enterprise Support Plans</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            AMC Plans for Your Business
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">AMC Packages</span>
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Get priority support with guaranteed response time. Choose the plan that fits your needs.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Guranteed uptime for your IT infrastructure. Our Annual Maintenance Contracts provide 
+            priority response, unlimited support, and peace of mind.
           </p>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-12 bg-slate-50">
+      {/* Benefits with Interactive Hover */}
+      <section className="py-12 bg-white border-b">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <Zap className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: Zap, title: "SLA Priority", desc: "4-24 hour guaranteed resolution time for critical issues", bg: "bg-blue-50", color: "text-blue-600" },
+              { icon: Clock, title: "Proactive Health Checks", desc: "Quarterly preventative maintenance to catch issues before they happen", bg: "bg-green-50", color: "text-green-600" },
+              { icon: Shield, title: "Inventory Coverage", desc: "Comprehensive management of all your IT assets under one contract", bg: "bg-purple-50", color: "text-purple-600" }
+            ].map((benefit, i) => (
+              <div key={i} className="flex items-start gap-4 p-6 md:p-8 rounded-2xl hover:shadow-lg transition-all border border-transparent hover:border-slate-100 group">
+                <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110 group-hover:rotate-3", benefit.bg, benefit.color)}>
+                  <benefit.icon className="h-7 w-7" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-lg mb-2">Priority Support</h3>
-                <p className="text-slate-600 text-sm">AMC customers get priority support with guaranteed response time</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                <Clock className="h-6 w-6 text-green-600" />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-2">Fast Response</h3>
-                <p className="text-slate-600 text-sm">Get support within 4-48 hours based on your plan</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
-                <Shield className="h-6 w-6 text-purple-600" />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-2">Complete Coverage</h3>
-                <p className="text-slate-600 text-sm">Hardware, software, networking - all covered under one plan</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-20">
+      <section className="py-20 md:py-32 md:py-32 bg-slate-50">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Choose Your Plan</h2>
@@ -167,26 +164,50 @@ const AMCPlans: React.FC = () => {
       </section>
 
       {/* Why Choose AMC */}
-      <section className="py-20 bg-slate-50">
-        <div className="container">
+      <section className="py-20 md:py-32 md:py-32 bg-white relative overflow-hidden">
+        <div className="absolute left-0 bottom-0 w-64 h-64 bg-primary/5 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl" />
+        <div className="container relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose AMC?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-3">💰 Cost Effective</h3>
-                <p className="text-slate-600">Save money with annual plans instead of per-incident charges</p>
+            <div className="text-center mb-16">
+              <Badge variant="outline" className="mb-4">Value Proposition</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">The AMC Advantage</h2>
+              <p className="text-slate-600">Enterprise-grade maintenance for the modern Indian office</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { title: "Cost Effective", desc: "Predictable annual budgeting with up to 40% savings compared to pay-per-visit models.", emoji: "💰" },
+                { title: "Zero Visit Charges", desc: "No call-out fees or technician travel charges for all covered hardware issues.", emoji: "🛡️" },
+                { title: "Hardware Lifespan", desc: "Proactive maintenance increases the average lifespan of your IT equipment by 2-3 years.", emoji: "⚡" },
+                { title: "Documentation", desc: "Maintain full digital service history and asset logs for compliance and tax purposes.", emoji: "📄" }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all group">
+                  <div className="text-4xl group-hover:scale-110 transition-transform">{item.emoji}</div>
+                  <div>
+                    <h3 className="font-bold text-xl mb-2 text-slate-900">{item.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Category Comparison */}
+            <div className="mt-20 bg-slate-900 rounded-[32px] p-6 md:p-8 md:p-12 text-white overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5">
+                <Sparkles className="h-48 w-48" />
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-3">⚡ Priority Service</h3>
-                <p className="text-slate-600">Jump the queue with guaranteed response times</p>
+              <h3 className="text-2xl font-bold mb-8 text-center">Service Tier Estimates</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {categories.map((cat, i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl hover:bg-white/10 transition-all text-center">
+                    <p className="text-primary-foreground font-bold mb-1">{cat.title}</p>
+                    <p className="text-2xl font-extrabold text-white mb-2">{cat.range}</p>
+                    <p className="text-xs text-slate-400">Best for: {cat.bestFor}</p>
+                  </div>
+                ))}
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-3">🛡️ Peace of Mind</h3>
-                <p className="text-slate-600">No surprise bills - everything covered in one annual fee</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-3">📞 Dedicated Support</h3>
-                <p className="text-slate-600">Direct access to our expert support team</p>
+              <div className="mt-8 text-center text-sm text-slate-400">
+                *Final pricing depends on the number of systems, servers, and required response time.
               </div>
             </div>
           </div>
@@ -194,7 +215,7 @@ const AMCPlans: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary to-blue-700 text-white">
+      <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-700 text-white">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Get Started?

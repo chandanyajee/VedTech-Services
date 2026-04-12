@@ -37,7 +37,7 @@ const WhyUs: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-slate-900 text-white py-20 md:py-32">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Why Choose VedTech?</h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
@@ -46,11 +46,11 @@ const WhyUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {reasons.map((reason, i) => (
-              <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl border hover:border-primary/50 hover:bg-slate-50 transition-all group">
+              <div key={i} className="flex flex-col gap-4 p-6 md:p-8 rounded-2xl border hover:border-primary/50 hover:bg-slate-50 transition-all group">
                 <div className="mb-2 group-hover:scale-110 transition-transform">{reason.icon}</div>
                 <h3 className="text-xl font-bold">{reason.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{reason.desc}</p>
@@ -61,7 +61,7 @@ const WhyUs: React.FC = () => {
       </section>
 
       {/* Testimonial Quote */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 md:py-32 bg-slate-50">
         <div className="container max-w-4xl">
           <div className="text-center space-y-8">
             <div className="text-5xl text-primary font-serif opacity-50">"</div>

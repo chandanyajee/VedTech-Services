@@ -4,24 +4,24 @@ import { Target, Eye, Heart, ShieldCheck, TrendingUp, Users, Award, Zap } from '
 const About: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24">
+      {/* Header */}
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-4">
               <Award className="h-5 w-5 text-blue-400" />
-              <span className="text-sm font-semibold">Established 2020</span>
+              <span className="text-sm font-semibold">Self-Employed IT Enterprise</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About VedTech Services</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">About VedTech Services</h1>
             <p className="text-slate-300 text-xl leading-relaxed">
-              Building India's most trusted IT services company. We're on a mission to empower businesses 
-              with world-class technology solutions and unparalleled customer service.
+              Building India's most trusted IT services company. Registered as a self-employment enterprise 
+              under the PMEGP scheme, committed to local employment and digital transformation.
             </p>
           </div>
         </div>
       </section>
       {/* Company Story */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Story</h2>
@@ -51,7 +51,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* Mission & Vision */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-20 md:py-32 bg-slate-50">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="space-y-12">
@@ -91,7 +91,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* Core Values */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
@@ -99,7 +99,7 @@ const About: React.FC = () => {
               The principles that guide every decision we make and every service we deliver.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: <Heart className="h-10 w-10 text-primary" />,
@@ -122,7 +122,7 @@ const About: React.FC = () => {
                 description: "We invest in learning, technology, and innovation to serve you better every day."
               }
             ].map((value, i) => (
-              <div key={i} className="bg-slate-50 p-8 rounded-2xl border-2 border-transparent hover:border-primary transition-all text-center">
+              <div key={i} className="bg-slate-50 p-6 md:p-8 rounded-2xl border-2 border-transparent hover:border-primary transition-all text-center">
                 <div className="mb-6 flex justify-center">{value.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{value.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{value.description}</p>
@@ -132,7 +132,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* Why We're Different */}
-      <section className="py-24 bg-primary text-white">
+      <section className="py-20 md:py-32 bg-primary text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">What Makes Us Different</h2>
@@ -167,7 +167,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* Leadership Team Section */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -180,16 +180,22 @@ const About: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1 space-y-6">
                   <h3 className="text-3xl font-bold text-slate-900">Chandan Kumar Yajee</h3>
-                  <p className="text-lg text-primary font-semibold">{" Founder "}</p>
-                  <p className="text-slate-600 leading-relaxed">
-                    With a passion for technology and a vision to make IT services accessible to businesses across India, 
-                    Chandan Kumar Yajee founded VedTech Services in 2020. His commitment to excellence and customer satisfaction 
-                    has been the driving force behind the company's rapid growth and success.
-                  </p>
-                  <p className="text-slate-600 leading-relaxed">
-                    Under his leadership, VedTech Services has grown from a small startup to a trusted IT partner for over 500 
-                    businesses, delivering comprehensive technology solutions with a focus on quality, reliability, and innovation.
-                  </p>
+                  <p className="text-lg text-primary font-semibold">Founder & Managing Director</p>
+                  <div className="space-y-4">
+                    <p className="text-slate-600 leading-relaxed">
+                      With a passion for technology and a vision to make IT services accessible to businesses across India, 
+                      Chandan Kumar Yajee founded VedTech Services in 2020. His commitment to excellence and customer satisfaction 
+                      has been the driving force behind the company's rapid growth and success.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed">
+                      Under his leadership, VedTech Services has grown from a local initiative to a trusted IT partner for over 500+ 
+                      businesses, delivering comprehensive technology solutions with a focus on quality, reliability, and innovation.
+                    </p>
+                    <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
+                      <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1">Business Vision</p>
+                      <p className="text-slate-700 italic">"Our goal is to build a self-reliant digital ecosystem in India where every small business has access to top-tier technical support at an affordable cost."</p>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-4 pt-4">
                     <a 
                       href="https://www.linkedin.com/in/chandan-yajee" 
@@ -205,25 +211,29 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 <div className="order-1 md:order-2">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
                     <img
-                      src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9dv8752ctatc.jpg"
-                      alt="Chandan Kumar Yajee - Founder & CEO of VedTech Services"
-                      className="w-full h-auto object-cover"
-                      data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9dv8752ctatc.jpg%22%7D" />
+                      src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260328/file-akop22ku03k0.png"
+                      alt="Chandan Kumar Yajee - Founder"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Team Members Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Co-founder */}
-              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-blue-100 to-blue-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duv4o51yark.jpg)]">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* CEO */}
+              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+                <div className="aspect-square relative overflow-hidden">
+                  <img 
+                    src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duv4o51yark.jpg" 
+                    alt="Arpit Singh Parihar" 
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-                <div className="p-6 space-y-4">
+                <div className="p-6 md:p-8 space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Arpit Singh Parihar</h3>
                     <p className="text-primary font-semibold">Co-founder & CEO</p>
@@ -244,13 +254,12 @@ const About: React.FC = () => {
                   </a>
                 </div>
               </div>
-
               {/* IT Manager */}
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                 <div className="aspect-square from-purple-100 to-purple-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9dv12n1pp1c0.jpg)]">
 
                 </div>
-                <div className="p-6 space-y-4">
+                <div className="p-6 md:p-8 space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Aasita Sarathe</h3>
                     <p className="text-primary font-semibold">IT Manager</p>
@@ -277,7 +286,7 @@ const About: React.FC = () => {
                 <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzcdmlqcqo.jpg)]">
 
                 </div>
-                <div className="p-6 space-y-4">
+                <div className="p-6 md:p-8 space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Muskan Dubey</h3>
                     <p className="text-primary font-semibold">HR Manager</p>
@@ -303,7 +312,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* Growth Journey */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-20 md:py-32 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Growth Journey</h2>

@@ -12,9 +12,14 @@ import Industries from './pages/Industries';
 import EducationalInstitutions from './pages/EducationalInstitutions';
 import CorporateOffices from './pages/CorporateOffices';
 import RetailShops from './pages/RetailShops';
+import Healthcare from './pages/Healthcare';
+import Manufacturing from './pages/Manufacturing';
+import StartupsSMEs from './pages/StartupsSMEs';
 import WhyUs from './pages/WhyUs';
 import Support from './pages/Support';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import Demo from './pages/Demo';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminTickets from './pages/AdminTickets';
@@ -116,19 +121,19 @@ const routes: RouteConfig[] = [
   {
     name: 'Startups & SMEs',
     path: '/industries/startups-smes',
-    element: <CorporateOffices />,
+    element: <StartupsSMEs />,
     visible: false
   },
   {
     name: 'Healthcare',
     path: '/industries/healthcare',
-    element: <CorporateOffices />,
+    element: <Healthcare />,
     visible: false
   },
   {
     name: 'Manufacturing',
     path: '/industries/manufacturing',
-    element: <CorporateOffices />,
+    element: <Manufacturing />,
     visible: false
   },
   {
@@ -150,6 +155,16 @@ const routes: RouteConfig[] = [
     name: 'Contact',
     path: '/contact',
     element: <Contact />
+  },
+  {
+    name: 'Blog',
+    path: '/blog',
+    element: <Blog />
+  },
+  {
+    name: 'Demo',
+    path: '/demo',
+    element: <Demo />
   },
   {
     name: 'My Dashboard',
