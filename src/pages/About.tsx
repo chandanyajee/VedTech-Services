@@ -1,5 +1,7 @@
 import React from 'react';
 import { Target, Eye, Heart, ShieldCheck, TrendingUp, Users, Award, Zap } from 'lucide-react';
+import Chandan_yajee from "../img/Chandan_yajee.png";
+import MSME from "../img/MSME.png"
 
 const About: React.FC = () => {
   return (
@@ -213,7 +215,8 @@ const About: React.FC = () => {
                 <div className="order-1 md:order-2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
                     <img
-                      src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260328/file-akop22ku03k0.png"
+                      src={Chandan_yajee}
+                      
                       alt="Chandan Kumar Yajee - Founder"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -307,12 +310,42 @@ const About: React.FC = () => {
                   </a>
                 </div>
               </div>
+
+              {/* Sels Manager */}
+              {/* <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzcdmlqcqo.jpg)]">
+
+                </div>
+                <div className="p-6 md:p-8 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">Muskan Dubey</h3>
+                    <p className="text-primary font-semibold">Sels Manager</p>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Building and nurturing our talented team to deliver exceptional service to every client.
+                  </p>
+                  <a 
+                    href="https://www.linkedin.com/in/muskan-dubey-b990b3330" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                  >
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn Profile
+                  </a>
+                </div>
+              </div> */}
+
+
             </div>
           </div>
         </div>
       </section>
+
       {/* Growth Journey */}
-      <section className="py-20 md:py-32 md:py-32 bg-slate-50">
+      {/* <section className="py-20 md:py-32 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Growth Journey</h2>
@@ -330,8 +363,54 @@ const About: React.FC = () => {
               ))}
             </div>
           </div>
+
         </div>
       </section>
+       */}
+
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Certifications</h2>
+              <p className="text-slate-600 text-lg">Government Registered MSME Company    Trusted by Clients    Professional Digital Solutions</p>
+            </div>
+
+            {/* Founder */}
+            <div className="mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="order-2 md:order-1 space-y-6">
+                  <h3 className="text-3xl font-bold text-slate-900">Udyam Certified </h3>
+                  <div className="space-y-4">
+                    <p className="text-slate-600 leading-relaxed">
+                      
+                    </p>
+                    
+                    <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
+                      <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1">Business Vision</p>
+                      <p className="text-slate-700 italic">Ved Tech Services is a Government Registered MSME (Udyam Certified) company, ensuring reliability, trust, and quality service delivery.</p>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div className="order-1 md:order-2">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
+                    <img
+                      src={MSME}
+                      
+                      alt="Chandan Kumar Yajee - Founder"
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

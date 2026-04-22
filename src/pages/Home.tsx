@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import PageMeta from '@/components/common/PageMeta';
+// import msmeImg from "../img/MSME.png";
 
 const Home: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
         
         <div className="container relative z-10">
           <div className={`max-w-4xl space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
+            <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{" 🚀 Government Registered MSME Company  Trusted by Clients Professional Digital Solutions "}</div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight animate-slide-up">
               One Call – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient">Complete IT Solutions</span>
@@ -71,6 +72,11 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* <div>
+
+          <img src={msmeImg} alt="IT Specialist at Work" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />        
+        </div> */}
         
         {/* Animated Background Icons */}
         <div className="absolute right-10 top-20 opacity-10 animate-float">
@@ -366,7 +372,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Rajesh Kumar",
+                name: "Chandrmani Modi",
                 role: "Principal, Guru Shishya Public School",
                 company: "Educational Institution",
                 rating: 5,
