@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageMeta from '@/components/common/PageMeta';
+import College_Of_Pharmacy from "../img/College Of Pharmacy.jpg"
+import VedArambh_Group from "../img/VedArambh Group.jpg"
+import VED_FITNESS from "../img/VED FITNESS.jpg"
+import VedArambh_Mart from "../img/VedArambh Mart.jpg"
 
 const Demo: React.FC = () => {
   const demos = [
@@ -36,7 +40,7 @@ const Demo: React.FC = () => {
       name: "VedArambh Mart",
       category: "E-commerce Platform",
       description: "Full-featured e-commerce platform with product catalog, shopping cart, payment gateway integration, and order management system.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg",
+      image: VedArambh_Mart,
       link: "https://app-9gbc95t8hhq9.appmedo.com",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       features: ["Product Catalog", "Shopping Cart", "Payment Gateway", "Order Tracking"],
@@ -60,7 +64,7 @@ const Demo: React.FC = () => {
       name: "VED FITNESS",
       category: "Gym Management System",
       description: "Modern gym management platform with membership management, workout tracking, payment processing, and trainer scheduling.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg",
+      image: VED_FITNESS,
       link: "https://app-9j7xgqljr6dd.appmedo.com",
       tech: ["React", "Firebase", "Tailwind", "Chart.js"],
       features: ["Membership Management", "Workout Tracking", "Payment System", "Trainer Portal"],
@@ -72,10 +76,22 @@ const Demo: React.FC = () => {
       name: "VedArambh Group",
       category: "Corporate Website",
       description: "Professional corporate website showcasing company services, portfolio, team members, and client testimonials with modern design.",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81c94b3f-98d2-474e-93f2-ac5ecb11b096.jpg",
+      image: VedArambh_Group,
       link: "https://app-82srpbr0v9xd.appmedo.com/",
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
       features: ["Portfolio Showcase", "Team Section", "Service Pages", "Contact Forms"],
+      icon: Building2,
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 7,
+      name: "College Of Pharmacy",
+      category: "College management System ",
+      description: "Professional College website showcasing College services, portfolio, team members, and Student",
+      image: College_Of_Pharmacy,
+      link: "https://app-8t84np01ksu9.appmedo.com/",
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      features: ["Home", "About", "Courses", "Admission", "Faculty", "Infrastructure", "Laboratory", "Library", "Gallery", "Notices","Contact"],
       icon: Building2,
       color: "from-indigo-500 to-purple-500"
     }
