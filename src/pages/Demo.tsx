@@ -94,6 +94,30 @@ const Demo: React.FC = () => {
       features: ["Home", "About", "Courses", "Admission", "Faculty", "Infrastructure", "Laboratory", "Library", "Gallery", "Notices","Contact"],
       icon: Building2,
       color: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 8,
+      name: "Explore Bihar ",
+      category: "Turest  management System ",
+      description: "Professional College website showcasing College services, portfolio, team members, and Student",
+      image: College_Of_Pharmacy,
+      link: "https://app-8t84np01ksu9.appmedo.com/",
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      features: ["Home", "About", "Courses", "Admission", "Faculty", "Infrastructure", "Laboratory", "Library", "Gallery", "Notices","Contact"],
+      icon: Building2,
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 9,
+      name: "Beauty Parlor ",
+      category: "Beauty Parlor  management System ",
+      description: "Professional College website showcasing College services, portfolio, team members, and Student",
+      image: "",
+      link: "https://app-9grz3x2dsf0h.appmedo.com/",
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      features: ["Home","About","Services","Gallery","Contact"],
+      icon: Building2,
+      color: "from-indigo-500 to-purple-500"
     }
   ];
 
