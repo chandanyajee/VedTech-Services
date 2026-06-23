@@ -138,13 +138,13 @@ const ITSupportServices: React.FC = () => {
         <title>IT Support & AMC Services | 24/7 Helpdesk, Maintenance Contracts | VedTech Services</title>
         <meta name="description" content="Professional IT support services including 24/7 helpdesk, annual maintenance contracts (AMC), on-site support, and remote technical assistance. Dedicated support for businesses in India." />
         <meta name="keywords" content="IT support, AMC, annual maintenance contract, helpdesk, technical support, on-site support, remote support, IT maintenance, VedTech Services" />
-        <link rel="canonical" href="https://vedtechservices.com/services/it-support" />
+        <link rel="canonical" href="https://vedtechservices.in/services/it-support" />
         
         {/* Open Graph */}
         <meta property="og:title" content="IT Support & AMC Services | VedTech Services" />
         <meta property="og:description" content="Professional IT support services including 24/7 helpdesk, AMC plans, and comprehensive technical assistance." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vedtechservices.com/services/it-support" />
+        <meta property="og:url" content="https://vedtechservices.in/services/it-support" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -175,7 +175,7 @@ const ITSupportServices: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -202,7 +202,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our IT Support Services</h2>
@@ -242,7 +242,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* AMC Plans */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">AMC Plans</h2>
@@ -281,7 +281,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* Support Types */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Support for Every Business</h2>
@@ -320,7 +320,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* Response Time */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Response Time Commitment</h2>
@@ -351,7 +351,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Get Support Now</h2>
@@ -381,8 +381,8 @@ const ITSupportServices: React.FC = () => {
                   </div>
                   <h3 className="font-bold text-lg mb-2">Email Us</h3>
                   <p className="text-slate-600 mb-4">Quick Response</p>
-                  <a href="mailto:vedtechservice@gmail.com" className="text-primary font-semibold hover:underline">
-                    vedtechservice@gmail.com
+                  <a href="mailto:info@vedtechservices.in" className="text-primary font-semibold hover:underline">
+                    info@vedtechservices.in
                   </a>
                 </CardContent>
               </Card>
@@ -404,7 +404,7 @@ const ITSupportServices: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for Reliable IT Support?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

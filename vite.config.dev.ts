@@ -1,4 +1,4 @@
-
+ import * as vite from 'vite';
     import { defineConfig, loadConfigFromFile } from "vite";
     import type { Plugin, ConfigEnv } from "vite";
     import tailwindcss from "tailwindcss";
@@ -12,21 +12,39 @@
       monitorPlugin
     } from "miaoda-sc-plugin";
 
-    const env: ConfigEnv = { command: "serve", mode: "development" };
-    const configFile = path.resolve(__dirname, "vite.config.ts");
-    const result = await loadConfigFromFile(env, configFile);
-    const userConfig = result?.config;
+    export default defineConfig(async () => {
+      const env: ConfigEnv = { command: "serve", mode: "development" };
+      const configFile = path.resolve(__dirname, "vite.config.ts");
+      const result = await loadConfigFromFile(env, configFile);
+      const userConfig = result?.config;
 
-    export default defineConfig({
-      ...userConfig,
-      plugins: [
-        makeTagger(),
-        injectedGuiListenerPlugin({
-          path: 'https://miaoda-resource-static.s3cdn.medo.dev/common/v2/injected.js'
-        }),
-        injectOnErrorPlugin(),
-        ...(userConfig?.plugins || []),
-        
+      const viteVersionInfo = {
+        version: vite.version,
+        rollupVersion: (vite as any).rollupVersion ?? null,
+        rolldownVersion: (vite as any).rolldownVersion ?? null,
+        isRolldownVite: 'rolldownVersion' in vite
+      };
+
+      return {
+        ...userConfig,
+        define: {
+          __VITE_INFO__: JSON.stringify(viteVersionInfo),
+          ...(userConfig?.define || {})
+        },
+        // 将 Vite 缓存目录设置为项目本地目录，避免在 /workspace/node_modules/ 下创建
+        cacheDir: path.resolve(__dirname, "node_modules/.vite"),
+        server: {
+          ...(userConfig?.server || {}),
+          warmup: { clientFiles: ["./src/main.tsx"] }
+        },
+        plugins: [
+          makeTagger(),
+          injectedGuiListenerPlugin({
+            path: 'https://miaoda-resource-static.s3cdn.medo.dev/common/v2/injected.js'
+          }),
+          injectOnErrorPlugin(),
+          ...(userConfig?.plugins || []),
+          
 {
   name: 'hmr-toggle',
   configureServer(server) {
@@ -113,14 +131,15 @@
   }
 },
 ,
-        monitorPlugin(
-          {
-            scriptSrc: 'https://miaoda-resource-static.s3cdn.medo.dev/sentry/browser.sentry.min.js',
-            sentryDsn: 'https://e3c07b90fcb5207f333d50ac24a99d3e@sentry.miaoda.cn/233',
-            environment: 'undefined',
-            appId: 'app-99gjdx4fbuv5'
-          }
-        )
-      ]
+          monitorPlugin(
+            {
+              scriptSrc: 'https://miaoda-resource-static.s3cdn.medo.dev/sentry/browser.sentry.min.js',
+              sentryDsn: 'https://e3c07b90fcb5207f333d50ac24a99d3e@sentry.miaoda.cn/233',
+              environment: 'undefined',
+              appId: 'app-99gjdx4fbuv5'
+            }
+          )
+        ]
+      };
     });
     

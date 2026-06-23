@@ -7,6 +7,7 @@ import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building } from
 import { supabase } from '@/db/supabase';
 
 import { LoadingSpinner } from '@/components/common/Loader';
+import AdminRoleWarning from '@/components/admin/AdminRoleWarning';
 
 interface SupportTicket {
   id: string;
@@ -118,6 +119,7 @@ const AdminTickets: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-slate-50">
+      <div className="container pt-4"><AdminRoleWarning /></div>
       {/* Header */}
       <section className="bg-gradient-to-br from-primary via-blue-600 to-primary text-white py-12">
         <div className="container">

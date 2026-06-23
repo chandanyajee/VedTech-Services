@@ -197,13 +197,13 @@ const SoftwareServices: React.FC = () => {
         <title>Software & Digital Services | Web Development, Mobile Apps | VedTech Services</title>
         <meta name="description" content="Professional software development services including website development, mobile apps, custom software, cloud solutions, and UI/UX design. Expert developers in India." />
         <meta name="keywords" content="software development, web development, mobile app development, custom software, cloud solutions, UI/UX design, website design, e-commerce development, VedTech Services" />
-        <link rel="canonical" href="https://vedtechservices.com/services/software" />
+        <link rel="canonical" href="https://vedtechservices.in/services/software" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Software & Digital Services | VedTech Services" />
         <meta property="og:description" content="Professional software development services including website development, mobile apps, custom software, and cloud solutions." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vedtechservices.com/services/software" />
+        <meta property="og:url" content="https://vedtechservices.in/services/software" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

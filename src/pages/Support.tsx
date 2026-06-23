@@ -242,7 +242,7 @@ This ticket has been saved to the VedTech Services support system.
       `;
       
       // Open default email client
-      const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:info@vedtechservices.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoLink;
       
       // Show success dialog
@@ -601,7 +601,7 @@ This ticket has been saved to the VedTech Services support system.
                     <div>
                       <h4 className="font-bold text-slate-900 text-sm">Official Email</h4>
                       <p className="text-xs text-slate-500 mb-2">For detailed queries & quotes</p>
-                      <a href="mailto:vedtechservice@gmail.com" className="text-sm font-extrabold text-purple-600 hover:underline">vedtechservice@gmail.com</a>
+                      <a href="mailto:info@vedtechservices.in" className="text-sm font-extrabold text-purple-600 hover:underline">info@vedtechservices.in</a>
                     </div>
                   </div>
                 </CardContent>

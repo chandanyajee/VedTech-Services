@@ -1,4 +1,5 @@
 import React from 'react';
+import PageMeta from '@/components/common/PageMeta';
 import { 
   Globe, Laptop, Shield, Code, Smartphone, Cloud, 
   Wrench, Printer, Network, Headset, Server, Lock
@@ -147,11 +148,17 @@ const serviceCategories = [
 
 const Services: React.FC = () => {
   return (
+    <>
+      <PageMeta
+        title="IT Services — VedTech Services | Hardware, Software & Networking in Bihar"
+        description="Explore VedTech Services' full range of IT solutions: hardware repair, web development, mobile apps, networking, CCTV, cloud support, and IT AMC contracts across Bihar."
+        canonical="/services"
+      />
     <div className="flex flex-col w-full">
       {/* Header */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24">
+      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32 md:py-32">
         <div className="container text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our IT Services</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">Our IT Services</h1>
           <p className="text-slate-300 max-w-3xl mx-auto text-xl leading-relaxed">
             Comprehensive technology solutions designed to power your business. From software development 
             to hardware maintenance, we provide everything you need under one roof.
@@ -159,15 +166,15 @@ const Services: React.FC = () => {
         </div>
       </section>
       {/* Services Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 md:py-32 bg-white">
         <div className="container">
           <div className="space-y-32">
             {serviceCategories.map((category, idx) => (
               <div key={idx} className="space-y-12">
                 {/* Category Header */}
-                <div className={`bg-gradient-to-r ${category.color} text-white rounded-3xl p-12 md:p-16`}>
+                <div className={`bg-gradient-to-r ${category.color} text-white rounded-3xl p-6 md:p-16`}>
                   <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="bg-white/20 p-6 rounded-2xl backdrop-blur-sm">
+                    <div className="bg-white/20 p-6 md:p-8 rounded-2xl backdrop-blur-sm">
                       {category.icon}
                     </div>
                     <div className="flex-1 text-center md:text-left">
@@ -201,7 +208,7 @@ const Services: React.FC = () => {
         </div>
       </section>
       {/* Service Process */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-20 md:py-32 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
@@ -228,7 +235,7 @@ const Services: React.FC = () => {
         </div>
       </section>
       {/* Trust Section */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-20 md:py-32 bg-slate-900 text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
@@ -251,7 +258,7 @@ const Services: React.FC = () => {
         </div>
       </section>
       {/* CTA */}
-      <section className="py-24 bg-white">
+      <section className="py-20 md:py-32 md:py-32 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold">Need a Custom Solution?</h2>
@@ -271,6 +278,7 @@ const Services: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

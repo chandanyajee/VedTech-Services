@@ -66,7 +66,7 @@ const MobileAppDevelopment: React.FC = () => {
         <title>Mobile App Development in Bihar | Android iOS App Patna | VedTech Services</title>
         <meta name="description" content="Professional mobile app development services in Bihar. Android app development, iOS app development, cross-platform apps in Patna, Gaya, Muzaffarpur. Expert app developers in Bihar." />
         <meta name="keywords" content="mobile app development Bihar, Android app development Patna, iOS app development Bihar, app development company Bihar, mobile app developer Gaya, app development Muzaffarpur, IT company Bihar" />
-        <link rel="canonical" href="https://vedtechservices.com/services/mobile-app-development" />
+        <link rel="canonical" href="https://vedtechservices.in/services/mobile-app-development" />
         
         <script type="application/ld+json">
           {JSON.stringify({

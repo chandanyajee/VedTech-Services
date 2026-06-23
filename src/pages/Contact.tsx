@@ -1,14 +1,36 @@
-import React from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Send, Sparkles, CheckCircle2 } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Phone, Mail, MapPin, MessageSquare, Send, Sparkles, CheckCircle2, Building2, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import PageMeta from '@/components/common/PageMeta';
+import { supabase } from '@/db/supabase';
+import { cn } from '@/lib/utils';
 
 const Contact: React.FC = () => {
+  const [offices, setOffices] = useState<any[]>([]);
+
+  useEffect(() => {
+    (supabase.from('offices') as any)
+      .select('id, name, branch_code, address, city, state, phone, email, manager_name, office_type, status')
+      .eq('status', 'active')
+      .order('office_type', { ascending: true })
+      .then(({ data }: { data: any[] | null }) => setOffices(data || []));
+  }, []);
+
+  const TYPE_COLORS: Record<string, string> = {
+    headquarters: 'bg-purple-100 text-purple-800 border-purple-200',
+    branch: 'bg-blue-100 text-blue-800 border-blue-200',
+    service_center: 'bg-orange-100 text-orange-800 border-orange-200',
+    remote: 'bg-slate-100 text-slate-700 border-slate-200',
+  };
+  const TYPE_LABELS: Record<string, string> = {
+    headquarters: 'HQ', branch: 'Branch', service_center: 'Service Centre', remote: 'Remote',
+  };
   const form = useForm({
     defaultValues: {
       name: "",
@@ -35,7 +57,7 @@ ${data.message}
     `;
     
     // Open default email client
-    const mailtoLink = `mailto:vedtechservice@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:info@vedtechservices.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
     
     alert("Thank you for your inquiry. Your email client will open to send the message. We will get back to you shortly!");
@@ -45,8 +67,9 @@ ${data.message}
   return (
     <>
       <PageMeta 
-        title="Contact VedTech Services - Get Free IT Consultation | 24/7 Support"
+        title="Contact VedTech Services — Get Free IT Consultation | 24/7 Support"
         description="Contact VedTech Services for professional IT support. Get free consultation, 24/7 emergency support, and expert solutions. Call, email, or WhatsApp us now for immediate assistance."
+        canonical="/contact"
       />
       <div className="flex flex-col w-full">
         {/* Hero Section */}
@@ -121,7 +144,7 @@ ${data.message}
                     </div>
                     <div>
                       <div className="font-bold">Email Us</div>
-                      <div className="text-slate-600">{"vedtechservicess@gmail.com"}</div>
+                      <div className="text-slate-600">{"info@vedtechservices.in"}</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -261,6 +284,75 @@ ${data.message}
           </div>
         </div>
       </section>
+
+      {/* ── Our Offices Section ─────────────────────────────────────── */}
+      {offices.length > 0 && (
+        <section className="py-16 bg-slate-50 border-t">
+          <div className="container">
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-3">
+                <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                  <Building2 className="h-4 w-4" /> Our Locations
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold text-slate-800 text-balance">Find the Nearest VedTech Office</h2>
+              <p className="text-slate-500 mt-2 text-pretty max-w-xl mx-auto">
+                We're expanding across Bihar. Walk in at any of our offices or call us directly for fastest response.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {offices.map((o) => (
+                <Card key={o.id} className="h-full hover:shadow-md transition-shadow border-slate-200">
+                  <CardContent className="p-5 space-y-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h3 className="font-bold text-slate-800 text-balance">{o.name}</h3>
+                        <span className="text-xs font-mono text-slate-400">{o.branch_code}</span>
+                      </div>
+                      <Badge variant="outline" className={cn('text-xs shrink-0', TYPE_COLORS[o.office_type] ?? 'bg-slate-100 text-slate-700')}>
+                        {TYPE_LABELS[o.office_type] ?? o.office_type}
+                      </Badge>
+                    </div>
+                    <div className="space-y-2 text-sm text-slate-600">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                        <span className="text-pretty">{o.address}, {o.city}, {o.state}</span>
+                      </div>
+                      {o.phone && (
+                        <div className="flex items-center gap-2">
+                          <Phone className="h-4 w-4 text-primary shrink-0" />
+                          <a href={`tel:${o.phone}`} className="hover:text-primary transition-colors">{o.phone}</a>
+                        </div>
+                      )}
+                      {o.email && (
+                        <div className="flex items-center gap-2">
+                          <Mail className="h-4 w-4 text-primary shrink-0" />
+                          <a href={`mailto:${o.email}`} className="hover:text-primary transition-colors truncate">{o.email}</a>
+                        </div>
+                      )}
+                      {o.manager_name && (
+                        <div className="flex items-center gap-2">
+                          <User className="h-4 w-4 text-slate-400 shrink-0" />
+                          <span className="text-slate-500">{o.manager_name}</span>
+                        </div>
+                      )}
+                    </div>
+                    {o.phone && (
+                      <Button
+                        size="sm" variant="outline"
+                        className="w-full mt-1 gap-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+                        onClick={() => window.open(`tel:${o.phone}`)}
+                      >
+                        <Phone className="h-3.5 w-3.5" /> Call This Office
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
     </>
   );

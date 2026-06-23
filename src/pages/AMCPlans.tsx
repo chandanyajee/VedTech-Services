@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Check, Star, Clock, Shield, Zap, ArrowRight, Sparkles } from 'lucide-react';
+import PageMeta from '@/components/common/PageMeta';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -56,6 +57,12 @@ const AMCPlans: React.FC = () => {
   ];
 
   return (
+    <>
+      <PageMeta
+        title="IT AMC Plans & Pricing — VedTech Services Annual Maintenance Contracts"
+        description="Explore VedTech Services' affordable Annual Maintenance Contract (AMC) plans for businesses. Comprehensive IT support, hardware maintenance, and SLA-backed service across Bihar."
+        canonical="/amc-plans"
+      />
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32 relative overflow-hidden">
@@ -243,6 +250,7 @@ const AMCPlans: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

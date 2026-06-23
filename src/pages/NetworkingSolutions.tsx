@@ -67,7 +67,7 @@ const NetworkingSolutions: React.FC = () => {
         <title>Networking Solutions in Bihar | LAN WiFi Setup Patna | VedTech Services</title>
         <meta name="description" content="Professional networking solutions in Bihar. LAN setup, WiFi installation, network security in Patna, Gaya, Muzaffarpur. Expert network engineers in Bihar." />
         <meta name="keywords" content="networking solutions Bihar, LAN setup Patna, WiFi installation Bihar, network setup Gaya, networking company Bihar, IT networking Muzaffarpur, network security Bihar" />
-        <link rel="canonical" href="https://vedtechservices.com/services/networking-solutions" />
+        <link rel="canonical" href="https://vedtechservices.in/services/networking-solutions" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -86,7 +86,7 @@ const NetworkingSolutions: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -127,7 +127,7 @@ const NetworkingSolutions: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Networking Services</h2>
@@ -171,7 +171,7 @@ const NetworkingSolutions: React.FC = () => {
         </section>
 
         {/* Network Types */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Network Solutions We Provide</h2>
@@ -193,7 +193,7 @@ const NetworkingSolutions: React.FC = () => {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Our Networking Services?</h2>
@@ -216,7 +216,7 @@ const NetworkingSolutions: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Networking Services Across Bihar</h2>
@@ -241,7 +241,7 @@ const NetworkingSolutions: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Need Networking Solutions?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

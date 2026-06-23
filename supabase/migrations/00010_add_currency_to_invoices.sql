@@ -1,0 +1,1 @@
+ALTER TABLE service_invoices ADD COLUMN currency text DEFAULT 'INR';

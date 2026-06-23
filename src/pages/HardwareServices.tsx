@@ -175,13 +175,13 @@ const HardwareServices: React.FC = () => {
         <title>Hardware & Infrastructure Services | Computer Repair, Networking | VedTech Services</title>
         <meta name="description" content="Professional hardware services including computer repair, laptop repair, printer services, networking solutions, server setup, and CCTV installation. Expert technicians in India." />
         <meta name="keywords" content="computer repair, laptop repair, printer repair, networking, hardware upgrade, server setup, CCTV installation, IT infrastructure, VedTech Services" />
-        <link rel="canonical" href="https://vedtechservices.com/services/hardware" />
+        <link rel="canonical" href="https://vedtechservices.in/services/hardware" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Hardware & Infrastructure Services | VedTech Services" />
         <meta property="og:description" content="Professional hardware services including computer repair, networking solutions, and IT infrastructure setup." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vedtechservices.com/services/hardware" />
+        <meta property="og:url" content="https://vedtechservices.in/services/hardware" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -212,7 +212,7 @@ const HardwareServices: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -239,7 +239,7 @@ const HardwareServices: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Hardware Services</h2>
@@ -285,7 +285,7 @@ const HardwareServices: React.FC = () => {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Our Hardware Services</h2>
@@ -311,7 +311,7 @@ const HardwareServices: React.FC = () => {
         </section>
 
         {/* Common Issues */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Common Issues We Fix</h2>
@@ -343,7 +343,7 @@ const HardwareServices: React.FC = () => {
         </section>
 
         {/* Brands */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Brands We Service</h2>
@@ -365,7 +365,7 @@ const HardwareServices: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Need Hardware Support?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

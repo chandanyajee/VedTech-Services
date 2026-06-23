@@ -1,12 +1,15 @@
 import React from 'react';
 import { Target, Eye, Heart, ShieldCheck, TrendingUp, Users, Award, Zap } from 'lucide-react';
-import Chandan_yajee from "../img/Chandan_yajee.png";
-import MSME from "../img/MSME.png"
-import Sundaram from "../img/Sundaram .jpeg"
-import Prasun from "../img/Parasun.jpg"
+import PageMeta from '@/components/common/PageMeta';
 
 const About: React.FC = () => {
   return (
+    <>
+      <PageMeta
+        title="About VedTech Services — Expert IT Partner in Bihar, India"
+        description="VedTech Services is Bihar's trusted enterprise IT partner. Learn about our mission, values, team, and commitment to delivering fast, reliable technology solutions."
+        canonical="/about"
+      />
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 md:py-32">
@@ -185,6 +188,7 @@ const About: React.FC = () => {
                 <div className="order-2 md:order-1 space-y-6">
                   <h3 className="text-3xl font-bold text-slate-900">Chandan Kumar Yajee</h3>
                   <p className="text-lg text-primary font-semibold">Founder & Managing Director</p>
+                    <a href="mailto:founder@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">founder@vedtechservices.in</a>
                   <div className="space-y-4">
                     <p className="text-slate-600 leading-relaxed">
                       With a passion for technology and a vision to make IT services accessible to businesses across India, 
@@ -217,8 +221,7 @@ const About: React.FC = () => {
                 <div className="order-1 md:order-2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
                     <img
-                      src={Chandan_yajee}
-                      
+                      src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/app-99gjdx4fbuv5/20260528/Chandan_yajee.png"
                       alt="Chandan Kumar Yajee - Founder"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -242,6 +245,7 @@ const About: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Arpit Singh Parihar</h3>
                     <p className="text-primary font-semibold">Co-founder & CEO</p>
+                    <a href="mailto:ceo@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">ceo@vedtechservices.in</a>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     Strategic leader driving business growth and operational excellence at VedTech Services.
@@ -268,6 +272,7 @@ const About: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Aasita Sarathe</h3>
                     <p className="text-primary font-semibold">IT Manager</p>
+                    <a href="mailto:it.manager@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">it.manager@vedtechservices.in</a>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     Leading technical operations and ensuring seamless IT infrastructure management for our clients.
@@ -295,6 +300,7 @@ const About: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Muskan Dubey</h3>
                     <p className="text-primary font-semibold">HR Manager</p>
+                    <a href="mailto:hr@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">hr@vedtechservices.in</a>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     Building and nurturing our talented team to deliver exceptional service to every client.
@@ -313,79 +319,46 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* Developer  */}
-              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://m.jpg)]">
-                <img src={Sundaram} alt="" />
+              {/* Testing Engineer */}
+              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+                <div className="aspect-square relative overflow-hidden">
+                  <img 
+                    src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/app-99gjdx4fbuv5/20260620/Parasun.jpg" 
+                    alt="Prasun Prakash - Testing Engineer" 
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-6 md:p-8 space-y-4">
+                    <a href="mailto:prasun.prakash@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">prasun.prakash@vedtechservices.in</a>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">Prasun Prakash</h3>
+                    <p className="text-primary font-semibold">Testing Engineer</p>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Ensuring software quality through manual and automated testing, bug tracking, and performance validation for reliable client solutions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Software Developer */}
+              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
+                <div className="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                  <svg className="h-20 w-20 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                  </svg>
                 </div>
                 <div className="p-6 md:p-8 space-y-4">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900">Sundaram Prince</h3>
-                    <p className="text-primary font-semibold">Software Developer </p>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed"> 
-                    A dedicated developer focused on building scalable, efficient, and user-friendly digital solutions. Contributing to the development of high-performance applications and ensuring smooth technical execution at VedTech Services.                  </p>
-                  <a 
-                    href="https://www.linkedin.com/in/sundaram-prince-kumar" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
-                  >
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    LinkedIn Profile
-                  </a>
-                </div>
-              </div>
-
-
-              {/* Testing Engineer    */}
-              <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://m.jpg)]">
-                <img src={Prasun} alt="" />
-                </div>
-                <div className="p-6 md:p-8 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">Prasun Prakash</h3>
-                    <p className="text-primary font-semibold">Testing Engineer </p>
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed"> 
-                   Ensuring software quality through manual and automated testing, bug tracking, and performance validation for reliable client solutions.
-                   </p>
-                  <a 
-                    href="https://www.linkedin.com/in/prasun-prakash-56141a281" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
-                  >
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    LinkedIn Profile
-                  </a>
-                </div>
-              </div>
-
-
-
-              {/* Sels Manager */}
-
-              {/* <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="aspect-square from-pink-100 to-pink-200 flex items-center justify-center bg-inherit bg-cover bg-center bg-no-repeat bg-[url(https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9duzcdmlqcqo.jpg)]">
-
-                </div>
-                <div className="p-6 md:p-8 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900">Muskan Dubey</h3>
-                    <p className="text-primary font-semibold">Sels Manager</p>
+                    <p className="text-primary font-semibold">Software Developer</p>
+                    <a href="mailto:sundaram.prince@vedtechservices.in" className="text-sm text-slate-500 hover:text-primary transition-colors">sundaram.prince@vedtechservices.in</a>
                   </div>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Building and nurturing our talented team to deliver exceptional service to every client.
+                    A dedicated developer focused on building scalable, efficient, and user-friendly digital solutions. Contributing to the development of high-performance applications and ensuring smooth technical execution at VedTech Services.
                   </p>
-                  <a 
-                    href="https://www.linkedin.com/in/muskan-dubey-b990b3330" 
-                    target="_blank" 
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
                   >
@@ -395,16 +368,13 @@ const About: React.FC = () => {
                     LinkedIn Profile
                   </a>
                 </div>
-              </div> */}
-
-
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Growth Journey */}
-      {/* <section className="py-20 md:py-32 md:py-32 bg-slate-50">
+      <section className="py-20 md:py-32 md:py-32 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Growth Journey</h2>
@@ -422,55 +392,10 @@ const About: React.FC = () => {
               ))}
             </div>
           </div>
-
         </div>
       </section>
-       */}
-
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Certifications</h2>
-              <p className="text-slate-600 text-lg">Government Registered MSME Company    Trusted by Clients    Professional Digital Solutions</p>
-            </div>
-
-            {/* Founder */}
-            <div className="mb-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1 space-y-6">
-                  <h3 className="text-3xl font-bold text-slate-900">Udyam Certified </h3>
-                  <div className="space-y-4">
-                    <p className="text-slate-600 leading-relaxed">
-                      
-                    </p>
-                    
-                    <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
-                      <p className="text-sm font-medium text-primary uppercase tracking-wider mb-1">Business Vision</p>
-                      <p className="text-slate-700 italic">Ved Tech Services is a Government Registered MSME (Udyam Certified) company, ensuring reliability, trust, and quality service delivery.</p>
-                    </div>
-                  </div>
-                  
-                </div>
-                <div className="order-1 md:order-2">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-                    <img
-                      src={MSME}
-                      
-                      alt="Chandan Kumar Yajee - Founder"
-                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </section>
-
     </div>
+    </>
   );
 };
 

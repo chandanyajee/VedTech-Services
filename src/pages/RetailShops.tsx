@@ -40,11 +40,11 @@ const RetailShops: React.FC = () => {
         <title>IT Solutions for Retail Shops in Bihar | POS Systems Patna | VedTech</title>
         <meta name="description" content="Complete IT solutions for retail shops in Bihar. POS systems, billing software, CCTV, inventory management in Patna, Gaya, Muzaffarpur." />
         <meta name="keywords" content="retail IT solutions Bihar, POS system Patna, billing software Bihar, CCTV installation Gaya, inventory management Muzaffarpur" />
-        <link rel="canonical" href="https://vedtechservices.com/industries/retail-shops" />
+        <link rel="canonical" href="https://vedtechservices.in/industries/retail-shops" />
       </Helmet>
 
       <div className="flex flex-col w-full">
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -70,7 +70,7 @@ const RetailShops: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">IT Solutions for Retail</h2>
@@ -108,7 +108,7 @@ const RetailShops: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Modernize Your Shop?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
@@ -118,7 +118,7 @@ const RetailShops: React.FC = () => {
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
                 <Link to="/contact">Get Started</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
                 <Link to="/support">Request Quote</Link>
               </Button>
             </div>

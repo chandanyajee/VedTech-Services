@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Zap, ShieldCheck, Clock, ThumbsUp, Wallet } from 'lucide-react';
+import PageMeta from '@/components/common/PageMeta';
 
 const WhyUs: React.FC = () => {
   const reasons = [
@@ -36,6 +37,12 @@ const WhyUs: React.FC = () => {
   ];
 
   return (
+    <>
+      <PageMeta
+        title="Why Choose VedTech Services — Fast, Reliable IT Support in Bihar"
+        description="Discover why businesses across Bihar trust VedTech Services for IT support. Fast response, certified engineers, transparent pricing, and 24/7 emergency assistance."
+        canonical="/why-us"
+      />
     <div className="flex flex-col w-full">
       <section className="bg-slate-900 text-white py-20 md:py-32">
         <div className="container text-center">
@@ -76,6 +83,7 @@ const WhyUs: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

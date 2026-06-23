@@ -5,78 +5,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import PageMeta from '@/components/common/PageMeta';
+import { blogPosts } from '@/data/blog';
 
 const Blog: React.FC = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "10 Essential IT Security Tips for Small Businesses in 2026",
-      excerpt: "Protect your business from cyber threats with these proven security strategies. Learn how to safeguard your data and maintain customer trust.",
-      category: "Security",
-      author: "VedTech Team",
-      date: "January 25, 2026",
-      readTime: "5 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg",
-      tags: ["Security", "Business", "Tips"]
-    },
-    {
-      id: 2,
-      title: "Why Your Business Needs a Professional Website in 2026",
-      excerpt: "Discover how a well-designed website can transform your business. From SEO benefits to customer engagement, learn why online presence matters.",
-      category: "Web Development",
-      author: "VedTech Team",
-      date: "January 20, 2026",
-      readTime: "7 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81c94b3f-98d2-474e-93f2-ac5ecb11b096.jpg",
-      tags: ["Website", "Business Growth", "SEO"]
-    },
-    {
-      id: 3,
-      title: "Complete Guide to IT AMC Plans: What You Need to Know",
-      excerpt: "Understanding Annual Maintenance Contracts for IT services. Learn how AMC plans can save costs and ensure smooth business operations.",
-      category: "IT Support",
-      author: "VedTech Team",
-      date: "January 15, 2026",
-      readTime: "6 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg",
-      tags: ["AMC", "IT Support", "Business"]
-    },
-    {
-      id: 4,
-      title: "Mobile App vs Website: What's Right for Your Business?",
-      excerpt: "Choosing between a mobile app and website? We break down the pros, cons, and costs to help you make the right decision for your business.",
-      category: "Mobile Development",
-      author: "VedTech Team",
-      date: "January 10, 2026",
-      readTime: "8 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81c94b3f-98d2-474e-93f2-ac5ecb11b096.jpg",
-      tags: ["Mobile App", "Website", "Strategy"]
-    },
-    {
-      id: 5,
-      title: "How to Choose the Right IT Service Provider for Your Business",
-      excerpt: "Key factors to consider when selecting an IT partner. From expertise to response time, learn what makes a great IT service provider.",
-      category: "Business Tips",
-      author: "VedTech Team",
-      date: "January 5, 2026",
-      readTime: "5 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d19bfcb7-b08f-4153-8d6b-3a56b1c14bac.jpg",
-      tags: ["IT Services", "Business", "Guide"]
-    },
-    {
-      id: 6,
-      title: "Top 5 Technology Trends for Indian SMEs in 2026",
-      excerpt: "Stay ahead of the curve with these emerging tech trends. From AI to cloud computing, discover what's shaping the future of business.",
-      category: "Technology Trends",
-      author: "VedTech Team",
-      date: "December 30, 2025",
-      readTime: "6 min read",
-      image: "https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81c94b3f-98d2-474e-93f2-ac5ecb11b096.jpg",
-      tags: ["Trends", "Technology", "SME"]
-    }
-  ];
-
-  const categories = ["All", "Security", "Web Development", "IT Support", "Mobile Development", "Business Tips", "Technology Trends"];
+  const categories = ["All", "Security", "Web Development", "IT Support", "Mobile Development", "Knowledge Base", "How-to Guides"];
   const [selectedCategory, setSelectedCategory] = React.useState("All");
 
   const filteredPosts = selectedCategory === "All" 
@@ -86,8 +18,9 @@ const Blog: React.FC = () => {
   return (
     <>
       <PageMeta 
-        title="VedTech Services Blog - IT Tips, Guides & Technology Insights"
+        title="VedTech Services Blog — IT Tips, Guides & Technology Insights"
         description="Read expert articles on IT services, web development, cybersecurity, and business technology. Get practical tips and insights from VedTech Services professionals."
+        canonical="/blog"
       />
       <div className="flex flex-col w-full">
         {/* Hero Section */}
@@ -173,8 +106,10 @@ const Blog: React.FC = () => {
                         <User className="h-4 w-4" />
                         <span>{post.author}</span>
                       </div>
-                      <Button variant="ghost" size="sm" className="group-hover:text-primary">
-                        Read More <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <Button asChild variant="ghost" size="sm" className="group-hover:text-primary">
+                        <Link to={`/blog/${post.id}`} className="flex items-center">
+                          Read More <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

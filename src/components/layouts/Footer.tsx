@@ -10,17 +10,17 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-2">
               <img
-                src="https://miaoda-edit-image.s3cdn.medo.dev/99gjdx4fbuv5/IMG-9bb2mddb1ukg.png"
+                src="https://miaoda-conversation-file.s3cdn.medo.dev/user-8t7j0johoxds/conv-99gjdx4fbuv4/20260302/file-9znj7azzuakg.png"
                 alt="VedTech Services Logo"
                 className="h-12 w-auto"
-                data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-edit-image.s3cdn.medo.dev%2F99gjdx4fbuv5%2FIMG-9bb2mddb1ukg.png%22%7D" />
+                data-editor-config="%7B%22defaultSrc%22%3A%22https%3A%2F%2Fmiaoda-conversation-file.s3cdn.medo.dev%2Fuser-8t7j0johoxds%2Fconv-99gjdx4fbuv4%2F20260302%2Ffile-9znj7azzuakg.png%22%7D" />
             </div>
             <h3 className="text-xl font-bold text-white">VedTech Services</h3>
-            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\"  ✔ MSME Registered  Udyam No: UDYAM-BR-30-0086717 "}</p>
+            <p className="text-sm leading-relaxed">{"Your one-stop solution for all IT hardware, software, and technical support needs. \"One Call – All IT Problems Solved\" "}</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
               <a href="#" className="hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="https://www.linkedin.com/company/ved-tech-services" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn Company Profile"><Linkedin className="h-5 w-5" /></a>
+              <a href="https://www.linkedin.com/in/ved-tech-services-0b04b03aa" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="LinkedIn Company Profile"><Linkedin className="h-5 w-5" /></a>
             </div>
           </div>
           
@@ -31,6 +31,7 @@ const Footer: React.FC = () => {
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/why-us" className="hover:text-white transition-colors">Why Choose Us</Link></li>
+              <li><Link to="/admin/login" className="hover:text-white transition-colors text-primary font-semibold">Admin Portal</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -59,7 +60,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>{"Email: vedtechservicess@gmail.com."}</span>
+                <span>{"Email: info@vedtechservices.in."}</span>
               </li>
               <li className="flex items-center gap-3">
                 <MessageSquare className="h-5 w-5 text-green-500 shrink-0" />
@@ -69,8 +70,14 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>© 2026 VedTech Services. All rights reserved.</p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Link to="/privacy" className="hover:text-white transition-colors underline decoration-slate-700">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors underline decoration-slate-700">Terms of Service</Link>
+            <Link to="/employee/login" className="hover:text-white transition-colors underline decoration-slate-700">Employee Login</Link>
+            <Link to="/admin/login" className="hover:text-white transition-colors underline decoration-slate-700">Admin Access</Link>
+          </div>
         </div>
       </div>
     </footer>

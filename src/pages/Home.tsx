@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Laptop, Globe, Shield, Zap, CheckCircle2, Award, Users, TrendingUp, Sparkles, Code, Server, Smartphone, Wrench, HeadphonesIcon, Star, Quote, ExternalLink, MessageCircle } from 'lucide-react';
+import { ArrowRight, Laptop, Globe, Shield, Zap, CheckCircle2, Award, Users, TrendingUp, Sparkles, Code, Server, Smartphone, Wrench, HeadphonesIcon, Star, Quote, ExternalLink, MessageCircle, Calendar, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import PageMeta from '@/components/common/PageMeta';
-// import msmeImg from "../img/MSME.png";
+import { blogPosts } from '@/data/blog';
 
 const Home: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,8 +17,9 @@ const Home: React.FC = () => {
   return (
     <>
       <PageMeta 
-        title="VedTech Services - Complete IT Solutions | Website Development, Hardware Support & IT Services"
-        description="VedTech Services provides professional IT solutions including website development, mobile app development, hardware repair, networking, and 24/7 IT support. One call for all your IT needs. Serving businesses across India."
+        title="VedTech Services — Complete IT Solutions | Website Development, Hardware Support & IT Services"
+        description="VedTech Services provides professional IT solutions including website development, mobile app development, hardware repair, networking, and 24/7 IT support. Serving businesses across Bihar and India."
+        canonical="/"
       />
       <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section with Enhanced Animations */}
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
         
         <div className="container relative z-10">
           <div className={`max-w-4xl space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{" 🚀 Government Registered MSME Company  Trusted by Clients Professional Digital Solutions "}</div>
+            <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight animate-slide-up">
               One Call – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient">Complete IT Solutions</span>
@@ -72,11 +73,6 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-        
-        {/* <div>
-
-          <img src={msmeImg} alt="IT Specialist at Work" className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />        
-        </div> */}
         
         {/* Animated Background Icons */}
         <div className="absolute right-10 top-20 opacity-10 animate-float">
@@ -372,7 +368,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Chandrmani Modi",
+                name: "Rajesh Kumar",
                 role: "Principal, Guru Shishya Public School",
                 company: "Educational Institution",
                 rating: 5,
@@ -521,6 +517,64 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Blog Preview Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <div className="text-center mb-12 space-y-4">
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              <TrendingUp className="h-3 w-3 mr-1" />
+              Latest Insights
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold">From Our Blog</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Expert articles, practical tips, and the latest trends in IT services and technology.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`} className="group block">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-primary/20 overflow-hidden">
+                  <div className="aspect-video overflow-hidden bg-slate-100">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <CardContent className="p-6 space-y-3">
+                    <Badge variant="secondary" className="text-xs">{post.category}</Badge>
+                    <h3 className="font-bold text-slate-900 line-clamp-2 group-hover:text-primary transition-colors text-balance">
+                      {post.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm line-clamp-2 text-pretty">{post.excerpt}</p>
+                    <div className="flex items-center justify-between pt-2 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {post.readTime}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button asChild variant="outline" size="lg" className="hover:scale-105 transition-transform duration-300">
+              <Link to="/blog">
+                View All Articles
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section with Animated Background */}
       <section className="relative py-20 md:py-32 md:py-32 overflow-hidden bg-gradient-to-br from-primary via-blue-600 to-primary text-white">
         {/* Animated Background Pattern */}

@@ -84,7 +84,7 @@ const EducationalInstitutions: React.FC = () => {
         <title>IT Solutions for Educational Institutions in Bihar | School IT Services Patna | VedTech</title>
         <meta name="description" content="Complete IT solutions for schools, colleges, and educational institutions in Bihar. Computer labs, smart classrooms, campus WiFi, student management systems in Patna, Gaya, Muzaffarpur." />
         <meta name="keywords" content="school IT solutions Bihar, computer lab setup Patna, smart classroom Bihar, educational IT services Gaya, campus WiFi Muzaffarpur, student management system Bihar, school software Patna" />
-        <link rel="canonical" href="https://vedtechservices.com/industries/educational-institutions" />
+        <link rel="canonical" href="https://vedtechservices.in/industries/educational-institutions" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -108,7 +108,7 @@ const EducationalInstitutions: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -149,7 +149,7 @@ const EducationalInstitutions: React.FC = () => {
         </section>
 
         {/* Solutions Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">IT Solutions for Education</h2>
@@ -188,7 +188,7 @@ const EducationalInstitutions: React.FC = () => {
         </section>
 
         {/* Projects */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Success Stories in Bihar</h2>
@@ -228,7 +228,7 @@ const EducationalInstitutions: React.FC = () => {
         </section>
 
         {/* Institution Types */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">We Serve All Educational Institutions</h2>
@@ -247,7 +247,7 @@ const EducationalInstitutions: React.FC = () => {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Educational Institutions Choose Us</h2>
@@ -270,7 +270,7 @@ const EducationalInstitutions: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Modernize Your Institution?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

@@ -6,10 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
-import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings, PieChart, TrendingUp, Filter, CheckCircle2, Award } from 'lucide-react';
+import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings, PieChart, TrendingUp, Filter, CheckCircle2, Award, ShieldAlert, FileText, CreditCard, Bell, Users, BarChart2, Inbox, MessageSquare } from 'lucide-react';
 import { supabase } from '@/db/supabase';
+import { logActivity, canPerformAction } from '@/db/api';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
+import AdminRoleWarning from '@/components/admin/AdminRoleWarning';
 
 interface SupportTicket {
   id: string;
@@ -28,6 +30,9 @@ interface SupportTicket {
   engineer_id: string | null;
   notes: string | null;
   is_amc_customer: boolean;
+  assignment_status: string;
+  assigned_engineer_id: string | null;
+  assigned_at: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -55,10 +60,13 @@ const AdminDashboard: React.FC = () => {
     engineer_id: '',
     notes: ''
   });
+  const [notifications, setNotifications] = useState<any[]>([]);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     // Check authentication
     const isAuth = localStorage.getItem('vts_admin_auth');
+    const adminId = localStorage.getItem('vts_admin_id');
     if (!isAuth) {
       navigate('/admin/login');
       return;
@@ -66,7 +74,111 @@ const AdminDashboard: React.FC = () => {
 
     fetchTickets();
     fetchEngineers();
+    fetchNotifications();
+    checkAndNotifyExpiringAMCs();
+
+    // Set up Realtime for notifications
+    const channel = supabase
+      .channel('admin-notifications')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'admin_notifications',
+          filter: `admin_id=eq.${adminId}` as any
+        },
+        (payload) => {
+          setNotifications(prev => [payload.new, ...prev]);
+          toast({
+            title: payload.new.title,
+            description: payload.new.message,
+          });
+        }
+      )
+      .subscribe();
+
+    // Set up Realtime for chatbot escalations
+    const escalationChannel = supabase
+      .channel('chatbot-escalations')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'chatbot_escalations'
+        },
+        (payload) => {
+          toast({
+            title: "New Chatbot Escalation!",
+            description: `From ${payload.new.customer_name}: ${payload.new.message.slice(0, 50)}...`,
+            variant: "default",
+          });
+          // Also play a sound if you want
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+      supabase.removeChannel(escalationChannel);
+    };
   }, [navigate]);
+
+  const checkAndNotifyExpiringAMCs = async () => {
+    try {
+      // Call the SQL function we created
+      const { data: expiringAMCs, error } = await supabase.rpc('check_expiring_amcs');
+      
+      if (error) throw error;
+      if (!expiringAMCs || (expiringAMCs as any[]).length === 0) return;
+
+      for (const amc of expiringAMCs as any[]) {
+        // Check if we already notified for this customer in the last 7 days to avoid spam
+        const { data: existingNotif } = await (supabase
+          .from('customer_notifications') as any)
+          .select('id')
+          .eq('customer_id', amc.customer_id)
+          .ilike('title', '%AMC Expiration%')
+          .gt('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString());
+
+        if (!existingNotif || (existingNotif as any[]).length === 0) {
+          // Create Dashboard Notification
+          await (supabase.from('customer_notifications') as any).insert({
+            customer_id: amc.customer_id,
+            title: 'AMC Expiration Reminder',
+            message: `Your AMC plan "${amc.plan_name}" is expiring in ${amc.days_left} days. Please renew to continue priority support.`,
+            type: amc.days_left <= 7 ? 'error' : 'warning',
+            link: '/dashboard'
+          });
+
+          // Simulate sending Email
+          console.log(`[Email Simulation] To: ${amc.email} | Subject: AMC Renewal Reminder | Content: Your plan expires in ${amc.days_left} days.`);
+        }
+      }
+    } catch (err) {
+      console.error('Error checking AMC expiration:', err);
+    }
+  };
+
+  const fetchNotifications = async () => {
+    const adminId = localStorage.getItem('vts_admin_id');
+    const { data } = await (supabase
+      .from('admin_notifications') as any)
+      .select('*')
+      .eq('admin_id', adminId)
+      .order('created_at', { ascending: false })
+      .limit(10);
+    setNotifications(data || []);
+  };
+
+  const markNotificationAsRead = async (id: string) => {
+    await (supabase
+      .from('admin_notifications') as any)
+      .update({ is_read: true })
+      .eq('id', id);
+    setNotifications(prev => prev.map(n => n.id === id ? { ...n, is_read: true } : n));
+  };
 
   const fetchTickets = async () => {
     setIsLoading(true);
@@ -128,6 +240,17 @@ const AdminDashboard: React.FC = () => {
     try {
       const engineerId = editForm.engineer_id === 'unassigned' ? null : editForm.engineer_id;
       
+      // Check for permissions
+      const role = localStorage.getItem('vts_admin_role');
+      if (!canPerformAction(role, 'support')) {
+        toast({
+          title: "Permission Denied",
+          description: "You do not have support permissions to update tickets.",
+          variant: "destructive"
+        });
+        return;
+      }
+
       // Use raw SQL to update
       const { error } = await supabase.rpc('update_ticket_admin', {
         p_ticket_id: selectedTicket.id,
@@ -144,6 +267,47 @@ const AdminDashboard: React.FC = () => {
           variant: "destructive"
         });
       } else {
+        // Create notifications for sensitive actions or high priority
+        if (selectedTicket.priority === 'high' || editForm.status === 'resolved') {
+          // Notify all super admins
+          const { data: superAdmins } = await (supabase.from('admin_users').select('id').eq('role', 'super_admin') as any);
+          if (superAdmins) {
+            const adminNotifications = superAdmins.map((admin: any) => ({
+              admin_id: admin.id,
+              title: editForm.status === 'resolved' ? 'Ticket Resolved' : 'High Priority Ticket Update',
+              message: `Ticket ${selectedTicket.ticket_id} has been ${editForm.status} by ${localStorage.getItem('vts_admin_email')}`,
+              type: editForm.status === 'resolved' ? 'info' : 'warning',
+              link: '/admin/tickets'
+            }));
+            await (supabase.from('admin_notifications').insert(adminNotifications) as any);
+          }
+        }
+
+        // Notify engineer if assigned
+        if (editForm.engineer_id && editForm.engineer_id !== 'unassigned') {
+          await (supabase.from('engineer_notifications').insert([{
+            engineer_id: editForm.engineer_id,
+            title: 'New Ticket Assigned',
+            message: `You have been assigned to Ticket ${selectedTicket.ticket_id}: ${selectedTicket.subject}`,
+            link: '/engineer/dashboard'
+          }] as any));
+        }
+
+        // Log the activity
+        await logActivity({
+          user_id: localStorage.getItem('vts_admin_id') || 'unknown',
+          user_name: localStorage.getItem('vts_admin_email') || 'unknown',
+          user_role: role || 'unknown',
+          action: 'UPDATE_TICKET',
+          target_id: selectedTicket.ticket_id,
+          target_type: 'SUPPORT_TICKET',
+          details: {
+            status: editForm.status,
+            engineer_id: engineerId,
+            notes: editForm.notes
+          }
+        });
+
         toast({
           title: "Success",
           description: "Ticket updated successfully"
@@ -232,24 +396,113 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-slate-50">
+      <div className="container pt-4"><AdminRoleWarning /></div>
       {/* Header */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12">
         <div className="container">
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+            {/* Title */}
+            <div className="flex-1">
               <h1 className="text-3xl font-bold mb-2">Admin Dashboard</h1>
               <p className="text-slate-300">VedTech Services - Support Management</p>
             </div>
-            <div className="flex gap-2">
-              <Button variant="secondary" onClick={() => navigate('/admin/engineers')}>
-                <UserCog className="h-4 w-4 mr-2" />
-                Engineers
-              </Button>
-              <Button variant="secondary" onClick={() => navigate('/admin/settings')}>
+
+            {/* Nav column */}
+            <div className="flex flex-col gap-2 min-w-[200px]">
+
+              {/* Quick tools row */}
+              <div className="flex flex-wrap gap-2">
+                <div className="relative">
+                  <Button variant="secondary" size="icon" onClick={() => setShowNotifications(!showNotifications)}>
+                    <Bell className="h-4 w-4" />
+                    {notifications.filter(n => !n.is_read).length > 0 && (
+                      <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full border-2 border-white"></span>
+                    )}
+                  </Button>
+                  {showNotifications && (
+                    <Card className="absolute top-12 right-0 w-80 z-50 shadow-xl border-slate-200">
+                      <CardHeader className="py-3 bg-slate-50 border-b">
+                        <CardTitle className="text-sm">Notifications</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0 max-h-96 overflow-y-auto">
+                        {notifications.length === 0 ? (
+                          <p className="p-4 text-center text-xs text-slate-500">No notifications</p>
+                        ) : (
+                          notifications.map(n => (
+                            <div
+                              key={n.id}
+                              className={`p-3 border-b hover:bg-slate-50 cursor-pointer ${!n.is_read ? 'bg-blue-50/30' : ''}`}
+                              onClick={() => markNotificationAsRead(n.id)}
+                            >
+                              <p className="text-xs font-bold text-slate-900">{n.title}</p>
+                              <p className="text-[11px] text-slate-600 mt-1">{n.message}</p>
+                              <p className="text-[9px] text-slate-400 mt-2">{new Date(n.created_at).toLocaleTimeString()}</p>
+                            </div>
+                          ))
+                        )}
+                      </CardContent>
+                    </Card>
+                  )}
+                </div>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/performance')} title="Performance">
+                  <BarChart2 className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/inventory')} title="Inventory">
+                  <Inbox className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/billing')} title="Billing">
+                  <CreditCard className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/chatbot-escalations')} title="Chat Escalations">
+                  <MessageSquare className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/audit-logs')} title="Audit Logs">
+                  <ShieldAlert className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/crm')} title="CRM">
+                  <Users className="h-4 w-4" />
+                </Button>
+                <Button variant="secondary" size="icon" onClick={() => navigate('/admin/offices')} title="Office & Branch Console">
+                  <Building className="h-4 w-4" />
+                </Button>
+              </div>
+
+              {/* Role-based text buttons — stacked */}
+              {canPerformAction(localStorage.getItem('vts_admin_role'), 'super') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/logs')}>
+                  <FileText className="h-4 w-4 mr-2" />
+                  Audit Logs
+                </Button>
+              )}
+              {canPerformAction(localStorage.getItem('vts_admin_role'), 'super') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/manage')}>
+                  <ShieldAlert className="h-4 w-4 mr-2" />
+                  Admins
+                </Button>
+              )}
+              {canPerformAction(localStorage.getItem('vts_admin_role'), 'super') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/team')}>
+                  <Users className="h-4 w-4 mr-2" />
+                  Team
+                </Button>
+              )}
+              {canPerformAction(localStorage.getItem('vts_admin_role'), 'support') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/engineers')}>
+                  <UserCog className="h-4 w-4 mr-2" />
+                  Engineers
+                </Button>
+              )}
+              {canPerformAction(localStorage.getItem('vts_admin_role'), 'billing') && (
+                <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/amc-plans')}>
+                  <CreditCard className="h-4 w-4 mr-2" />
+                  Billing
+                </Button>
+              )}
+              <Button variant="secondary" className="w-full justify-start" onClick={() => navigate('/admin/settings')}>
                 <Settings className="h-4 w-4 mr-2" />
                 Settings
               </Button>
-              <Button variant="outline" className="bg-transparent border-white hover:bg-white hover:text-slate-900" onClick={handleLogout}>
+              <Button variant="outline" className="w-full justify-start bg-transparent border-white hover:bg-white hover:text-slate-900" onClick={handleLogout}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>

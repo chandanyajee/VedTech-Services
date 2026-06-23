@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
@@ -44,12 +44,17 @@
     "embla-carousel-react": "^8.6.0",
     "eventsource-parser": "^3.0.6",
     "input-otp": "^1.4.2",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.8",
+    "jszip": "^3.10.1",
     "ky": "^1.13.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.553.0",
     "miaoda-auth-react": "2.0.6",
     "miaoda-sc-plugin": "1.0.52",
     "motion": "^12.23.25",
     "next-themes": "^0.4.6",
+    "otplib": "^13.4.1",
     "qrcode": "^1.5.4",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
@@ -57,6 +62,7 @@
     "react-dropzone": "^14.3.8",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.66.0",
+    "react-leaflet": "^4.2.1",
     "react-resizable-panels": "^2.1.8",
     "react-router": "^7.9.5",
     "react-router-dom": "^7.9.5",
@@ -66,8 +72,10 @@
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-intersect": "^2.2.0",
+    "ua-parser-js": "^2.0.10",
     "vaul": "^1.1.2",
     "video-react": "^0.16.0",
+    "xlsx": "^0.18.5",
     "zod": "^3.25.76"
   },
   "devDependencies": {

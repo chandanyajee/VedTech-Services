@@ -84,7 +84,7 @@ const CorporateOffices: React.FC = () => {
         <title>IT Solutions for Corporate Offices in Bihar | Office IT Setup Patna | VedTech</title>
         <meta name="description" content="Complete IT solutions for corporate offices in Bihar. Office IT setup, network security, cloud solutions, IT support in Patna, Gaya, Muzaffarpur. Enterprise IT services." />
         <meta name="keywords" content="corporate IT solutions Bihar, office IT setup Patna, business IT services Bihar, network security Gaya, cloud solutions Muzaffarpur, IT support Bihar, enterprise IT Patna" />
-        <link rel="canonical" href="https://vedtechservices.com/industries/corporate-offices" />
+        <link rel="canonical" href="https://vedtechservices.in/industries/corporate-offices" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -105,7 +105,7 @@ const CorporateOffices: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -146,7 +146,7 @@ const CorporateOffices: React.FC = () => {
         </section>
 
         {/* Solutions Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">IT Solutions for Corporate Offices</h2>
@@ -185,7 +185,7 @@ const CorporateOffices: React.FC = () => {
         </section>
 
         {/* Projects */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Corporate Clients in Bihar</h2>
@@ -225,7 +225,7 @@ const CorporateOffices: React.FC = () => {
         </section>
 
         {/* Office Types */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">We Serve All Types of Offices</h2>
@@ -244,7 +244,7 @@ const CorporateOffices: React.FC = () => {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Corporate Offices Choose Us</h2>
@@ -267,7 +267,7 @@ const CorporateOffices: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Upgrade Your Office IT?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">

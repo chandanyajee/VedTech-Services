@@ -55,7 +55,7 @@ const HardwareRepair: React.FC = () => {
         <title>Computer Repair Services in Bihar | Laptop Repair Patna | VedTech Services</title>
         <meta name="description" content="Professional computer and laptop repair services in Bihar. Hardware repair, printer repair, data recovery in Patna, Gaya, Muzaffarpur. Expert technicians in Bihar." />
         <meta name="keywords" content="computer repair Bihar, laptop repair Patna, hardware repair Bihar, printer repair Gaya, computer service Muzaffarpur, laptop service Bihar, IT repair Patna, hardware service Bihar" />
-        <link rel="canonical" href="https://vedtechservices.com/services/hardware-repair" />
+        <link rel="canonical" href="https://vedtechservices.in/services/hardware-repair" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -74,7 +74,7 @@ const HardwareRepair: React.FC = () => {
 
       <div className="flex flex-col w-full">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <section className="relative py-20 md:py-32 md:py-28 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
           <div className="container relative z-10">
             <div className="max-w-4xl">
@@ -115,7 +115,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Hardware Repair Services</h2>
@@ -159,7 +159,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* Common Issues */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Common Issues We Fix</h2>
@@ -184,7 +184,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* Brands */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Brands We Service</h2>
@@ -206,7 +206,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 bg-white">
+        <section className="py-20 md:py-32 bg-white">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose VedTech for Hardware Repair?</h2>
@@ -245,7 +245,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 md:py-32 bg-slate-50">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Hardware Repair Services Across Bihar</h2>
@@ -270,7 +270,7 @@ const HardwareRepair: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-blue-600 text-white">
+        <section className="py-20 md:py-32 bg-gradient-to-br from-primary to-blue-600 text-white">
           <div className="container text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Need Hardware Repair?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
