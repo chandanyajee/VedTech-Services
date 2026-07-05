@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, Eye, Heart, ShieldCheck, TrendingUp, Users, Award, Zap } from 'lucide-react';
 import PageMeta from '@/components/common/PageMeta';
-import Arpit_profile from "../img/Arpit_profile.jpeg";
+import Arpit_profile1 from "../img/Arpit_profile.jpeg";
 
 const About: React.FC = () => {
   return (
@@ -237,7 +237,7 @@ const About: React.FC = () => {
               <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
                 <div className="aspect-square relative overflow-hidden">
                   <img 
-                    src={Arpit_profile}
+                    src={Arpit_profile1}
                     alt="Arpit Singh Parihar" 
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                   />
