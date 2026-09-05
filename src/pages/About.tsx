@@ -215,7 +215,7 @@ const About: React.FC = () => {
               </div>
 
               {/* Founder */}
-              <div className="mb-20">
+              {/* <div className="mb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <div className="order-2 md:order-1 space-y-6">
                     <h3 className="text-3xl font-bold text-slate-900">Chandan Kumar Yajee</h3>
@@ -260,7 +260,7 @@ const About: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Team Members Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
