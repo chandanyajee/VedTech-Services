@@ -144,7 +144,7 @@ async function sendFeedbackReminderEmail(ticket: any) {
       to: [{ email: ticket.customers.email }],
       subject: `We'd love to hear your feedback on Ticket ${ticket.ticket_id}`
     }],
-    from: { email: 'vedtechservice@gmail.com', name: 'VedTech Services' },
+    from: { email: 'info@vedtechservices.in ', name: 'VedTech Services' },
     content: [{
       type: 'text/html',
       value: `

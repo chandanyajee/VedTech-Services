@@ -62,6 +62,57 @@ const AMCPlans: React.FC = () => {
         title="IT AMC Plans & Pricing — VedTech Services Annual Maintenance Contracts"
         description="Explore VedTech Services' affordable Annual Maintenance Contract (AMC) plans for businesses. Comprehensive IT support, hardware maintenance, and SLA-backed service across Bihar."
         canonical="/amc-plans"
+        keywords="IT AMC plans India, annual maintenance contract, IT support contract Bihar, hardware maintenance plan, SLA IT support"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "IT Annual Maintenance Contract (AMC)",
+            "provider": { "@type": "Organization", "name": "VedTech Services", "url": "https://vedtechservices.in" },
+            "url": "https://vedtechservices.in/amc-plans",
+            "description": "Comprehensive IT AMC plans covering hardware maintenance, software support, networking, and 24/7 helpdesk for businesses across India.",
+            "areaServed": "India",
+            "serviceType": "IT Maintenance Contract",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "VedTech AMC Plans",
+              "itemListElement": [
+                { "@type": "Offer", "name": "Basic AMC Plan", "description": "Essential hardware and software support for small businesses" },
+                { "@type": "Offer", "name": "Standard AMC Plan", "description": "Full IT support including networking and priority response" },
+                { "@type": "Offer", "name": "Enterprise AMC Plan", "description": "Dedicated engineer, SLA-backed 24/7 support, cloud included" }
+              ]
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is an IT AMC plan?",
+                "acceptedAnswer": { "@type": "Answer", "text": "An IT AMC (Annual Maintenance Contract) is a yearly service agreement where VedTech Services provides regular maintenance, support, and repairs for your IT infrastructure at a fixed cost." }
+              },
+              {
+                "@type": "Question",
+                "name": "What does the VedTech AMC cover?",
+                "acceptedAnswer": { "@type": "Answer", "text": "VedTech AMC plans cover hardware repair, software troubleshooting, networking support, CCTV maintenance, antivirus management, and 24/7 helpdesk access depending on the tier chosen." }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I contact VedTech Services for an AMC quote?",
+                "acceptedAnswer": { "@type": "Answer", "text": "You can contact VedTech Services at info@vedtechservices.in, call +91 7858971869, or WhatsApp us for a free AMC quote tailored to your business needs." }
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vedtechservices.in" },
+              { "@type": "ListItem", "position": 2, "name": "AMC Plans", "item": "https://vedtechservices.in/amc-plans" }
+            ]
+          }
+        ]}
       />
     <div className="flex flex-col w-full">
       {/* Header */}

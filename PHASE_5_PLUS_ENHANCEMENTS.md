@@ -239,7 +239,7 @@ Run the SQL commands to schedule the two cron jobs
 Verify jobs are scheduled by querying cron.job table
 3. Verify SendGrid Configuration
 Ensure SENDGRID_API_KEY is added to Supabase Edge Functions secrets
-Verify sender email address (vedtechservice@gmail.com) is verified in SendGrid
+Verify sender email address (info@vedtechservices.in ) is verified in SendGrid
 Test email sending via manual Edge Function invocation
 4. Integrate Employee ID Card Component
 Add EmployeeIDCard component to Employee Dashboard page
@@ -255,8 +255,8 @@ SendGrid Setup: See SENDGRID_SETUP.md for detailed configuration instructions
 Cron Jobs Setup: See CRON_JOBS_SETUP.md for automated job configuration
 Employee ID Card: See src/components/employee/EmployeeIDCard.tsx for component usage
 Contact Information
-Email: vedtechservice@gmail.com
-Phone: +91 7370057723
+Email: info@vedtechservices.in 
+Phone: +91 7858971869
 Website: https://vedtechservices.in
 Last Updated: January 2026
 Version: Phase 5+ (v96+)

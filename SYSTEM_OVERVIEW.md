@@ -286,9 +286,9 @@ Company: VedTech Services Tagline: One Call – One Ticket – Fast Solution Ini
 
 Contact:
 
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7858971869, 7370057723
+Phone: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
 Services:
 
 Hardware Support

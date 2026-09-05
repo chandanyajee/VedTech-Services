@@ -2,14 +2,13 @@ VedTech Services - Contact Information
 Updated Contact Details
 Phone Numbers
 Primary: +91 7858971869
-Secondary: +91 7370057723
 Email
-Primary: vedtechservice@gmail.com
+Primary: info@vedtechservices.in 
 WhatsApp
 +91 7858971869
-7370057723
 Address
-Visit us: Samastipur, Tech Hub, Bihar, India
+Visit us: Gurugram, Haryana — Sector 17A (Head Office)
+Visit us: Samastipur, Bihar — 848101 
 
 Founder
 Chandan Kumar Yajee
@@ -17,25 +16,25 @@ Chandan Kumar Yajee
 Where Contact Info Appears
 Footer (All Pages)
 
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7858971869, 7370057723
-Address: Samastipur, Tech Hub, Bihar, India
+Phone: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
+Address: Gurugram Haryana — Sector 17A (Head Office), Samastipur Bihar — 848101 
 Contact Page (/contact)
 
-Call Us: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7858971869, 7370057723
-Form placeholder: +91 7370057723
+Call Us: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
+Form placeholder: +91 7858971869
 Support Page (/support)
 
-Call Us: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7858971869, 7370057723
-Form placeholder: +91 7370057723
+Call Us: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
+Form placeholder: +91 7858971869
 WhatsApp Floating Button
 
-Connects to: +91 7370057723
+Connects to: +91 7858971869
 Appears on all pages (bottom-right corner)
 Pre-filled message: "Hello VedTech Services, I need IT support."
 Social Media Links

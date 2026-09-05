@@ -9,7 +9,7 @@ Smart auto-responses
 Professional design
 Status: ✅ Fully functional
 2. 📧 Email Integration
-Contact Form: Sends to vedtechservice@gmail.com
+Contact Form: Sends to info@vedtechservices.in 
 Support Tickets: Auto-generates ticket ID + email
 Method: Opens default email client with pre-filled data
 Status: ✅ Fully functional
@@ -58,8 +58,8 @@ Fixed Elements (Bottom-Right):
 Primary Channels
 ChatBot (Blue icon) - Quick queries
 WhatsApp (Green icon) - Instant messaging
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
+Phone: +91 7858971869
+Email: info@vedtechservices.in 
 LinkedIn: Connect with founder
 Form Submissions
 Contact Form → Email client opens
@@ -75,7 +75,7 @@ Scenario 2: Detailed Support
 Visit Support page
 Fill ticket form with details
 Submit → Email client opens
-Send email to vedtechservice@gmail.com
+Send email to info@vedtechservices.in 
 Receive ticket ID confirmation
 Scenario 3: Direct Contact
 Click WhatsApp icon (green)
@@ -142,7 +142,7 @@ All links functional
 Responsive design verified
 Cross-browser compatible
 📞 Support Information
-Founder: Chandan Kumar Yajee Email: vedtechservice@gmail.com Phone: +91 7858971869, +91 7370057723 LinkedIn: https://www.linkedin.com/in/chandan-yajee Location: Samastipur, Tech Hub, Bihar, India
+Founder: Chandan Kumar Yajee Email: info@vedtechservices.in Phone: +91 7858971869 LinkedIn: https://www.linkedin.com/in/chandan-yajee Location: Samastipur,  Bihar, India
 
 🎉 Summary
 Successfully implemented:

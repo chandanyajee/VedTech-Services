@@ -29,7 +29,7 @@ Open your web browser and go to: https://sendgrid.com
 1.2 Sign Up for Free Account
 Click on the "Start for Free" or "Sign Up" button
 Complete the registration form with:
-Email Address: Use a valid business email (e.g., vedtechservice@gmail.com)
+Email Address: Use a valid business email (e.g., info@vedtechservices.in )
 Password: Create a strong password (minimum 8 characters)
 Company Name: VedTech Services
 Website: https://vedtechservices.in
@@ -95,8 +95,8 @@ Complete the sender verification form:
 From Information:
 
 From Name: VedTech Services
-From Email Address: vedtechservice@gmail.com
-Reply To: vedtechservice@gmail.com
+From Email Address: info@vedtechservices.in 
+Reply To: info@vedtechservices.in 
 Company Information:
 
 Company Address: Samastipur, Bihar, India
@@ -107,14 +107,14 @@ Country: India
 Click the "Create" button to submit the verification request
 
 3.3 Complete Email Verification
-Check the inbox of vedtechservice@gmail.com
+Check the inbox of info@vedtechservices.in 
 Look for an email from SendGrid with subject: "SendGrid Sender Verification"
 Click the "Verify Single Sender" button in the email
 You'll be redirected to a confirmation page
 Return to the SendGrid dashboard
 3.4 Confirm Verification Status
 Navigate back to Settings > Sender Authentication
-Verify that vedtechservice@gmail.com is marked as "Verified" with a green checkmark ✅
+Verify that info@vedtechservices.in  is marked as "Verified" with a green checkmark ✅
 If not verified, repeat the verification process or check your spam folder
 Troubleshooting Sender Verification:
 
@@ -163,7 +163,7 @@ Click "Invoke" to execute the function
 Check the function execution logs for success messages
 5.2 Verify Email Delivery
 Check the recipient's inbox (the email address configured in a scheduled report)
-Look for an email from VedTech Services Reports (vedtechservice@gmail.com)
+Look for an email from VedTech Services Reports (info@vedtechservices.in )
 Verify the email contains:
 ✅ Professional HTML template with VedTech branding
 ✅ Company logo and tagline
@@ -225,7 +225,7 @@ Verify the API key has Mail Send: Full Access permission
 Check Sender Email Verification:
 
 Navigate to Settings > Sender Authentication in SendGrid dashboard
-Verify that vedtechservice@gmail.com is marked as "Verified"
+Verify that info@vedtechservices.in  is marked as "Verified"
 If not verified, complete the sender verification process (Step 3)
 Review Edge Function Logs:
 
@@ -245,7 +245,7 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --data '{
     "personalizations": [{"to": [{"email": "test@example.com"}]}],
-    "from": {"email": "vedtechservice@gmail.com"},
+    "from": {"email": "info@vedtechservices.in "},
     "subject": "Test Email",
     "content": [{"type": "text/plain", "value": "This is a test email."}]
   }'
@@ -331,7 +331,7 @@ Check your email inbox for the verification email from SendGrid
 Click the verification link to complete the process
 Use a Different Sender Email:
 
-If you cannot verify vedtechservice@gmail.com, use a different email address
+If you cannot verify info@vedtechservices.in , use a different email address
 Update the sender email in the Edge Function code:
 from: {
   email: 'your-verified-email@example.com',
@@ -368,15 +368,15 @@ Supabase Documentation
 Edge Functions: https://supabase.com/docs/guides/functions
 Environment Variables: https://supabase.com/docs/guides/functions/secrets
 VedTech Services Support
-Email: vedtechservice@gmail.com
-Phone: +91 7370057723
+Email: info@vedtechservices.in 
+Phone: +91 7858971869
 Website: https://vedtechservices.in
 Summary Checklist
 Before going live with SendGrid email integration, ensure you have completed all the following steps:
 
 [ ] Created a SendGrid account and verified your email
 [ ] Generated a SendGrid API key with Mail Send: Full Access permission
-[ ] Verified the sender email address (vedtechservice@gmail.com)
+[ ] Verified the sender email address (info@vedtechservices.in )
 [ ] Added SENDGRID_API_KEY secret to Supabase Edge Functions
 [ ] Tested email sending via Edge Function invocation
 [ ] Verified email delivery and HTML template rendering

@@ -6,12 +6,24 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
-import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings, PieChart, TrendingUp, Filter, CheckCircle2, Award, ShieldAlert, FileText, CreditCard, Bell, Users, BarChart2, Inbox, MessageSquare } from 'lucide-react';
+import { Ticket, Search, RefreshCw, Mail, Phone, Calendar, User, Building, LogOut, UserCog, Edit, Settings, PieChart, TrendingUp, Filter, CheckCircle2, Award, ShieldAlert, FileText, CreditCard, Bell, Users, BarChart2, Inbox, MessageSquare, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { supabase } from '@/db/supabase';
 import { logActivity, canPerformAction } from '@/db/api';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import AdminRoleWarning from '@/components/admin/AdminRoleWarning';
+
+interface ContactSubmission {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  service: string | null;
+  message: string;
+  status: string;
+  admin_notes: string | null;
+  created_at: string;
+}
 
 interface SupportTicket {
   id: string;
@@ -62,6 +74,10 @@ const AdminDashboard: React.FC = () => {
   });
   const [notifications, setNotifications] = useState<any[]>([]);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [contactSubmissions, setContactSubmissions] = useState<ContactSubmission[]>([]);
+  const [contactLoading, setContactLoading] = useState(false);
+  const [expandedContact, setExpandedContact] = useState<string | null>(null);
+  const [contactNotes, setContactNotes] = useState<Record<string, string>>({});
 
   useEffect(() => {
     // Check authentication
@@ -75,6 +91,7 @@ const AdminDashboard: React.FC = () => {
     fetchTickets();
     fetchEngineers();
     fetchNotifications();
+    fetchContactSubmissions();
     checkAndNotifyExpiringAMCs();
 
     // Set up Realtime for notifications
@@ -159,6 +176,38 @@ const AdminDashboard: React.FC = () => {
     } catch (err) {
       console.error('Error checking AMC expiration:', err);
     }
+  };
+
+  const fetchContactSubmissions = async () => {
+    setContactLoading(true);
+    try {
+      const { data, error } = await (supabase
+        .from('contact_submissions') as any)
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(50);
+      if (!error) setContactSubmissions(data || []);
+    } catch (err) {
+      console.error('Error fetching contact submissions:', err);
+    } finally {
+      setContactLoading(false);
+    }
+  };
+
+  const updateContactStatus = async (id: string, status: string) => {
+    await (supabase.from('contact_submissions') as any)
+      .update({ status })
+      .eq('id', id);
+    setContactSubmissions(prev => prev.map(s => s.id === id ? { ...s, status } : s));
+  };
+
+  const saveContactNotes = async (id: string) => {
+    const notes = contactNotes[id] ?? '';
+    await (supabase.from('contact_submissions') as any)
+      .update({ admin_notes: notes })
+      .eq('id', id);
+    setContactSubmissions(prev => prev.map(s => s.id === id ? { ...s, admin_notes: notes } : s));
+    toast({ title: 'Notes saved' });
   };
 
   const fetchNotifications = async () => {
@@ -391,7 +440,8 @@ const AdminDashboard: React.FC = () => {
     total: tickets.length,
     open: tickets.filter(t => t.status === 'open' || t.status === 'in-progress').length,
     resolved: tickets.filter(t => t.status === 'resolved' || t.status === 'closed').length,
-    amc: tickets.filter(t => t.is_amc_customer).length
+    amc: tickets.filter(t => t.is_amc_customer).length,
+    newContacts: contactSubmissions.filter(s => s.status === 'new').length,
   };
 
   return (
@@ -515,7 +565,7 @@ const AdminDashboard: React.FC = () => {
       <section className="py-8">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-5 gap-4">
               <Card className="bg-white hover:shadow-md transition-shadow">
                 <CardContent className="pt-6">
                   <div className="flex flex-col">
@@ -557,6 +607,29 @@ const AdminDashboard: React.FC = () => {
                       <p className="text-2xl font-bold text-purple-600">{stats.amc}</p>
                       <Award className="h-5 w-5 text-purple-600 opacity-50" />
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+              {/* New Contacts badge card */}
+              <Card
+                className="bg-blue-50 border-blue-200 hover:shadow-md transition-shadow cursor-pointer"
+                onClick={() => document.getElementById('contact-submissions-section')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <CardContent className="pt-6">
+                  <div className="flex flex-col">
+                    <p className="text-xs text-blue-600 uppercase font-bold mb-1">New Inquiries</p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold text-blue-700">{stats.newContacts}</p>
+                      <div className="relative">
+                        <MessageCircle className="h-5 w-5 text-blue-500 opacity-70" />
+                        {stats.newContacts > 0 && (
+                          <span className="absolute -top-1.5 -right-1.5 h-3.5 w-3.5 bg-red-500 rounded-full border-2 border-white animate-pulse" />
+                        )}
+                      </div>
+                    </div>
+                    {stats.newContacts > 0 && (
+                      <p className="text-[10px] text-blue-500 mt-1">Click to review ↓</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -737,6 +810,135 @@ const AdminDashboard: React.FC = () => {
                           Call Customer
                         </Button>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact Form Submissions */}
+      <section id="contact-submissions-section" className="py-8">
+        <div className="container">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5 text-primary" />
+                  <CardTitle>Contact Form Submissions</CardTitle>
+                  <Badge variant="secondary">{contactSubmissions.length}</Badge>
+                </div>
+                <Button size="icon" variant="outline" onClick={fetchContactSubmissions}>
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {contactLoading ? (
+                <p className="text-center py-10 text-slate-500">Loading submissions…</p>
+              ) : contactSubmissions.length === 0 ? (
+                <div className="text-center py-10 text-slate-400">
+                  <MessageCircle className="h-10 w-10 mx-auto mb-3 opacity-40" />
+                  <p>No contact submissions yet.</p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {contactSubmissions.map(sub => (
+                    <div key={sub.id} className="border rounded-lg overflow-hidden">
+                      {/* Row header */}
+                      <button
+                        className="w-full flex items-center justify-between px-4 py-3 hover:bg-slate-50 transition-colors text-left"
+                        onClick={() => setExpandedContact(expandedContact === sub.id ? null : sub.id)}
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                            <User className="h-4 w-4 text-primary" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="font-semibold text-slate-900 text-sm truncate">{sub.name}</p>
+                            <p className="text-xs text-slate-500 truncate">{sub.email}</p>
+                          </div>
+                          {sub.service && (
+                            <Badge variant="outline" className="hidden md:flex text-xs shrink-0">{sub.service}</Badge>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0 ml-2">
+                          <Badge className={
+                            sub.status === 'new' ? 'bg-blue-100 text-blue-800' :
+                            sub.status === 'contacted' ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-green-100 text-green-800'
+                          }>{sub.status}</Badge>
+                          <span className="text-xs text-slate-400 hidden md:block">
+                            {new Date(sub.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                          </span>
+                          {expandedContact === sub.id
+                            ? <ChevronUp className="h-4 w-4 text-slate-400" />
+                            : <ChevronDown className="h-4 w-4 text-slate-400" />}
+                        </div>
+                      </button>
+
+                      {/* Expanded details */}
+                      {expandedContact === sub.id && (
+                        <div className="border-t bg-slate-50 p-4 space-y-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div className="space-y-2">
+                              {sub.phone && (
+                                <div className="flex items-center gap-2">
+                                  <Phone className="h-4 w-4 text-slate-400 shrink-0" />
+                                  <a href={`tel:${sub.phone}`} className="text-primary hover:underline">{sub.phone}</a>
+                                </div>
+                              )}
+                              <div className="flex items-center gap-2">
+                                <Mail className="h-4 w-4 text-slate-400 shrink-0" />
+                                <a href={`mailto:${sub.email}`} className="text-primary hover:underline">{sub.email}</a>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="h-4 w-4 text-slate-400 shrink-0" />
+                                <span className="text-slate-600">{new Date(sub.created_at).toLocaleString('en-IN')}</span>
+                              </div>
+                            </div>
+                            <div>
+                              <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Message</p>
+                              <p className="text-slate-700 bg-white border rounded p-3 text-sm leading-relaxed">{sub.message}</p>
+                            </div>
+                          </div>
+
+                          {/* Status + Notes */}
+                          <div className="flex flex-col md:flex-row gap-3">
+                            <div className="flex-1">
+                              <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Admin Notes</p>
+                              <Textarea
+                                rows={2}
+                                placeholder="Add internal notes…"
+                                value={contactNotes[sub.id] ?? (sub.admin_notes || '')}
+                                onChange={e => setContactNotes(prev => ({ ...prev, [sub.id]: e.target.value }))}
+                                className="text-sm"
+                              />
+                            </div>
+                            <div className="flex flex-col gap-2 shrink-0">
+                              <p className="text-xs font-semibold text-slate-500 uppercase">Update Status</p>
+                              <Select value={sub.status} onValueChange={v => updateContactStatus(sub.id, v)}>
+                                <SelectTrigger className="w-40">
+                                  <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="new">New</SelectItem>
+                                  <SelectItem value="contacted">Contacted</SelectItem>
+                                  <SelectItem value="resolved">Resolved</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <Button size="sm" onClick={() => saveContactNotes(sub.id)}>Save Notes</Button>
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={`mailto:${sub.email}?subject=Re: Your VedTech Inquiry`}>
+                                  <Mail className="h-3 w-3 mr-1" /> Reply
+                                </a>
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

@@ -41,7 +41,7 @@ geo.position: 25.8644;85.7826
 ICBM: Coordinates
 Contact Information:
 
-contact: vedtechservice@gmail.com
+contact: info@vedtechservices.in 
 phone: +91-7858971869
 Canonical URL:
 
@@ -65,7 +65,7 @@ Organization Schema:
   "address": "Samastipur, Bihar, India",
   "contactPoint": {
     "telephone": "+91-7858971869",
-    "email": "vedtechservice@gmail.com"
+    "email": "info@vedtechservices.in "
   }
 }
 Local Business Schema:
@@ -417,4 +417,4 @@ File attachments
 Chat integration
 Automated responses
 Ticket assignment system
-VedTech Services - Complete IT Solutions Keywords: vedtechservices, ved tech services, VTS, VedArambh A Sanatan initiative Contact: vedtechservice@gmail.com | +91 7858971869 Location: Samastipur, Bihar, India
+VedTech Services - Complete IT Solutions Keywords: vedtechservices, ved tech services, VTS, VedArambh A Sanatan initiative Contact: info@vedtechservices.in  | +91 7858971869 Location: Samastipur, Bihar, India

@@ -144,7 +144,7 @@ const PrivacyPolicy: React.FC = () => (
           <p>For any privacy-related queries, contact:</p>
           <address className="not-italic bg-white border rounded-lg p-4 space-y-1 text-sm">
             <p><strong>VedTech Services</strong></p>
-            <p>Samastipur, Tech Hub, Bihar, India</p>
+            <p>Gurugram, Haryana — Sector 17A (Head Office)</p>
             <p>Email: <a href="mailto:info@vedtechservices.in" className="text-primary underline">info@vedtechservices.in</a></p>
             <p>Phone: <a href="tel:+917858971869" className="text-primary underline">+91 7858971869</a></p>
           </address>

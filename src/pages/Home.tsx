@@ -20,6 +20,104 @@ const Home: React.FC = () => {
         title="VedTech Services — Complete IT Solutions | Website Development, Hardware Support & IT Services"
         description="VedTech Services provides professional IT solutions including website development, mobile app development, hardware repair, networking, and 24/7 IT support. Serving businesses across Bihar and India."
         canonical="/"
+        keywords="IT services India, website development Bihar, hardware repair, networking solutions, IT support Gurugram, IT company Samastipur, IT company Bhopal"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VedTech Services",
+            "url": "https://vedtechservices.in",
+            "logo": "https://vedtechservices.in/vedtech-logo.png",
+            "description": "VedTech Services is a trusted enterprise IT partner providing comprehensive technology solutions including hardware support, software development, networking, cloud, CCTV, and IT AMC services across India.",
+            "foundingDate": "2020",
+            "email": "info@vedtechservices.in",
+            "telephone": "+917858971869",
+            "sameAs": [
+              "https://www.linkedin.com/company/vedtechservices",
+              "https://twitter.com/vedtechservices",
+              "https://www.facebook.com/vedtechservices"
+            ],
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "Sector 56, Gurugram",
+                "addressLocality": "Gurugram",
+                "addressRegion": "Haryana",
+                "postalCode": "122011",
+                "addressCountry": "IN"
+              }
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+917858971869",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              },
+              {
+                "@type": "ContactPoint",
+                "telephone": "+917858971869",
+                "contactType": "technical support",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "VedTech Services",
+            "url": "https://vedtechservices.in",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://vedtechservices.in/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "VedTech Services",
+            "@id": "https://vedtechservices.in/#organization",
+            "url": "https://vedtechservices.in",
+            "telephone": "+917858971869",
+            "email": "info@vedtechservices.in",
+            "image": "https://vedtechservices.in/og-image.png",
+            "priceRange": "₹₹",
+            "currenciesAccepted": "INR",
+            "paymentAccepted": "Cash, Credit Card, UPI, Bank Transfer",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              "opens": "09:00",
+              "closes": "19:00"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Sector 56, Gurugram",
+              "addressLocality": "Gurugram",
+              "addressRegion": "Haryana",
+              "postalCode": "122011",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "28.4089",
+              "longitude": "77.0423"
+            },
+            "hasMap": "https://maps.google.com/?q=VedTech+Services+Gurugram",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "87",
+              "bestRating": "5"
+            }
+          }
+        ]}
       />
       <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section with Enhanced Animations */}
@@ -32,44 +130,86 @@ const Home: React.FC = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-float-delayed" />
         
         <div className="container relative z-10">
-          <div className={`max-w-4xl space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight animate-slide-up">
-              One Call – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient">Complete IT Solutions</span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 leading-relaxed max-w-3xl animate-slide-up-delayed">
-              VedTech Services is your trusted enterprise IT partner delivering comprehensive technology solutions. 
-              From hardware infrastructure to custom software development, we provide fast, reliable, and professional services under one roof.
-            </p>
-            
-            <div className="flex flex-col md:flex-row gap-4 pt-4 animate-slide-up-delayed-2">
-              <Button asChild size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Link to="/support">
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Raise a Ticket
-                </Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Link to="/services">
-                  Explore Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur-sm animate-fade-in">{"We help  startups & businesses grow with Website, App & Digital Solutions"}</div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight animate-slide-up">
+                One Call – <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 animate-gradient">Complete IT Solutions</span>
+              </h1>
+
+              <p className="text-xl text-slate-300 leading-relaxed max-w-3xl animate-slide-up-delayed">
+                VedTech Services is your trusted enterprise IT partner delivering comprehensive technology solutions.
+                From hardware infrastructure to custom software development, we provide fast, reliable, and professional services under one roof.
+              </p>
+
+              <div className="flex flex-col md:flex-row gap-4 pt-4 animate-slide-up-delayed-2">
+                <Button asChild size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Link to="/support">
+                    <Sparkles className="mr-2 h-5 w-5" />
+                    Raise a Ticket
+                  </Link>
+                </Button>
+                <Button asChild variant="secondary" size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Link to="/services">
+                    Explore Services
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-8 pt-8 text-slate-300 animate-fade-in-delayed">
+                {[
+                  { icon: CheckCircle2, text: "24/7 Support" },
+                  { icon: Users, text: "100+ Happy Clients" },
+                  { icon: TrendingUp, text: "Pan-India Service" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default group">
+                    <item.icon className="h-5 w-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
+                    <span>{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            <div className="flex flex-wrap gap-8 pt-8 text-slate-300 animate-fade-in-delayed">
-              {[
-                { icon: CheckCircle2, text: "24/7 Support" },
-                { icon: Users, text: "100+ Happy Clients" },
-                { icon: TrendingUp, text: "Pan-India Service" }
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 hover:text-white transition-colors duration-300 cursor-default group">
-                  <item.icon className="h-5 w-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
-                  <span>{item.text}</span>
+
+            {/* Right: Laptop + Phone Device Mockups */}
+            <div className={`relative hidden lg:flex items-center justify-center min-h-[380px] transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              {/* Glow rings */}
+              <div className="absolute w-72 h-72 bg-blue-500/25 rounded-full blur-3xl" />
+              <div className="absolute w-56 h-56 bg-cyan-400/15 rounded-full blur-2xl" />
+
+              {/* Laptop — main image */}
+              <div className="relative z-10 animate-float">
+                <img
+                  src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_e9f5af18-68fd-4e22-b65d-875b711fde66.jpg"
+                  alt="IT professional working on laptop"
+                  className="w-72 h-52 rounded-2xl shadow-2xl border border-white/10 object-cover"
+                />
+                <div className="absolute -top-3 -left-3 bg-green-500 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                  <CheckCircle2 className="h-3 w-3" /> Live Support
                 </div>
-              ))}
+              </div>
+
+              {/* Phone — overlapping bottom-right */}
+              <div className="absolute bottom-2 right-8 z-20 animate-float-delayed">
+                <img
+                  src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_81dcc0b5-19a6-42e2-bb4a-f892cbafaf8f.jpg"
+                  alt="Mobile IT solutions on smartphone"
+                  className="w-32 h-48 rounded-2xl shadow-2xl border border-white/10 object-cover"
+                />
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg whitespace-nowrap">
+                  📱 Mobile IT
+                </div>
+              </div>
+
+              {/* Floating stat card */}
+              <div className="absolute top-2 right-4 z-30 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs animate-float">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className="font-semibold">100+ Clients Served</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

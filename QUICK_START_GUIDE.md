@@ -75,7 +75,7 @@ Unique for every ticket
 Email Integration
 Ticket submission opens email client
 Pre-filled with ticket details
-Sent to: vedtechservice@gmail.com
+Sent to: info@vedtechservices.in 
 📱 All Pages
 Public Pages
 / - Home
@@ -90,9 +90,9 @@ Public Pages
 Admin Pages
 /admin/tickets - Admin Dashboard (Hidden)
 📞 Contact Information
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7370057723
+Phone: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
 Location: Samastipur, Bihar, India
 🎯 Ticket Workflow
 Customer Journey
@@ -166,6 +166,6 @@ QUICK_START_GUIDE.md - This file (quick reference)
 TODO.md - Implementation checklist
 Need Help?
 
-Email: vedtechservice@gmail.com
+Email: info@vedtechservices.in 
 Phone: +91 7858971869
-WhatsApp: +91 7370057723
+WhatsApp: +91 7858971869

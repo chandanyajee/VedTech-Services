@@ -362,7 +362,7 @@ Consistent spacing
 📞 Contact Integration
 Contact Methods:
 Phone: +91-7858971869
-Email: vedtechservice@gmail.com
+Email: info@vedtechservices.in 
 Support Tickets: /support
 Contact Form: /contact
 CTA Destinations:

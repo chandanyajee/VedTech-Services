@@ -508,6 +508,77 @@ const ChatBot: React.FC = () => {
     handleSend(suggestion);
   };
 
+  // Local keyword-based fallback — answers instantly without hitting AI gateway
+  const getLocalResponse = (text: string): string | null => {
+    const t = text.toLowerCase().trim();
+
+    if (/^(hi|hello|hey|namaste|good\s*(morning|afternoon|evening)|howdy|greetings)/.test(t)) {
+      return "Hello! 👋 Welcome to **VedTech Services**!\n\nI'm VedBot, your AI IT Support Assistant. I can help you with:\n- 🛠️ **Services** — hardware, software, networking, cloud\n- 📋 **AMC Plans** — annual maintenance contracts\n- 🎫 **Support Tickets** — raise & track issues\n- 📞 **Contact Details** — phone, email, office locations\n- 💰 **Get a Quote** — pricing & consultations\n\nHow can I help you today?";
+    }
+
+    if (/service|what do you (do|offer)|what can (vedtech|you)|solutions|capabilities/.test(t)) {
+      return "## VedTech Services — What We Offer 🛠️\n\n1. **Hardware Repair & Maintenance** — Laptops, desktops, servers, printers\n2. **Custom Software Development** — Web apps, mobile apps, ERP, CRM\n3. **Networking Solutions** — LAN/WAN, Wi-Fi, firewall, VPN\n4. **AMC Plans** — Basic, Standard, Enterprise annual contracts\n5. **IT Support & Helpdesk** — Remote & on-site, 4-hour SLA\n6. **Cloud Services** — Migration, backup, DevOps\n7. **Cybersecurity** — Vulnerability assessment, endpoint security\n8. **CCTV & Surveillance** — IP camera installation\n9. **IT Consultancy** — Infrastructure audits, digital transformation\n\n👉 Visit [/services](/services) for full details or ask me about any specific service!";
+    }
+
+    if (/amc|annual maintenance|maintenance contract|maintenance plan/.test(t)) {
+      return "## AMC Plans — Annual Maintenance Contracts 📋\n\n| Plan | Best For | Support | Response Time |\n|------|----------|---------|---------------|\n| **Basic** | Small businesses | Email | 48 hours |\n| **Standard** | Mid-size companies | Phone + Email + Quarterly visits | 24 hours |\n| **Enterprise** | Large organizations | 24/7 + Dedicated manager + Monthly on-site | **4 hours** |\n\n💡 All plans include proactive monitoring and priority issue resolution.\n\n👉 See full pricing at [/amc-plans](/amc-plans) or call **+91 7858971869** for a custom quote!";
+    }
+
+    if (/contact|email|phone|call|reach|whatsapp|address|location|office|where are you/.test(t)) {
+      return "## Contact VedTech Services 📞\n\n| Channel | Details |\n|---------|----------|\n| 📧 **Email** | info@vedtechservices.in |\n| 📞 **Phone** | +91 7858971869 |\n| 💬 **WhatsApp** | +91 7858971869 |\n| 🌐 **Website** | vedtechservices.in |\n\n## Office Locations 📍\n- **Gurugram, Haryana** *(Head Office)*\n- **Samastipur, Bihar**\n- **Bhopal, Madhya Pradesh*\n- Pan-India remote support available\n\n🕐 **Hours**: Mon–Sat, 9:00 AM – 7:00 PM IST\n\n👉 [Open Contact Page](/contact)";
+    }
+
+    if (/office|location|where|city|branch|gurugram|samastipur|bhopal|headquarter/.test(t)) {
+      return "## Our Office Locations 📍\n\n1. **Gurugram, Haryana** — Head Office\n2. **Samastipur, Bihar** — Branch Office\n3. **Bhopal, Madhya Pradesh** — Branch Office\n\n🌐 **Pan-India remote support** available across all cities\n\n📞 **+91 7858971869** | 📧 **info@vedtechservices.in**\n🕐 Mon–Sat, 9 AM – 7 PM IST\n\n👉 [View full contact details](/contact)";
+    }
+
+    if (/ticket|raise|issue|complaint|problem|support request|help request/.test(t)) {
+      return "## Raise a Support Ticket 🎫\n\nYou can raise a support ticket in 3 ways:\n\n1. 👉 **Online**: Visit [/support](/support) and fill the form\n2. 📞 **Call**: +91 7858971869 (Mon–Sat, 9 AM – 7 PM)\n3. 💬 **Here**: Click **\"Talk to a Human\"** below to escalate directly to our team\n\nFor **Enterprise AMC** clients: 4-hour SLA guaranteed response.\n\nWhat issue are you experiencing? I can help troubleshoot first!";
+    }
+
+    if (/quote|pricing|price|cost|how much|rate|estimate|proposal/.test(t)) {
+      return "## Get a Quote 💰\n\nWe offer customised pricing for all our services.\n\n**To get a quote:**\n- 📞 Call **+91 7858971869** (quickest)\n- 📧 Email **info@vedtechservices.in**\n- 💬 WhatsApp **+91 7858971869**\n\n**Popular services:**\n- Hardware repair & AMC plans → [/amc-plans](/amc-plans)\n- Custom software development → [/services](/services)\n- IT consultancy & networking → [/contact](/contact)\n\nTell me what you need and I'll point you in the right direction! 🎯";
+    }
+
+    if (/team|founder|ceo|who|staff|employee|leadership|chandan|arpit|aasita|muskan|prasun|sundaram/.test(t)) {
+      return "## Our Leadership Team 👥\n\n| Name | Role | Email |\n|------|------|-------|\n| **Chandan Kumar Yajee** | Founder & MD | founder@vedtechservices.in |\n| **Arpit Singh Parihar** | Co-founder & CEO | ceo@vedtechservices.in |\n| **Aasita Sarathe** | IT Manager | it.manager@vedtechservices.in |\n| **Muskan Dubey** | HR Manager | hr@vedtechservices.in |\n| **Prasun Prakash** | Testing Engineer | prasun.prakash@vedtechservices.in |\n| **Sundaram Prince** | Software Developer | sundaram.prince@vedtechservices.in |\n\n👉 [Meet the team](/about)";
+    }
+
+    if (/about|company|vedtech|history|founded|when|story|background/.test(t)) {
+      return "## About VedTech Services 🏢\n\n**VedTech Services** (part of VedArambh initiative) is a premier enterprise IT company in India.\n\n- 📅 **Founded**: 2020\n- 🎯 **Tagline**: *\"One Call – All IT Solutions\"*\n- 🏆 **100+ clients** served across India\n- 📍 **Offices**: Gurugram • Samastipur • Bhopal\n- 🌐 **Coverage**: Pan-India remote support\n\nWe deliver end-to-end IT solutions — from hardware repair to custom software, cloud services, and 24/7 enterprise support.\n\n👉 [Read our full story](/about)";
+    }
+
+    if (/hardware|laptop|desktop|printer|server|repair|fix|broken|not working/.test(t)) {
+      return "## Hardware Repair & Maintenance 💻\n\nVedTech Services handles all hardware issues:\n\n- **Laptops & Desktops** — diagnosis, repair, upgrades\n- **Servers** — installation, maintenance, troubleshooting\n- **Printers & Peripherals** — repair and consumables\n- **Networking Hardware** — routers, switches, access points\n\n🔧 We offer both **on-site** and **remote** support.\n\nFor immediate help:\n- 📞 **+91 7858971869**\n- 🎫 [Raise a ticket](/support)\n\nTell me more about your hardware issue — I may be able to help right now!";
+    }
+
+    if (/software|app|web|mobile|development|custom|erp|crm|website|application/.test(t)) {
+      return "## Custom Software Development 💻\n\nVedTech builds tailored software solutions:\n\n- 🌐 **Web Applications** — responsive, scalable, modern\n- 📱 **Mobile Apps** — Android & iOS\n- 🏭 **ERP & CRM** — business management systems\n- ☁️ **SaaS Platforms** — cloud-native applications\n- 🔗 **API Integration** — connect your existing systems\n\n**Our process**: Requirements → Design → Development → Testing → Deployment → Support\n\nReady to start your project?\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**\n- 👉 [Get a quote](/contact)";
+    }
+
+    if (/cloud|aws|azure|migration|backup|devops|hosting/.test(t)) {
+      return "## Cloud Services ☁️\n\nVedTech helps businesses move to and thrive in the cloud:\n\n- **Cloud Migration** — seamless transition to AWS, Azure, or GCP\n- **Backup & Recovery** — automated, secure, tested\n- **DevOps** — CI/CD pipelines, infrastructure automation\n- **Cloud Hosting** — reliable, scalable, cost-optimised\n\nCall us for a **free cloud assessment**:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**";
+    }
+
+    if (/network|wifi|wi-fi|lan|wan|firewall|vpn|cabling|internet/.test(t)) {
+      return "## Networking Solutions 🌐\n\nVedTech delivers complete networking infrastructure:\n\n- **LAN/WAN Setup** — office & enterprise networks\n- **Wi-Fi Solutions** — seamless wireless coverage\n- **Structured Cabling** — professional installation\n- **Firewall & VPN** — secure remote access\n- **Network Monitoring** — 24/7 health checks\n\nFor a **site survey or quote**:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**";
+    }
+
+    if (/security|cyber|cctv|camera|surveillance|vulnerability|endpoint/.test(t)) {
+      return "## Cybersecurity & CCTV 🔒\n\nVedTech protects your business:\n\n**Cybersecurity:**\n- Vulnerability assessment & penetration testing\n- Firewall management & endpoint security\n- Security audits & compliance\n\n**CCTV & Surveillance:**\n- IP camera installation & configuration\n- Remote monitoring setup\n- NVR/DVR management\n\nContact us for a **security assessment**:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**";
+    }
+
+    if (/thank|thanks|great|awesome|perfect|helpful|good bot|nice/.test(t)) {
+      return "You're very welcome! 😊 It's my pleasure to help.\n\nIf you need anything else — services, support, or pricing — just ask! Have a great day! 🌟\n\n*VedTech Services — One Call, All IT Solutions*";
+    }
+
+    if (/bye|goodbye|see you|take care|later/.test(t)) {
+      return "Goodbye! 👋 Thank you for visiting VedTech Services.\n\nFeel free to come back anytime. For urgent help:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**\n\n*Have a wonderful day!* 😊";
+    }
+
+    return null; // No local match — proceed to AI gateway
+  };
+
   const handleSend = async (overrideInput?: any) => {
     const textToSend = typeof overrideInput === 'string' ? overrideInput : input;
     if (!textToSend.trim() || isStreaming) return;
@@ -522,6 +593,21 @@ const ChatBot: React.FC = () => {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsTyping(true);
+
+    // Try local keyword fallback first (instant, no AI gateway)
+    const localReply = getLocalResponse(textToSend);
+    if (localReply) {
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          text: localReply,
+          sender: 'bot',
+          timestamp: new Date()
+        }]);
+        setIsTyping(false);
+      }, 400);
+      return;
+    }
 
     // Knowledge Base article search (runs in parallel)
     const keywords = textToSend.toLowerCase().split(' ').filter(k => k.length > 2);
@@ -561,6 +647,7 @@ const ChatBot: React.FC = () => {
     const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 
     let accumulated = '';
+    let errorDetected = false;
 
     await sendStreamRequest({
       functionUrl: `${supabaseUrl}/functions/v1/chat-ai`,
@@ -570,11 +657,26 @@ const ChatBot: React.FC = () => {
       onData: (data) => {
         try {
           const parsed = JSON.parse(data);
+
+          // Detect structured error responses from the edge function
+          if (parsed?.error) {
+            errorDetected = true;
+            let friendlyMsg = '';
+            if (parsed.error === 'rate_limit') {
+              friendlyMsg = "⏳ VedBot is a little busy right now. Please wait a few seconds and try again!\n\nFor urgent help, reach us directly:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**";
+            } else {
+              friendlyMsg = `⚠️ I ran into a temporary issue. Please try again.\n\nIf the problem persists, contact us:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**`;
+            }
+            setMessages(prev => prev.map(m =>
+              m.id === botMsgId ? { ...m, text: friendlyMsg } : m
+            ));
+            return;
+          }
+
           const chunk = parsed?.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
           if (chunk) {
             accumulated += chunk;
             setStreamingText(accumulated);
-            // Keep the live message bubble updated
             setMessages(prev => prev.map(m =>
               m.id === botMsgId ? { ...m, text: accumulated } : m
             ));
@@ -582,12 +684,13 @@ const ChatBot: React.FC = () => {
         } catch { /* incomplete SSE chunk — skip */ }
       },
       onComplete: () => {
-        // Finalise with the complete text
-        setMessages(prev => prev.map(m =>
-          m.id === botMsgId
-            ? { ...m, text: accumulated || "I'm sorry, I couldn't generate a response. Please try again or call us at +91 7858971869." }
-            : m
-        ));
+        if (!errorDetected && !accumulated) {
+          setMessages(prev => prev.map(m =>
+            m.id === botMsgId
+              ? { ...m, text: "I'm sorry, I couldn't generate a response. Please try again.\n\nNeed immediate help?\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**" }
+              : m
+          ));
+        }
         setIsStreaming(false);
         setStreamingText('');
       },
@@ -595,7 +698,7 @@ const ChatBot: React.FC = () => {
         if (!abortRef.current?.signal.aborted) {
           setMessages(prev => prev.map(m =>
             m.id === botMsgId
-              ? { ...m, text: 'Sorry, I encountered an error. Please try again or contact us directly at +91 7858971869.' }
+              ? { ...m, text: "⚠️ Connection issue. Please check your internet and try again.\n\nFor direct help:\n- 📞 **+91 7858971869**\n- 📧 **info@vedtechservices.in**" }
               : m
           ));
         }
@@ -1059,10 +1162,7 @@ const ChatBot: React.FC = () => {
                     <span className="bg-white rounded p-1 shadow-sm group-hover:bg-primary/10">📞</span>
                     <span>+91 7858971869 (Primary)</span>
                   </a>
-                  <a href="tel:+917370057723" className="flex items-center gap-2 text-slate-700 hover:text-primary transition-colors group">
-                    <span className="bg-white rounded p-1 shadow-sm group-hover:bg-primary/10">📞</span>
-                    <span>+91 7370057723</span>
-                  </a>
+                  
                   <a href="https://wa.me/917858971869" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 hover:text-green-600 transition-colors group">
                     <span className="bg-white rounded p-1 shadow-sm group-hover:bg-green-50">💬</span>
                     <span>WhatsApp: +91 7858971869</span>

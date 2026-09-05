@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS public.email_campaigns (
   campaign_type text DEFAULT 'Newsletter',
   subject_line text NOT NULL,
   sender_name text DEFAULT 'VedTech Services',
-  sender_email text DEFAULT 'vedtechservice@gmail.com',
+  sender_email text DEFAULT 'info@vedtechservices.in ',
   email_content text NOT NULL,
   recipient_selection jsonb,
   status text DEFAULT 'Draft',

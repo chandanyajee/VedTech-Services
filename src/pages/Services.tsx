@@ -153,6 +153,31 @@ const Services: React.FC = () => {
         title="IT Services — VedTech Services | Hardware, Software & Networking in Bihar"
         description="Explore VedTech Services' full range of IT solutions: hardware repair, web development, mobile apps, networking, CCTV, cloud support, and IT AMC contracts across Bihar."
         canonical="/services"
+        keywords="IT services Bihar India, hardware repair, website development, networking solutions, CCTV installation, cloud migration, IT AMC contract, software development"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "VedTech Services IT Solutions",
+            "url": "https://vedtechservices.in/services",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Website & App Development", "url": "https://vedtechservices.in/services/software" },
+              { "@type": "ListItem", "position": 2, "name": "Hardware Repair & Supply", "url": "https://vedtechservices.in/services/hardware" },
+              { "@type": "ListItem", "position": 3, "name": "Networking Solutions", "url": "https://vedtechservices.in/services/networking-solutions" },
+              { "@type": "ListItem", "position": 4, "name": "IT Support & AMC", "url": "https://vedtechservices.in/services/it-support" },
+              { "@type": "ListItem", "position": 5, "name": "CCTV & Security Systems", "url": "https://vedtechservices.in/services" },
+              { "@type": "ListItem", "position": 6, "name": "Cloud Services", "url": "https://vedtechservices.in/services/it-support" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vedtechservices.in" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://vedtechservices.in/services" }
+            ]
+          }
+        ]}
       />
     <div className="flex flex-col w-full">
       {/* Header */}

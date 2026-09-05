@@ -90,8 +90,8 @@ CREATE TABLE email_template_settings (
   company_name text NOT NULL DEFAULT 'VED TECH SERVICES',
   company_tagline text NOT NULL DEFAULT 'Digital Solutions | Endless Possibilities',
   company_address text DEFAULT 'Samastipur, Bihar, India',
-  company_phone text DEFAULT '+91 7370057723',
-  company_email text DEFAULT 'vedtechservice@gmail.com',
+  company_phone text DEFAULT '+91 7858971869',
+  company_email text DEFAULT 'info@vedtechservices.in ',
   company_website text DEFAULT 'https://vedtechservices.in',
   created_at timestamptz DEFAULT now(),
   updated_at timestamptz DEFAULT now()
@@ -354,8 +354,8 @@ Test bulk download after any dependency updates
 Support and Contact
 For issues, questions, or feature requests related to these implementations:
 
-Email: vedtechservice@gmail.com
-Phone: +91 7370057723
+Email: info@vedtechservices.in 
+Phone: +91 7858971869
 Website: https://vedtechservices.in
 Last Updated: January 2026
 Version: v98

@@ -44,14 +44,14 @@ Response: Instant AI-powered
 Available: 24/7
 2. WhatsApp (Green Icon)
 Best For: Instant messaging
-Number: +91 7370057723
+Number: +91 7858971869
 Available: Business hours
 3. Phone
-Numbers: +91 7858971869, +91 7370057723
+Numbers: +91 7858971869
 Best For: Urgent support
 Available: Mon-Sat 9AM-7PM
 4. Email
-Address: vedtechservice@gmail.com
+Address: info@vedtechservices.in 
 Best For: Detailed inquiries
 Response: Within 24 hours
 5. Support Ticket
@@ -140,7 +140,7 @@ Adaptive layouts
 🚀 Quick Actions
 For Users
 Get Help: Click blue chat icon
-Urgent Support: Call +91 7370057723
+Urgent Support: Call +91 7858971869
 WhatsApp: Click green icon
 Raise Ticket: Visit /support
 Contact Sales: Visit /contact
@@ -166,4 +166,4 @@ Complete team transparency
 Multiple contact channels
 Professional design
 Production-ready
-Contact: vedtechservice@gmail.com Phone: +91 7858971869, +91 7370057723 Location: Samastipur, Bihar, India
+Contact: info@vedtechservices.in  Phone: +91 7858971869 Location: Samastipur, Bihar, India

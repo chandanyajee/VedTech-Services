@@ -10,6 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import PageMeta from '@/components/common/PageMeta';
 import { supabase } from '@/db/supabase';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 const Contact: React.FC = () => {
   const [offices, setOffices] = useState<any[]>([]);
@@ -41,27 +42,26 @@ const Contact: React.FC = () => {
     }
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Form submitted:", data);
-    
-    // Create email content
-    const subject = `Contact Form: ${data.service || 'General Inquiry'}`;
-    const body = `
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
-Service: ${data.service}
-
-Message:
-${data.message}
-    `;
-    
-    // Open default email client
-    const mailtoLink = `mailto:info@vedtechservices.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    
-    alert("Thank you for your inquiry. Your email client will open to send the message. We will get back to you shortly!");
-    form.reset();
+  const onSubmit = async (data: any) => {
+    try {
+      const { error } = await supabase.from('contact_submissions').insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        service: data.service || null,
+        message: data.message,
+      });
+      if (error) throw error;
+      toast.success('Message sent!', {
+        description: 'We received your inquiry and will get back to you within 24 hours.',
+      });
+      form.reset();
+    } catch (err) {
+      console.error('Contact form error:', err);
+      toast.error('Failed to send message', {
+        description: 'Please try emailing us directly at info@vedtechservices.in',
+      });
+    }
   };
 
   return (
@@ -70,6 +70,40 @@ ${data.message}
         title="Contact VedTech Services — Get Free IT Consultation | 24/7 Support"
         description="Contact VedTech Services for professional IT support. Get free consultation, 24/7 emergency support, and expert solutions. Call, email, or WhatsApp us now for immediate assistance."
         canonical="/contact"
+        keywords="contact VedTech Services, IT support contact India, IT helpdesk phone number, info@vedtechservices.in, WhatsApp IT support"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact VedTech Services",
+            "url": "https://vedtechservices.in/contact",
+            "description": "Get in touch with VedTech Services for IT support, consultation, and quotes.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "VedTech Services",
+              "email": "info@vedtechservices.in",
+              "telephone": "+917858971869",
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+917858971869",
+                  "contactType": "customer service",
+                  "contactOption": "TollFree",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Hindi"]
+                }
+              ]
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vedtechservices.in" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://vedtechservices.in/contact" }
+            ]
+          }
+        ]}
       />
       <div className="flex flex-col w-full">
         {/* Hero Section */}
@@ -170,7 +204,7 @@ ${data.message}
                     </div>
                     <div>
                       <div className="font-bold">Our Office</div>
-                      <div className="text-slate-600">{"Samastipur, Tech Hub, Bihar, India"}</div>
+                      <div className="text-slate-600">{"Gurugram, Haryana — Sector 17A (Head Office)"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -209,7 +243,7 @@ ${data.message}
                           <FormItem>
                             <FormLabel>Full Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="John Doe" {...field} />
+                              <Input placeholder="Your Full Name" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -222,7 +256,7 @@ ${data.message}
                           <FormItem>
                             <FormLabel>Email Address</FormLabel>
                             <FormControl>
-                              <Input placeholder="john@example.com" {...field} />
+                              <Input placeholder="info@vedtechservices.in" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -348,6 +382,7 @@ ${data.message}
                     )}
                   </CardContent>
                 </Card>
+                
               ))}
             </div>
           </div>

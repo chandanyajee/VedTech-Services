@@ -25,13 +25,13 @@ Contact information provided in responses
 Close button to minimize chat
 2. Email Integration
 Contact Form
-Email Destination: vedtechservice@gmail.com
+Email Destination: info@vedtechservices.in 
 Functionality: Opens default email client with pre-filled content
 Email Format:
 Subject: Contact Form: [Service Type]
 Body: Name, Email, Phone, Service, Message
 Support Ticket Form
-Email Destination: vedtechservice@gmail.com
+Email Destination: info@vedtechservices.in 
 Functionality: Creates support ticket and opens email client
 Email Format:
 Subject: Support Ticket #[ID]: [Subject]
@@ -99,18 +99,16 @@ Files Created
 src/components/common/ChatBot.tsx - Complete chatbot component
 6. Contact Information Summary
 Email
-Primary: vedtechservice@gmail.com
+Primary: info@vedtechservices.in 
 Usage: Contact forms, support tickets, general inquiries
 Phone Numbers
 Primary: +91 7858971869
-Secondary: +91 7370057723
 WhatsApp
 +91 7858971869
-7370057723
 LinkedIn
 Founder: https://www.linkedin.com/in/chandan-yajee
 Address
-Samastipur, Tech Hub, Bihar, India
+Gurugram, Haryana — Sector 17A (Head Office)
 
 7. User Interaction Flow
 Customer Support Journey

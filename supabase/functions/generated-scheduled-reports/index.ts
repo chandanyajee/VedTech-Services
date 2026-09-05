@@ -175,8 +175,8 @@ function generateHTMLEmailTemplate(schedule: ReportSchedule, reportSummary: any,
   const companyName = templateSettings?.company_name || 'VED TECH SERVICES';
   const companyTagline = templateSettings?.company_tagline || 'Digital Solutions | Endless Possibilities';
   const companyAddress = templateSettings?.company_address || 'Samastipur, Bihar, India';
-  const companyPhone = templateSettings?.company_phone || '+91 7370057723';
-  const companyEmail = templateSettings?.company_email || 'vedtechservice@gmail.com';
+  const companyPhone = templateSettings?.company_phone || '+91 7858971869';
+  const companyEmail = templateSettings?.company_email || 'info@vedtechservices.in ';
   const companyWebsite = templateSettings?.company_website || 'https://vedtechservices.in';
   const logoUrl = templateSettings?.logo_url;
   const footerContent = templateSettings?.footer_content;
@@ -276,8 +276,8 @@ function generateHTMLEmailTemplate(schedule: ReportSchedule, reportSummary: any,
       </div>
       <div class="footer-links">
         <a href="https://vedtechservices.in">Website</a> |
-        <a href="mailto:vedtechservice@gmail.com">Email</a> |
-        <a href="tel:+917370057723">Phone</a>
+        <a href="mailto:info@vedtechservices.in ">Email</a> |
+        <a href="tel:+917858971869">Phone</a>
       </div>
       <div style="margin-top: 20px; color: #6b7280;">
         TECHNOLOGY | TRADITION | TRANSFORMATION<br>
@@ -337,7 +337,7 @@ async function sendReportEmailViaSendGrid(
       }
     ],
     from: {
-      email: 'vedtechservice@gmail.com',
+      email: 'info@vedtechservices.in ',
       name: 'VedTech Services Reports'
     },
     content: [

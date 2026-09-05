@@ -154,7 +154,8 @@ const TermsOfService: React.FC = () => (
           <p>For questions about these Terms, please contact:</p>
           <address className="not-italic bg-white border rounded-lg p-4 space-y-1 text-sm">
             <p><strong>VedTech Services</strong></p>
-            <p>Samastipur, Tech Hub, Bihar, India</p>
+            <p>Gurugram, Haryana — Sector 17A India (Head Office)</p>
+            <p>Samastipur, Bihar — 848101 India</p>
             <p>Email: <a href="mailto:info@vedtechservices.in" className="text-primary underline">info@vedtechservices.in</a></p>
             <p>Phone: <a href="tel:+917858971869" className="text-primary underline">+91 7858971869</a></p>
           </address>

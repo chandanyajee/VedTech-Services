@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS email_template_settings (
   company_name text NOT NULL DEFAULT 'VED TECH SERVICES',
   company_tagline text NOT NULL DEFAULT 'Digital Solutions | Endless Possibilities',
   company_address text DEFAULT 'Samastipur, Bihar, India',
-  company_phone text DEFAULT '+91 7370057723',
-  company_email text DEFAULT 'vedtechservice@gmail.com',
+  company_phone text DEFAULT '+91 7858971869',
+  company_email text DEFAULT 'info@vedtechservices.in ',
   company_website text DEFAULT 'https://vedtechservices.in',
   created_at timestamptz DEFAULT now(),
   updated_at timestamptz DEFAULT now()
@@ -52,8 +52,8 @@ INSERT INTO email_template_settings (
   'VED TECH SERVICES',
   'Digital Solutions | Endless Possibilities',
   'Samastipur, Bihar, India',
-  '+91 7370057723',
-  'vedtechservice@gmail.com',
+  '+91 7858971869',
+  'info@vedtechservices.in ',
   'https://vedtechservices.in'
 ) ON CONFLICT DO NOTHING;
 

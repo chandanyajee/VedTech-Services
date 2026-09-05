@@ -409,9 +409,9 @@ Admin Dashboard: https://vedtechservices.com/admin/tickets
 Access: Direct URL (not in navigation)
 Authentication: None (can be added)
 Contact
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
-WhatsApp: +91 7370057723
+Phone: +91 7858971869
+Email: info@vedtechservices.in 
+WhatsApp: +91 7858971869
 Location: Samastipur, Bihar, India
 🎉 Implementation Status
 Database

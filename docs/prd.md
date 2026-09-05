@@ -424,11 +424,11 @@ VedTech Services provides end-to-end IT solutions with:
 - **Get Free Consultation** CTA button (clickable, prominent placement at top of page)
 - **Start Your Project Today** CTA button (clickable)
 - **WhatsApp button** (clickable, fixed floating button + inline button in contact section) – VERY IMPORTANT
-- Contact form with email integration to vedtechservice@gmail.com
+- Contact form with email integration to info@vedtechservices.in 
   - Fields: Name, Email, Phone, Service Interest, Message
   - Submit button (clickable)
 - Phone number with Call Now button (clickable)
-- Email address: vedtechservice@gmail.com (clickable)
+- Email address: info@vedtechservices.in  (clickable)
 - Business address
 - Office hours
 - Google Maps embed (placeholder if address not confirmed)
@@ -674,7 +674,7 @@ Mobile navigation: hamburger menu with smooth slide-in drawer, all nav links acc
 - Advanced chat bot widget for instant engagement
 - Call Now buttons with phone number (clickable)
 - Service inquiry and ticket raise forms (clickable)
-- Email contact options (vedtechservice@gmail.com) (clickable)
+- Email contact options (info@vedtechservices.in ) (clickable)
 - Request AMC buttons (clickable)
 
 ---
@@ -698,8 +698,8 @@ Mobile navigation: hamburger menu with smooth slide-in drawer, all nav links acc
 ---
 
 ## 15. Contact & Communication
-- Primary Email: vedtechservice@gmail.com (clickable)
-- Contact form submissions sent to vedtechservice@gmail.com
+- Primary Email: info@vedtechservices.in  (clickable)
+- Contact form submissions sent to info@vedtechservices.in 
 - Advanced chat bot integration for real-time customer support
 - WhatsApp quick support access (clickable, fixed floating button on all pages)
 
@@ -832,7 +832,7 @@ Mobile navigation: hamburger menu with smooth slide-in drawer, all nav links acc
 - Ticket system generates auto Ticket ID and sends confirmation
 - SEO meta tags, schema markup, and proper heading hierarchy implemented on all pages
 - All external project links open correctly in a new tab
-- Contact form submissions are sent to vedtechservice@gmail.com
+- Contact form submissions are sent to info@vedtechservices.in 
 
 ---
 

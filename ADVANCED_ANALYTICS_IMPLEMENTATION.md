@@ -659,8 +659,8 @@ SendGrid Webhook Payload
 Support and Contact
 For issues, questions, or feature requests related to these implementations:
 
-Email: vedtechservice@gmail.com
-Phone: +91 7370057723
+Email: info@vedtechservices.in 
+Phone: +91 7858971869
 Website: https://vedtechservices.in
 Last Updated: January 2026
 Version: v99

@@ -41,7 +41,7 @@ export default function AdminEmailTemplateSettings() {
     company_name: 'VED TECH SERVICES',
     company_tagline: 'Digital Solutions | Endless Possibilities',
     company_address: 'Samastipur, Bihar, India',
-    company_phone: '+91 7370057723',
+    company_phone: '+91 7858971869',
     company_email: 'info@vedtechservices.in',
     company_website: 'https://vedtechservices.in',
   });
@@ -440,7 +440,7 @@ export default function AdminEmailTemplateSettings() {
                         id="company_phone"
                         value={formData.company_phone}
                         onChange={(e) => setFormData({ ...formData, company_phone: e.target.value })}
-                        placeholder="+91 7370057723"
+                        placeholder="+91 7858971869"
                       />
                     </div>
 

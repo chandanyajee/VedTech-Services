@@ -226,8 +226,8 @@ Automated Support
 AI Chatbot (Blue icon) - Intelligent responses
 WhatsApp (Green icon) - Instant messaging
 Direct Contact
-Phone: +91 7858971869, +91 7370057723
-Email: vedtechservice@gmail.com
+Phone: +91 7858971869, 
+Email: info@vedtechservices.in 
 Professional Network
 LinkedIn: Connect with team members
 Chandan Kumar Yajee (Founder)
